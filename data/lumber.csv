@@ -1,0 +1,9 @@
+name,price,rarity,wEffect,eEffect,obtainFrom
+Black Branch,200,N/A,N/A,N/A,Foraging Minigame (Arcadia:Any Season + Elysia)
+Black Lumber,500,N/A,N/A,N/A,Logging Minigame (Copper Axe + Silver Axe + Gold Axe + Mystic Axe)
+Branch,50,N/A,N/A,N/A,Foraging Minigame (Arcadia:Any Season + Elysia)
+Golden Lumber,10000,RARE,50% Chance of getting struck by lightning each turn,50% Chance of enemy getting a critical hit on you,Logging Minigame (Any Axe) + Foraging Minigame (Arcadia:Any Season + Elysia)
+Lumber,300,N/A,N/A,N/A,Logging Minigame (Any Axe)
+Old Lumber,50,N/A,N/A,N/A,Logging Minigame (Any Axe)
+Small Branch,5,N/A,N/A,N/A,Foraging Minigame (Arcadia:Any Season + Elysia)
+Small Lumber,100,N/A,N/A,N/A,Logging Minigame (Any Axe)

@@ -1,0 +1,11 @@
+name,price,rarity,wEffect,eEffect,obtainFrom
+Big Crystal,3000,UNDETERMINED,Not Applicable,Not Applicable,Mining Minigame
+Crystal,700,N/A,N/A,N/A,Mining Minigame (Hammer)
+Dark Crystal,700,COMMON,Inserts Minor Curse (Needs Mod Approval),Inserts Minor Curse (Needs Mod Approval),Mining Minigame (Hammer)
+Earth Crystal,800,UNCOMMON,Earth Elemental on Attack,Earth Resistance,Foraging Minigame (Arcadia:Fall + Winter + Elysia)
+Fire Crystal,800,UNCOMMON,Fire Elemental on Attack,Fire Resistance,Foraging Minigame (Arcadia:Summer + Fall)
+Love Crystal,2500,UNCOMMON,20% Chance of Critical Hit,20% Chance of Dodging a Hit,Mining Minigame (Hammer)
+Magic Crystal,3500,RARE,M.ATK +5,M.DEF +5,Foraging Minigame (Arcadia:Any Season + Elysia)
+Rune Crystal,5000,N/A,N/A,N/A,Logging Minigame (Any Axe) + Foraging Minigame (Arcadia:Any Season + Elysia)
+Water Crystal,800,UNCOMMON,Water Elemental on Attack,Water Resistance,Foraging Minigame (Arcadia:Winter + Elysia)
+Wind Crystal,800,UNCOMMON,Wind Elemental on Attack,Wind Resistance,Foraging Minigame (Arcadia:Spring + Fall)
