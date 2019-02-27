@@ -3,12 +3,8 @@ var minefuncts = require('./minefunct');
 var simplefuncts = require('./simplefunct');
 var critterfuncts = require('./critterfunct');
 var foragefuncts = require('./foragefunct');
-var botvars = require('./vars');
+var botvars = require('./variables/vars');
 var fs =require('fs');
-
-//var parse = require('csv-parse');
-//var Converter = require("csvtojson").Converter;
-//var csv = require('csv-parser')
 
 module.exports = {
 	initMethodDict: function (methodDict) {
@@ -36,63 +32,39 @@ module.exports = {
 		methodDict['forageone'] = foragefuncts.forageOne;
 		methodDict['foraging'] = foragefuncts.foraging;
 
+		//randomline
+		methodDict['choose'] = botfuncts.randomFromLine;
+
 
 	},
 
 	initMethodArray: function (){
-		crops();
-		crystals();
-		fabrics();
-		fish();
-		flowers();
-		gems();
-		herbs();
-		lumber();
-		ores();
-		monsterParts();
-		roots();
-		spores();
-		stones();
 		critters();
-		wildFoods();
-		
+
+		botvars.piCropsList = loadCategory("crops", "./data/crops.csv");
+		botvars.piCrystalsList = loadCategory("crystals", "./data/crystal.csv");
+		botvars.piFabricList = loadCategory("fabrics", "./data/fabrics.csv");
+		botvars.piFishList = loadCategory("fish", "./data/fish.csv");
+		botvars.piFlowerList = loadCategory("flowers", "./data/flowers.csv");
+		botvars.piHerbsList = loadCategory("herbs", "./data/herbs.csv");
+		botvars.piGemsList = loadCategory("gems", "./data/gems.csv");
+		botvars.piLumberList = loadCategory("lumber", "./data/lumber.csv");
+		botvars.piMonsterPartsList = loadCategory("monsterparts", "./data/monsterparts.csv")
+		botvars.piOresList = loadCategory("ores", "./data/ore.csv");
+		botvars.piRootsList = loadCategory("roots", "./data/roots.csv");
+		botvars.piSporesList = loadCategory("spores", "./data/spore.csv");
+		botvars.piStonesList = loadCategory("stones", "./data/stones.csv");
+		botvars.piWildFoodList = loadCategory("wildfood", "./data/wildfoods.csv");
+
 		//items that don't fit other categories
-		misc();
+		botvars.piMiscList = loadCategory("misc", "./data/misc.csv");
 
 		//combinations
-		getMineForge();
 
-		botvars.piItemCategories["crops"] = Object.keys(botvars.picropsList);
-		botvars.piItemCategories["crystals"] = Object.keys(botvars.piCrystalsList);
-		botvars.piItemCategories["fabrics"] = Object.keys(botvars.piFabricList);
-		botvars.piItemCategories["fish"] = Object.keys(botvars.piFishList);
-		botvars.piItemCategories["flowers"]= Object.keys(botvars.piFlowerList);
-		botvars.piItemCategories["herbs"] = Object.keys(botvars.piHerbsList);
-		botvars.piItemCategories["gems"] = Object.keys(botvars.piGemsList);
-		botvars.piItemCategories["lumber"] = Object.keys(botvars.piLumberList);
-		botvars.piItemCategories["monsterparts"] = Object.keys(botvars.piMonsterPartsList);
-		botvars.piItemCategories["ores"] = Object.keys(botvars.piOresList);
-		botvars.piItemCategories["roots"] = Object.keys(botvars.piRootsList);
-		botvars.piItemCategories["spores"] = Object.keys(botvars.piSporesList);
-		botvars.piItemCategories["stones"] = Object.keys(botvars.piStonesList);
-		botvars.piItemCategories["wildfood"] = Object.keys(botvars.piWildFoodList);
+		//be sure to include this in the receipe list later
+		botvars.piMineForgeList = loadCategory("mineForge", "./data/mineforge.csv");
 
-		//critters
-		botvars.piItemCategories["bees"] = Object.keys(botvars.piBeesList);
-		botvars.piItemCategories["beetles"] = Object.keys(botvars.piBeetlesList);
-		botvars.piItemCategories["butterflies"] = Object.keys(botvars.piButterfliesList);
-		botvars.piItemCategories["cicadas"] = Object.keys(botvars.piCicadasList);
-		botvars.piItemCategories["crickets"] = Object.keys(botvars.piCricketsList);
-		botvars.piItemCategories["dragonflies"] = Object.keys(botvars.piDragonfliesList);
-		botvars.piItemCategories["fireflies"] = Object.keys(botvars.piFirefliesList);
-		botvars.piItemCategories["frogs"] = Object.keys(botvars.piFrogsList);
-		botvars.piItemCategories["ladybugs"] = Object.keys(botvars.piLadybugsList);
-
-		botvars.piItemCategories["misc"] = Object.keys(botvars.piMiscList);
-
-		//be sure to include this in the recepie list later
-		botvars.piItemCategories["mineForge"] = Object.keys(botvars.piMineForgeList);
-
+		//minigames categories for easy reference
 		botvars.piMiningCategories = ["crystals", "gems", "ores", "stones", "misc", "mineForge", "roots"];
 		botvars.piLoggingCategories = ["lumber", "crops", "stones", "spores", "crystals"];
 		botvars.piCritterCatchCategories = ["bees", "beetles", "butterflies", "cicadas", "crickets", "dragonflies", "fireflies", "frogs", "ladybugs"];
@@ -109,243 +81,45 @@ function readFile(filepath){
 	return filejunk;
 }
 
-function lumber(){
-	var lumberFile = "./data/lumber.csv"
+function getFileCategoryListing(filePath){
+	var listRaw = readFile(filePath).split("\n");
+	var propertyNames = listRaw[0].trim().split(",");
+	var categoryList = [];
 
-	lumberListRaw = readFile(lumberFile).split("\n");
+	for(i = 1; i< listRaw.length; i++){
+		var item = listRaw[i].trim().split(",");
+		
+		var tempItem = {};
 
-	for(i = 1; i < lumberListRaw.length; i++){
-			item = lumberListRaw[i].trim().split(",");
-			botvars.piLumberList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "rarity": item[2], "wEffect": item[3], "eEffect": item[4], "obtainFrom": item[5]};
+		for(j = 0; j< propertyNames.length; j++){
+			tempItem[propertyNames[j]] = item[j];
 		}
+		//assume name is always in item[0]
+		categoryList[(item[0].trim().toLowerCase())] = tempItem;
+	}
+
+	return categoryList;
+}
+
+function loadCategory(categoryName, filepath){
+	var categoryList = getFileCategoryListing(filepath);
+
+	botvars.piItemCategories[categoryName] = Object.keys(categoryList);
+	return categoryList;
 }
 
 
-//all fetch categories
-
+//critter categories
 function critters(){
-	var beesFile = "./data/critters/bees.csv"
-	var beetlesFile = "./data/critters/beetles.csv"
-	var butterfliesFile = "./data/critters/butterflies.csv"
-	var cicadasFile = "./data/critters/cicadas.csv"
-	var cricketsFile = "./data/critters/crickets.csv"
-	var dragonfliesFile = "./data/critters/dragonflies.csv"
-	var firefliesFile = "./data/critters/fireflies.csv"
-	var frogsFile = "./data/critters/frogs.csv"
-	var ladybugsFile = "./data/critters/ladybugs.csv"
-
-	var beesListRaw = readFile(beesFile).split("\n");
-	var beetlesListRaw = readFile(beetlesFile).split("\n");
-	var butterfliesListRaw = readFile(butterfliesFile).split("\n");
-	var cicadasListRaw = readFile(cicadasFile).split("\n");
-	var cricketsListRaw = readFile(cricketsFile).split("\n");
-	var dragonfliesListRaw = readFile(dragonfliesFile).split("\n");
-	var firefliesListRaw = readFile(firefliesFile).split("\n");
-	var frogsListRaw = readFile(frogsFile).split("\n");
-	var ladybugsListRaw = readFile(ladybugsFile).split("\n");
-
-	for(i = 1; i < beesListRaw.length; i++) {
-			item = beesListRaw[i].trim().split(",");
-			botvars.piBeesList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-	}
-
-	for(i = 1; i < beetlesListRaw.length; i++) {
-			item = beetlesListRaw[i].trim().split(",");
-			botvars.piBeetlesList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-	}
-
-	for(i = 1; i < butterfliesListRaw.length; i++) {
-			item = butterfliesListRaw[i].trim().split(",");
-			botvars.piButterfliesList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-	}
-
-	for(i = 1; i < cicadasListRaw.length; i++) {
-			item = cicadasListRaw[i].trim().split(",");
-			botvars.piCicadasList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-	}
-
-	for(i = 1; i < cricketsListRaw.length; i++) {
-			item = cricketsListRaw[i].trim().split(",");
-			botvars.piCricketsList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-	}
-
-	for(i = 1; i < dragonfliesListRaw.length; i++) {
-			item = dragonfliesListRaw[i].trim().split(",");
-			botvars.piDragonfliesList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-	}
-
-	for(i = 1; i < firefliesListRaw.length; i++) {
-			item = firefliesListRaw[i].trim().split(",");
-			botvars.piFirefliesList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-	}
-
-	for(i = 1; i < frogsListRaw.length; i++) {
-			item = frogsListRaw[i].trim().split(",");
-			botvars.piFrogsList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-	}
-
-	for(i = 1; i < ladybugsListRaw.length; i++) {
-			item = ladybugsListRaw[i].trim().split(",");
-			botvars.piLadybugsList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-	}
-}
-
-function spores(){
-	var sporesFile = "./data/spore.csv"
-
-	sporesListRaw = readFile(sporesFile).split("\n");
-
-	for(i = 1; i < sporesListRaw.length; i++){
-			item = sporesListRaw[i].trim().split(",");
-			botvars.piSporesList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "rarity": item[2], "wEffect": item[3], "eEffect": item[4], "obtainFrom": item[5]};
-		}
-}
-
-function monsterParts(){
-	var monsterPartsFile = "./data/monsterparts.csv"
-
-	monsterPartsListRaw = readFile(monsterPartsFile).split("\n");
-
-	for(i = 1; i < monsterPartsListRaw.length; i++){
-			item = monsterPartsListRaw[i].trim().split(",");
-			botvars.piMonsterPartsList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "rarity": item[2], "wEffect": item[3], "eEffect": item[4], "obtainFrom": item[5]};
-		}
-}
-
-function crops(){
-	var cropsFile = "./data/crops.csv"
-
-	cropsListRaw = readFile(cropsFile).split("\n");
-
-	for(i = 1; i < cropsListRaw.length; i++){
-			item = cropsListRaw[i].trim().split(",");
-			botvars.picropsList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "seedPrice": item[2], "obtainFrom": item[3]};
-		}
-}
-
-function fish(){
-	var fishFile = "./data/fish.csv"
-
-	fishListRaw = readFile(fishFile).split("\n");
-
-	for(i = 1; i < fishListRaw.length; i++){
-			item = fishListRaw[i].trim().split(",");
-			botvars.piFishList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "isKingFish": item[2], "locations": item[3], "obtainFrom": item[4]};
-		}
-}
-
-function fabrics(){
-	var fabricFile = "./data/fabrics.csv"
-
-	fabricsListRaw = readFile(fabricFile).split("\n");
-
-	for(i = 1; i < fabricsListRaw.length; i++){
-			item = fabricsListRaw[i].trim().split(",");
-			botvars.piFabricList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-		}
-}
-
-
-function flowers(){
-	var flowersFile = "./data/flowers.csv"
-
-	flowersListRaw = readFile(flowersFile).split("\n");
-
-	for(i = 1; i < flowersListRaw.length; i++){
-			item = flowersListRaw[i].trim().split(",");
-			botvars.piFlowerList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "rarity": item[2], "wEffect": item[3], "eEffect": item[4], "seedPrice": item[5], "obtainFrom": item[6]};
-		}
-}
-
-
-function gems(){
-	var gemsFile = "./data/gems.csv"
-
-	gemsListRaw = readFile(gemsFile).split("\n");
-
-	for(i = 1; i < gemsListRaw.length; i++){
-			item = gemsListRaw[i].trim().split(",");
-			botvars.piGemsList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "rarity": item[2], "wEffect": item[3], "eEffect": item[4], "obtainFrom": item[5]};
-		}
-}
-
-function herbs(){
-	var herbsFile = "./data/herbs.csv"
-
-	herbsListRaw = readFile(herbsFile).split("\n");
-
-	for(i = 1; i < herbsListRaw.length; i++){
-			item = herbsListRaw[i].trim().split(",");
-			botvars.piHerbsList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-		}
-}
-
-function roots(){
-	var rootsFile = "./data/roots.csv"
-
-	rootsListRaw = readFile(rootsFile).split("\n");
-
-	for(i = 1; i < rootsListRaw.length; i++){
-			item = rootsListRaw[i].trim().split(",");
-			botvars.piRootsList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "rarity": item[2], "wEffect": item[3], "eEffect": item[4], "obtainFrom": item[5]};
-		}
-}
-
-
-//THIS WILL NEED FUTURE EDITS
-function getMineForge(){
-	var mineForgeFile = "./data/mineforge.csv"
-
-	mineForgeListRaw = readFile(mineForgeFile).split("\n");
-
-	for(i = 1; i < mineForgeListRaw.length; i++){
-			item = mineForgeListRaw[i].trim().split(",");
-			botvars.piMineForgeList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-		}
-}
-
-function crystals(){
-	var crystalFile = "./data/crystal.csv"
-
-	crystalListRaw = readFile(crystalFile).split("\n");
-
-	for(i = 1; i < crystalListRaw.length; i++){
-			item = crystalListRaw[i].trim().split(",");
-			botvars.piCrystalsList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "rarity": item[2], "wEffect": item[3], "eEffect": item[4], "obtainFrom": item[5]};
-		}
-}
-
-function ores(){
-	var oreFile = "./data/ore.csv"
-
-	oreListRaw = readFile(oreFile).split("\n");
-
-	for(i = 1; i < oreListRaw.length; i++){
-			item = oreListRaw[i].trim().split(",");
-			botvars.piOresList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "rarity": item[2], "wEffect": item[3], "eEffect": item[4], "obtainFrom": item[5]};
-		}
-}
-
-function stones(){
-	var stonesFile = "./data/stones.csv"
-
-	stoneListRaw = readFile(stonesFile).split("\n");
-
-	for(i = 1; i < stoneListRaw.length; i++){
-			item = stoneListRaw[i].trim().split(",");
-			botvars.piStonesList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "rarity": item[2], "wEffect": item[3], "eEffect": item[4], "obtainFrom": item[5]};
-		}
-}
-
-function wildFoods(){
-	var wildFoodFile = "./data/wildfoods.csv"
-
-	wildFoodListRaw = readFile(wildFoodFile).split("\n");
-
-	for(i = 1; i < wildFoodListRaw.length; i++){
-			item = wildFoodListRaw[i].trim().split(",");
-			botvars.piWildFoodList[(item[0].trim().toLowerCase())] = {"name": item[0], "price": item[1], "obtainFrom": item[2]};
-		}
+	botvars.piBeesList = loadCategory("bees", "./data/critters/bees.csv");
+	botvars.piBeetlesList = loadCategory("beetles", "./data/critters/beetles.csv");
+	botvars.piButterfliesList = loadCategory("butterflies", "./data/critters/butterflies.csv");
+	botvars.piCicadasList = loadCategory ("cicadas", "./data/critters/cicadas.csv");
+	botvars.piCricketsList = loadCategory("crickets", "./data/critters/crickets.csv");
+	botvars.piDragonfliesList = loadCategory("dragonflies", "./data/critters/dragonflies.csv");
+	botvars.piFirefliesList = loadCategory("fireflies", "./data/critters/fireflies.csv");
+	botvars.piFrogsList = loadCategory("frogs", "./data/critters/frogs.csv");
+	botvars.piLadybugsList = loadCategory("ladybugs", "./data/critters/ladybugs.csv");
 }
 
 

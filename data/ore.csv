@@ -1,4 +1,4 @@
-name,price,rarity,wEffect:,eEffect,obtainFrom
+name,price,rarity,wEffect,eEffect,obtainFrom
 Copper Ore,50,COMMON,ATK +1,DEF +1, Mining Minigame (Hoe)
 Gold Ore,700,UNCOMMON,ATK +3,DEF +3,Mining Minigame (Hammer + Hoe)
 Junk Ore,10,COMMON,ATK +1,DEF +1,Mining Minigame (Hoe)

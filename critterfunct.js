@@ -1,4 +1,5 @@
-var botvars = require('./vars');
+var botvars = require('./variables/vars');
+var lines = require('./variables/lines');
 var botfunct = require('./botfunct');
 var commaNumber = require('comma-number');
 
@@ -16,14 +17,14 @@ module.exports = {
 
 		switch(season){
 			case "spring":
-				return lineOutput + season + ".\n\n" + "**Critter Caught:** " + getCritterDetailsOne(botvars.springCritterLine);
+				return lineOutput + season + ".\n\n" + "**Critter Caught:** " + getCritterDetailsOne(lines.springCritterLine);
 			case "summer":
-				return lineOutput + season + ".\n\n" + "**Critter Caught:** " + getCritterDetailsOne(botvars.summerCritterLine);
+				return lineOutput + season + ".\n\n" + "**Critter Caught:** " + getCritterDetailsOne(lines.summerCritterLine);
 			case "autumn":
 			case "fall":
-				return lineOutput + season + ".\n\n" + "**Critter Caught:** " + getCritterDetailsOne(botvars.fallCritterLine);
+				return lineOutput + season + ".\n\n" + "**Critter Caught:** " + getCritterDetailsOne(lines.fallCritterLine);
 			case "winter":
-				return lineOutput + season + ".\n\n" + "**Critter Caught:** " + getCritterDetailsOne(botvars.winterCritterLine);
+				return lineOutput + season + ".\n\n" + "**Critter Caught:** " + getCritterDetailsOne(lines.winterCritterLine);
 			default:
 				return "Invalid season " + season;
 		}
@@ -43,17 +44,17 @@ module.exports = {
 
 		switch(season){
 			case "spring":
-				critterList = botvars.springCritterLine;
+				critterList = lines.springCritterLine;
 				break;
 			case "summer":
-				critterList = botvars.summerCritterLine;
+				critterList = lines.summerCritterLine;
 				break;
 			case "autumn":
 			case "fall":
-				critterList = botvars.fallCritterLine;
+				critterList = lines.fallCritterLine;
 				break;
 			case "winter":
-				critterList = botvars.winterCritterLine;
+				critterList = lines.winterCritterLine;
 				break;
 			default:
 				return "Invalid season " + season;

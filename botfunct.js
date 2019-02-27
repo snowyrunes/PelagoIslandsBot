@@ -1,4 +1,5 @@
-var botvars = require('./vars');
+var botvars = require('./variables/vars');
+var lines = require('./variables/lines');
 var commaNumber = require('comma-number');
 
 module.exports = {
@@ -8,6 +9,25 @@ module.exports = {
 		return Math.floor(Math.random() * max);
 	},
 
+	randomFromLine: function(args){
+		var rLine = args.join(" ");
+		var rArray = [];
+
+		if(rLine.includes("|")){
+			rArray = rLine.split("|");
+		}else{
+			if(rLine.includes(",")){
+				rArray = rLine.split(",");
+			}else{
+				return "Please include bar separated list ( option 1 | option 2 ) or comma separated list ( option 1, option 2)."
+			}
+		}
+
+		var rNum = Math.floor(Math.random() * rArray.length);
+
+		return "Result: " + rArray[rNum].trim();
+	},
+
 	findItemRawDetails: function(itemName, categoryName){
 		if (botvars.piCritterCatchCategories.includes(categoryName)){
 				return findCritterRaw(itemName, categoryName);
@@ -15,7 +35,7 @@ module.exports = {
 
 		switch (categoryName){
 			case "crops":
-				return botvars.picropsList[itemName];
+				return botvars.piCropsList[itemName];
 			case "crystals":
 				return botvars.piCrystalsList[itemName];
 			case "gems":
@@ -96,6 +116,12 @@ module.exports = {
 			case "stonebreakone":
 			case "stonebreak":
 				return getStoneBreakingRolls();
+			case "crittercatch":
+			case "crittercatchone":
+				return getCritterCatchRolls();
+			case "forageone":
+			case "foraging":
+				return getForageLine();
 			default:
 				return ("No minigame command found for " + args[0]);
 		}
@@ -103,8 +129,6 @@ module.exports = {
 	}
 
 }
-
-
 
 function giveFieldPrice(sDescript, field){
 	if (field === "N/A"){
@@ -128,273 +152,121 @@ function parseObtain(oString){
 }
 
 //roll line functions
+
+function getForageLine(){
+	var fLine = "**Roll line for foraging on Arcadia in spring:**\n";
+	fLine += lines.forageArcadiaSpring.join(" | ");
+	fLine += "\n-\n**Roll line for foraging on Arcadia in summer:**\n";
+	fLine += lines.forageArcadiaSummer.join(" | ");
+	fLine += "\n-\n**Roll line for foraging on Arcadia in fall:**\n";
+	fLine += lines.forageArcadiaFall.join(" | ");
+	fLine += "\n-\n**Roll line for foraging on Arcadia in winter:**\n";
+	fLine += lines.forageArcadiaWinter.join(" | ");
+	fLine += "\n-\n**Roll line for foraging on Elysia:**\n";
+	fLine += lines.forageElysia.join(" | ");
+
+	return fLine;
+}
+
+function getCritterCatchRolls(){
+	var cLine = "**Roll line for critter catching in spring:**\n";
+	cLine += lines.springCritterLine.join(" | ");
+	cLine += "\n-\n**Roll line for critter catching in summer:**\n";
+	cLine += lines.summerCritterLine.join(" | ");
+	cLine += "\n-\n**Roll line for critter catching in fall:**\n";
+	cLine += lines.fallCritterLine.join(" | ");
+	cLine += "\n-\n**Roll line for critter catching in winter:**\n";
+	cLine += lines.winterCritterLine.join(" | ");
+
+	return cLine;
+}
+
 function getStoneBreakingRolls(){
 	var mLine = "**Roll line for using a rusty hammer:**\n";
-	mLine += botvars.rustyHammerLine.join(" | ");
-	mLine += "\n\n**Roll line for using an ordinary hammer:**\n";
-	mLine += botvars.ordinaryHammerLine.join(" | ");
-	mLine += "\n\n**Roll line for using a copper hammer:**\n";
-	mLine += botvars.copperHammerLine.join(" | ");
-	mLine += "\n\n**Roll line for using a silver hammer:**\n";
-	mLine += botvars.silverHammerLine.join(" | ");
-	mLine += "\n\n**Roll line for using a gold hammer:**\n";
-	mLine += botvars.goldHammerLine.join(" | ");
-	mLine += "\n\n**Roll line for using a mythic hammer:**\n";
-	mLine += botvars.mysticHammerLine.join(" | ");
+	mLine += lines.rustyHammerLine.join(" | ");
+	mLine += "\n-\n**Roll line for using an ordinary hammer:**\n";
+	mLine += lines.ordinaryHammerLine.join(" | ");
+	mLine += "\n-\n**Roll line for using a copper hammer:**\n";
+	mLine += lines.copperHammerLine.join(" | ");
+	mLine += "\n-\n**Roll line for using a silver hammer:**\n";
+	mLine += lines.silverHammerLine.join(" | ");
+	mLine += "\n-\n**Roll line for using a gold hammer:**\n";
+	mLine += lines.goldHammerLine.join(" | ");
+	mLine += "\n-\n**Roll line for using a mythic hammer:**\n";
+	mLine += lines.mysticHammerLine.join(" | ");
 
 	return mLine;
 }
 
 function getLoggingRolls(){
 	var mLine = "**Roll line for using a rusty axe:**\n";
-	mLine += botvars.rustyAxeLine.join(" | ");
-	mLine += "\n\n**Roll line for using an axe:**\n";
-	mLine += botvars.axeLine.join(" | ");
-	mLine += "\n\n**Roll line for using a copper axe:**\n";
-	mLine += botvars.copperAxeLine.join(" | ");
-	mLine += "\n\n**Roll line for using a silver axe:**\n";
-	mLine += botvars.silverAxeLine.join(" | ");
-	mLine += "\n\n**Roll line for using a gold axe:**\n";
-	mLine += botvars.goldAxeLine.join(" | ");
-	mLine += "\n\n**Roll line for using a mythic axe:**\n";
-	mLine += botvars.mysticAxeLine.join(" | ");
+	mLine += lines.rustyAxeLine.join(" | ");
+	mLine += "\n-\n**Roll line for using an axe:**\n";
+	mLine += lines.axeLine.join(" | ");
+	mLine += "\n-\n**Roll line for using a copper axe:**\n";
+	mLine += lines.copperAxeLine.join(" | ");
+	mLine += "\n-\n**Roll line for using a silver axe:**\n";
+	mLine += lines.silverAxeLine.join(" | ");
+	mLine += "\n-\n**Roll line for using a gold axe:**\n";
+	mLine += lines.goldAxeLine.join(" | ");
+	mLine += "\n-\n**Roll line for using a mythic axe:**\n";
+	mLine += lines.mysticAxeLine.join(" | ");
 
 	return mLine;
 }
 
 function getMineRolls(){
 	var mLine = "**Roll line for using a hammer:**\n";
-	mLine += botvars.mineHammerLine.join(" | ");
+	mLine += lines.mineHammerLine.join(" | ");
 	mLine += "\n-\n**Roll line for using a hoe:**\n";
-	mLine += botvars.mineHoeLine.join(" | ");
+	mLine += lines.mineHoeLine.join(" | ");
 
 	return mLine;
 
 }
 
 
+//get category generic
+function getCategoryFromList(categoryList, itemName){
+	var item = categoryList[itemName];
+	var itemString =  "**Details for " + item.name;
+	
+	if(item.hasOwnProperty("price")){
+		itemString += ":\n**Price: *" + commaNumber(item.price) + "G";
+	}
+
+	if(item.hasOwnProperty("seedPrice")){
+		itemString += giveFieldPrice("*,\nSeed Price: *", item.seedPrice);
+	}
+
+	if(item.hasOwnProperty("rarity")){
+		itemString += giveField("*,\nRarity: *", item.rarity);
+	}
+
+	if(item.hasOwnProperty("wEffect")){
+		itemString += giveField("*,\nWeapon Upgrade Effect: *", item.wEffect);
+	}
+
+	if (item.hasOwnProperty("eEffect")){
+		itemString += giveField("*,\nEquipment Updgrade Effect: *", item.eEffect);
+	}
+
+	if(item.hasOwnProperty("obtainFrom")){
+		itemString += "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
+	}
+
+	if(item.hasOwnProperty("isKingFish")){
+		itemString += giveField("*,\nIs it a kingfish? *", item.isKingFish);
+	}
+
+	if(item.hasOwnProperty("locations")){
+		itemString += giveField("*,\nFishing Locations: *", item.locations);
+	}
+
+	return itemString;
+}
+
 //get category
-function getCrops(itemName){
-	var item = botvars.picropsList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveFieldPrice("*,\nSeed Price: *", item.seedPrice)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getFabrics(itemName){
-	var item = botvars.piFabricList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getFish(itemName){
-	var item = botvars.piFishList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nIs it a kingfish? *", item.isKingFish)
-					+ giveField("*,\nFishing Locations: *", item.locations)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getFlowers(itemName){
-	var item = botvars.piFlowerList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ giveFieldPrice("*,\nSeed Price: *", item.seedPrice)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getHerbs(itemName){
-	var item = botvars.piHerbsList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getMonsterParts(itemName){
-	var item = botvars.piMonsterPartsList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getSpores(itemName){
-	var item = botvars.piSporesList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-
-function getCrystal(itemName){
-	var item = botvars.piCrystalsList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getGem(itemName){
-	var item = botvars.piGemsList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-
-function getOre(itemName){
-	var item = botvars.piOresList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-}
-
-function getStone(itemName){
-	var item = botvars.piStonesList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getMisc(itemName){
-	var item = botvars.piMiscList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-
-function getMisc(itemName){
-	var item = botvars.piMiscList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getMineForge(itemName){
-	var item = botvars.piMineForgeList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getRoots(itemName){
-	var item = botvars.piRootsList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-function getLumber(itemName){
-	var item = botvars.piLumberList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ giveField("*,\nRarity: *", item.rarity)
-					+ giveField("*,\nWeapon Upgrade Effect: *", item.wEffect)
-					+ giveField("*,\nEquipment Updgrade Effect: *", item.eEffect)
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-}
-
-function getWildFood(itemName){
-	var item = botvars.piWildFoodList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
-
-//critters
-function getBees(itemName){
-	var item = botvars.picropsList[itemName];
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
-
-}
 
 function findCritterRaw(critterName, categoryName){
 	switch(categoryName){
@@ -428,41 +300,26 @@ function findCritter(critterName, categoryName){
 
 	switch(categoryName){
 		case "bees":
-			item = botvars.piBeesList[critterName];
-			break;
+			return getCategoryFromList(botvars.piBeesList, critterName);
 		case "beetles":
-			item = botvars.piBeetlesList[critterName];
-			break;
+			return getCategoryFromList(botvars.piBeetlesList, critterName);
 		case "butterflies":
-			item = botvars.piButterfliesList[critterName];
-			break;
+			return getCategoryFromList(botvars.piButterfliesList, critterName);
 		case "cicadas":
-			item = botvars.piCicadasList[critterName];
-			break;
+			return getCategoryFromList(botvars.piCicadasList, critterName);
 		case "crickets":
-			item = botvars.piCricketsList[critterName];
-			break;
+			return getCategoryFromList(botvars.piCricketsList, critterName);
 		case "dragonflies":
-			item = botvars.piDragonfliesList[critterName];
-			break;
+			return getCategoryFromList(botvars.piDragonfliesList, critterName);
 		case "fireflies":
-			item = botvars.piFirefliesList[critterName];
-			break;
+			return getCategoryFromList(botvars.piFirefliesList, critterName);
 		case "frogs":
-			item = botvars.piFrogsList[critterName];
-			break;
+			return getCategoryFromList(botvars.piFrogsList, critterName);
 		case "ladybugs":
-			item = botvars.piLadybugsList[critterName];
-			break;
+			return getCategoryFromList(botvars.piLadybugsList, critterName);
 		default:
 			return {};
 	}
-
-	var itemString =  "**Details for " + item.name 
-					+ ":\n**Price: *" + commaNumber(item.price) + "G" 
-					+ "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
-	
-	return itemString;
 }
 
 
@@ -474,42 +331,42 @@ function findItem(itemName, categoryName){
 
 	switch(categoryName){
 		case "crops":
-			return getCrops(itemName);
+			return getCategoryFromList(itemName, botvars.piCropsList);
 		case "crystals":
-			return getCrystal(itemName);
+			return getCategoryFromList(itemName, botvars.piCrystalsList);
 		case "gems":
-			return getGem(itemName);
+			return getCategoryFromList(botvars.piGemsList, itemName);
 		case "fabrics":
-			return getFabrics(itemName);
+			return getCategoryFromList(botvars.piFabricList, itemName);
 		case "fish":
-			return getFish(itemName);
+			return getCategoryFromList(botvars.piFishList, itemName);
 		case "flowers":
-			return getFlowers(itemName);
+			return getCategoryFromList(botvars.piFlowerList, itemName);
 		case "herbs":
-			return getHerbs(itemName);
+			return getCategoryFromList(botvars.piHerbsList, itemName);
 		case "lumber":
-			return getLumber(itemName);
-		case "ores":
-			return getOre(itemName);
+			return getCategoryFromList(botvars.piLumberList, itemName);
 		case "monsterparts":
-			return getMonsterParts(itemName);
+			return getCategoryFromList(botvars.piMonsterPartsList, itemName);
+		case "ores":
+			return getCategoryFromList(botvars.piOresList, itemName);
 		case "roots":
-			return getRoots(itemName);
+			return getCategoryFromList(botvars.piRootsList, itemName);
 		case "spores":
-			return getSpores(itemName);
+			return getCategoryFromList(botvars.piSporesList, itemName);
 		case "stones":
-			return getStone(itemName);
+			return getCategoryFromList(botvars.piStonesList, itemName);
 		case "wildfood":
-			return getWildFood(itemName);
+			return getCategoryFromList(botvars.piWildFoodList, itemName);
 		case "misc":
-			return getMisc(itemName);
+			return getCategoryFromList(botvars.piMiscList, itemName);
 		case "mineForge":
-			return getMineForge(itemName);
+			//be sure that armor bleeds into this one
+			return getCategoryFromList(botvars.piMineForgeList, itemName);
 		default:
 			return "Something went wrong. Contact Katie about category " + categoryName;
 	}
 }
-
 
 //finding
 function findCateogry(itemName){

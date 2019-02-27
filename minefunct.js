@@ -1,4 +1,5 @@
-var botvars = require('./vars');
+var botvars = require('./variables/vars');
+var lines = require('./variables/lines');
 var botfunct = require('./botfunct');
 var commaNumber = require('comma-number');
 
@@ -85,9 +86,9 @@ function mineLine(tool){
 
 	switch(tool){
 		case 'hammer':
-			return botvars.mineHammerLine[mineNum];
+			return lines.mineHammerLine[mineNum];
 		case 'hoe':
-			return botvars.mineHoeLine[mineNum];
+			return lines.mineHoeLine[mineNum];
 		default:
 			return "INVALID-TOOL";
 	}

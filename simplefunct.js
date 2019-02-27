@@ -1,4 +1,5 @@
-var botvars = require('./vars');
+var botvars = require('./variables/vars');
+var lines = require('./variables/lines');
 var botfunct = require('./botfunct');
 var commaNumber = require('comma-number');
 
@@ -14,17 +15,17 @@ module.exports = {
 
 		switch(axeName){
 			case "rusty axe":
-				return lineOutput + " " + axeName +".\n\n" + getLoggingResults(botvars.rustyAxeLine);
+				return lineOutput + " " + axeName +".\n\n" + getLoggingResults(lines.rustyAxeLine);
 			case "axe":
-				return lineOutput + "n " + axeName +".\n\n" + getLoggingResults(botvars.axeLine);
+				return lineOutput + "n " + axeName +".\n\n" + getLoggingResults(lines.axeLine);
 			case "copper axe":
-				return lineOutput + " " + axeName +".\n\n" + getLoggingResults(botvars.copperAxeLine);
+				return lineOutput + " " + axeName +".\n\n" + getLoggingResults(lines.copperAxeLine);
 			case "silver axe":
-				return lineOutput + " " + axeName +".\n\n" + getLoggingResults(botvars.silverAxeLine);
+				return lineOutput + " " + axeName +".\n\n" + getLoggingResults(lines.silverAxeLine);
 			case "gold axe":
-				return lineOutput + " " + axeName +".\n\n" + getLoggingResults(botvars.goldAxeLine);
+				return lineOutput + " " + axeName +".\n\n" + getLoggingResults(lines.goldAxeLine);
 			case "mystic axe":
-				return lineOutput + " " + axeName +".\n\n" + getLoggingResults(botvars.mysticAxeLine);
+				return lineOutput + " " + axeName +".\n\n" + getLoggingResults(lines.mysticAxeLine);
 			default:
 				return "Invalid axe name: " + axeName;
 		}
@@ -41,17 +42,17 @@ module.exports = {
 
 		switch(axeName){
 			case "rusty axe":
-				return lineOutput + " " + axeName +".\n\n" + getLogOneResults(botvars.rustyAxeLine);
+				return lineOutput + " " + axeName +".\n\n" + getLogOneResults(lines.rustyAxeLine);
 			case "axe":
-				return lineOutput + "n " + axeName +".\n\n" + getLogOneResults(botvars.axeLine);
+				return lineOutput + "n " + axeName +".\n\n" + getLogOneResults(lines.axeLine);
 			case "copper axe":
-				return lineOutput + " " + axeName +".\n\n" + getLogOneResults(botvars.copperAxeLine);
+				return lineOutput + " " + axeName +".\n\n" + getLogOneResults(lines.copperAxeLine);
 			case "silver axe":
-				return lineOutput + " " + axeName +".\n\n" + getLogOneResults(botvars.silverAxeLine);
+				return lineOutput + " " + axeName +".\n\n" + getLogOneResults(lines.silverAxeLine);
 			case "gold axe":
-				return lineOutput + " " + axeName +".\n\n" + getLogOneResults(botvars.goldAxeLine);
+				return lineOutput + " " + axeName +".\n\n" + getLogOneResults(lines.goldAxeLine);
 			case "mystic axe":
-				return lineOutput + " " + axeName +".\n\n" + getLogOneResults(botvars.mysticAxeLine);
+				return lineOutput + " " + axeName +".\n\n" + getLogOneResults(lines.mysticAxeLine);
 			default:
 				return "Invalid axe name: " + axeName;
 		}
@@ -68,17 +69,17 @@ module.exports = {
 
 		switch(hammerName){
 			case "rusty hammer":
-				return lineOutput + " "+  hammerName + ".\n\n" + getStoneBreakOne(botvars.rustyHammerLine);
+				return lineOutput + " "+  hammerName + ".\n\n" + getStoneBreakOne(lines.rustyHammerLine);
 			case "ordinary hammer":
-				return lineOutput + "n "+  hammerName + ".\n\n" + getStoneBreakOne(botvars.ordinaryHammerLine);
+				return lineOutput + "n "+  hammerName + ".\n\n" + getStoneBreakOne(lines.ordinaryHammerLine);
 			case "copper hammer":
-				return lineOutput + " "+  hammerName + ".\n\n" + getStoneBreakOne(botvars.copperHammerLine);
+				return lineOutput + " "+  hammerName + ".\n\n" + getStoneBreakOne(lines.copperHammerLine);
 			case "silver hammer":
-				return lineOutput + " "+  hammerName + ".\n\n" + getStoneBreakOne(botvars.silverHammerLine);
+				return lineOutput + " "+  hammerName + ".\n\n" + getStoneBreakOne(lines.silverHammerLine);
 			case "gold hammer":
-				return lineOutput + " "+  hammerName + ".\n\n" + getStoneBreakOne(botvars.goldHammerLine);
+				return lineOutput + " "+  hammerName + ".\n\n" + getStoneBreakOne(lines.goldHammerLine);
 			case "mystic hammer":
-				return lineOutput + " "+  hammerName + ".\n\n" + getStoneBreakOne(botvars.mysticHammerLine);
+				return lineOutput + " "+  hammerName + ".\n\n" + getStoneBreakOne(lines.mysticHammerLine);
 			default:
 				return "Invalid hammer name: " + hammerName;
 		}
@@ -95,17 +96,17 @@ module.exports = {
 
 		switch(hammerName){
 			case "rusty hammer":
-				return lineOutput + " "+  hammerName +".\n\n" + getStoneBreakingMulti(botvars.rustyHammerLine);
+				return lineOutput + " "+  hammerName +".\n\n" + getStoneBreakingMulti(lines.rustyHammerLine);
 			case "ordinary hammer":
-				return lineOutput + "n "+  hammerName +".\n\n" + getStoneBreakingMulti(botvars.ordinaryHammerLine);
+				return lineOutput + "n "+  hammerName +".\n\n" + getStoneBreakingMulti(lines.ordinaryHammerLine);
 			case "copper hammer":
-				return lineOutput + " "+ hammerName +".\n\n" + getStoneBreakingMulti(botvars.copperHammerLine);
+				return lineOutput + " "+ hammerName +".\n\n" + getStoneBreakingMulti(lines.copperHammerLine);
 			case "silver hammer":
-				return lineOutput + " "+ hammerName +".\n\n" + getStoneBreakingMulti(botvars.silverHammerLine);
+				return lineOutput + " "+ hammerName +".\n\n" + getStoneBreakingMulti(lines.silverHammerLine);
 			case "gold hammer":
-				return lineOutput + " "+ hammerName +".\n\n" + getStoneBreakingMulti(botvars.goldHammerLine);
+				return lineOutput + " "+ hammerName +".\n\n" + getStoneBreakingMulti(lines.goldHammerLine);
 			case "mystic hammer":
-				return lineOutput + " "+ hammerName +".\n\n" + getStoneBreakingMulti(botvars.mysticHammerLine);
+				return lineOutput + " "+ hammerName +".\n\n" + getStoneBreakingMulti(lines.mysticHammerLine);
 			default:
 				return "Invalid hammer name: " + hammerName;
 		}

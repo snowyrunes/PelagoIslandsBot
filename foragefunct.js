@@ -1,4 +1,5 @@
-var botvars = require('./vars');
+var botvars = require('./variables/vars');
+var lines = require('./variables/lines');
 var botfunct = require('./botfunct');
 var commaNumber = require('comma-number');
 
@@ -14,16 +15,16 @@ module.exports =  {
 
 		switch(seasonOrElysia){
 			case "spring":
-				return lineOutput + "Arcadia in Spring.\n" + forageOne(botvars.forageArcadiaSpring);
+				return lineOutput + "Arcadia in Spring.\n" + forageOne(lines.forageArcadiaSpring);
 			case "summer":
-				return lineOutput + "Arcadia in Summer.\n" + forageOne(botvars.forageArcadiaSummer);
+				return lineOutput + "Arcadia in Summer.\n" + forageOne(lines.forageArcadiaSummer);
 			case "fall":
 			case "autumn":
-				return lineOutput + "Arcadia in Fall.\n" + forageOne(botvars.forageArcadiaFall);
+				return lineOutput + "Arcadia in Fall.\n" + forageOne(lines.forageArcadiaFall);
 			case "winter":
-				return lineOutput + "Arcadia in Fall.\n" + forageOne(botvars.forageArcadiaWinter);
+				return lineOutput + "Arcadia in Fall.\n" + forageOne(lines.forageArcadiaWinter);
 			case "elysia":
-				return lineOutput + "Eylsia in any season.\n" + forageOne(botvars.forageElysia);
+				return lineOutput + "Eylsia in any season.\n" + forageOne(lines.forageElysia);
 			default:
 				return "Invalid Foraging Season/Location. Please use the following: Spring, Summer, Fall, Winter, or Elysia";
 		}
@@ -43,24 +44,24 @@ module.exports =  {
 		switch(seasonOrElysia){
 			case "spring":
 				lineOutput = lineOutput + "Arcadia in Spring.\n\n";
-				foragingLine = botvars.forageArcadiaSpring;
+				foragingLine = lines.forageArcadiaSpring;
 				break;
 			case "summer":
 				lineOutput = lineOutput + "Arcadia in Summer.\n\n";
-				foragingLine = botvars.forageArcadiaSummer;
+				foragingLine = lines.forageArcadiaSummer;
 				break;
 			case "fall":
 			case "autumn":
 				lineOutput = lineOutput + "Arcadia in Fall.\n\n";
-				foragingLine = botvars.forageArcadiaFall;
+				foragingLine = lines.forageArcadiaFall;
 				break;
 			case "winter":
 				lineOutput = lineOutput +"Arcadia in Winter.\n\n";
-				foragingLine = botvars.forageArcadiaWinter;
+				foragingLine = lines.forageArcadiaWinter;
 				break;
 			case "elysia":
 				lineOutput = lineOutput + "Eylsia in any season.\n\n";
-				foragingLine = botvars.forageElysia;
+				foragingLine = lines.forageElysia;
 				break;
 			default:
 				return "Invalid Foraging Season/Location. Please use the following: Spring, Summer, Fall, Winter, or Elysia";
