@@ -172,8 +172,8 @@ function getLoggingObject(itemName){
 
 
 function getLoggingEventResults(){
-	var eventResultNum = botfunct.randomize(botvars.loggingEventLine.length);
-	var eventResult = botvars.loggingEventLine[eventResultNum];
+	var eventResultNum = botfunct.randomize(lines.loggingEventLine.length);
+	var eventResult = lines.loggingEventLine[eventResultNum];
 
 
 	switch(eventResult){
