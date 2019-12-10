@@ -1,0 +1,16 @@
+name	price	rarity	wEffect	eEffect
+Black Rock	200	N/A	N/A	N/A
+Black Stone	800	N/A	N/A	N/A
+Glass Stone	200	COMMON	MP +1	MP +1
+Glittering Stone	300	COMMON	M.ATK +1	M.DEF +1
+Invisible Stone	7000	RARE	Adds 1 HIT to every attack line	Removes 1 HIT from every attack line made towards you
+Mythic Stone	10000	N/A	N/A	N/A
+Old Stone	100	N/A	N/A	N/A
+Rock	50	COMMON	ATK +1	DEF +1
+Shade Stone	5000	RARE	Ability to use low-level Dark Magic	Ability to use low-level Dark Magic
+Small Rock	5	COMMON	ATK +1	DEF +1
+Small Stone	200	N/A	N/A	N/A
+Stone	500	N/A	N/A	N/A
+Sun Stone	1500	UNCOMMON	Light Elemental Attack	Light Resistance
+Useless Rocks	1	N/A	N/A	N/A
+White Stone	8000	RARE	Ability to heal 3HP to anyone once per battle	Ability to heal 3HP to anyone once per battle

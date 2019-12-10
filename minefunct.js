@@ -1,11 +1,39 @@
+const Minigame = require('./minigames');
 var botvars = require('./variables/vars');
 var lines = require('./variables/lines');
 var botfunct = require('./botfunct');
 var commaNumber = require('comma-number');
 
-module.exports = {
+module.exports = class Mining extends Minigame {
 
-	mineOne: function(args){
+	constructor(name) {
+		super(name);
+		this.loadObtainables();
+  	}
+
+	loadObtainables(){
+  		super.loadObtainables();
+
+  		var mineLines = {};
+
+  		mineLines["Hammer"] = [...new Set(lines.mineHammerLine)];
+  		mineLines["Hoe"] = [...new Set(lines.mineHoeLine)];
+
+  		var aKeys = Object.keys(mineLines);
+
+  		for(var k = 0; k< aKeys.length; k ++){
+
+  			//console.log(mineLines[aKeys[k]]);
+  			for(var i = 0; i< mineLines[aKeys[k]].length; i++ ){
+  				var itemName = mineLines[aKeys[k]][i];
+	  			if(!isSpecialCase(itemName)){
+	  				super.getObtainablesConditonString(itemName, aKeys[k]);
+	  			}
+	  		}
+  		}
+  	}
+
+	mineOne(args){
 
 		if(args.length < 1 ){
 			return "Please provide a tool."
@@ -39,18 +67,18 @@ module.exports = {
 				return lineOutput + "\n\n" + rollResult + botvars.tunnelDesc;
 			default:
 				var mItemName = rollResult.trim().toLowerCase();
-				var category = findMineObjectCategory(mItemName);
+				var singleMineRes = singleMine(mItemName, tool);
 
-				if (category === "INVALID"){
+				if (singleMineRes === "INVALID"){
 					return "Something went very wrong here. Let Katie know about " + mItemName;
 				}
 
-				return lineOutput + "\n\n" + singleMine(mItemName, category, tool);
+				return lineOutput + "\n\n" + singleMineRes;
 		}
 
-	},
+	}
 
-	mineAll: function(args){
+	mineAll(args){
 		if(args.length < 1 ){
 			return "Please provide a tool."
 		}
@@ -65,20 +93,22 @@ module.exports = {
 	}
 }
 
-//local functions
-function findMineObjectCategory(itemName){
-
-	for(var i = 0; i< botvars.piMiningCategories.length; i++){
-		var itemsForCat = botvars.piItemCategories[botvars.piMiningCategories[i]];
-
-		if (itemsForCat.includes(itemName)){
-			 return botvars.piMiningCategories[i];
-		}
+function isSpecialCase(itemName){
+	switch(itemName){
+		case "INVALID-TOOL":
+		case "FOUND NOTHING!":
+		case "FELL THROUGH A HOLE!":
+		case "ENCOUNTERED MONSTER!":
+		case "RED GAS!":
+		case "YELLOW GAS!":
+		case "ORANGE GAS!":
+		case "GREEN GAS!":
+		case "???":
+		case "TUNNEL":
+			return true;
+		default:
+			return false;
 	}
-
-	return "INVALID";
-
-
 }
 
 function mineLine(tool){
@@ -94,10 +124,14 @@ function mineLine(tool){
 	}
 }
 
-function singleMine(itemName, category, tool){
-	var mineItem = botfunct.findItemRawDetails(itemName, category);
-	var mineOutput = "With your " + tool + ", you mined a(n) " + mineItem.name + "!\nIt is worth " + commaNumber(mineItem.price) + "G!";
+function singleMine(itemName, tool){
+	var mineItem = botfunct.findItemRawDetails(itemName);
 
+	if(mineItem === {} || mineItem.name === undefined){
+		return "INVALID";
+	}
+
+	var mineOutput = "With your " + tool + ", you mined a(n) " + mineItem.name + "!\nIt is worth " + commaNumber(mineItem.price) + "G!";
 	return mineOutput;
 }
 
@@ -154,13 +188,12 @@ function multiLine(tool){
 					return "Something went very wrong here. Let Katie know about tools and" + mItemName;
 				default:
 					var mItemName = rollResult.trim().toLowerCase();
-					var category = findMineObjectCategory(mItemName);
 
-					if (category === "INVALID"){
-						return "Something went very wrong here. Let Katie know about " + mItemName;
+					var minedItemToAdd = botfunct.findItemRawDetails(mItemName);
+
+					if(minedItemToAdd === {} || minedItemToAdd.name === undefined){
+						return "INVALID MINE ROLL- Talk to Katie about " + mItemName;
 					}
-
-					var minedItemToAdd = botfunct.findItemRawDetails(mItemName, category);
 
 					minedItems.push(minedItemToAdd.name);
 					gold = gold + Number(minedItemToAdd.price);

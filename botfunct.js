@@ -28,48 +28,12 @@ module.exports = {
 		return "Result: " + rArray[rNum].trim();
 	},
 
-	findItemRawDetails: function(itemName, categoryName){
-		if (botvars.piCritterCatchCategories.includes(categoryName)){
-				return findCritterRaw(itemName, categoryName);
+	findItemRawDetails: function(itemName){
+		if(Object.keys(botvars.piAllItemMap).includes(itemName)){
+			return botvars.piAllItemMap[itemName];
 		}
-
-		switch (categoryName){
-			case "crops":
-				return botvars.piCropsList[itemName];
-			case "crystals":
-				return botvars.piCrystalsList[itemName];
-			case "gems":
-				return botvars.piGemsList[itemName];
-			case "fabrics":
-				return botvars.piFabricList[itemName];
-			case "fish":
-				return botvars.piFishList[itemName];
-			case "flowers":
-				return botvars.piFlowerList[itemName];
-			case "herbs":
-				return botvars.piHerbsList[itemName];
-			case "lumber":
-				return botvars.piLumberList[itemName];
-			case "monsterparts":
-				return botvars.piMonsterPartsList[itemName];
-			case "ores":
-				return botvars.piOresList[itemName];
-			case "roots":
-				return botvars.piRootsList[itemName];
-			case "spores":
-				return botvars.piSporesList[itemName];
-			case "stones":
-				return botvars.piStonesList[itemName];
-			case "wildfood":
-				return botvars.piWildFoodList[itemName];
-			case "misc":
-				return botvars.piMiscList[itemName];
-			case "mineForge":
-				//be sure that armor bleeds into this one
-				return botvars.piMineForgeList[itemName];
-			default:
-				return {};
-		}
+		return {};
+	
 	},
 
 	listItemsFromCategory: function (args) {
@@ -97,7 +61,15 @@ module.exports = {
 		}
 
 		var itemName =  ""+ args.join(" ").trim().toLowerCase() + "";
-		return findCateogry(itemName);	
+
+		//console.log(Object.keys(botvars.piAllItemMap));
+		if(Object.keys(botvars.piAllItemMap).includes(itemName)){
+			return getCategoryFromList(itemName);
+		}else{
+			return "Invalid item name " + itemName;
+		}
+		
+		//return findCateogry(itemName);	
 
 	},
 
@@ -156,13 +128,13 @@ function parseObtain(oString){
 function getForageLine(){
 	var fLine = "**Roll line for foraging on Arcadia in spring:**\n";
 	fLine += lines.forageArcadiaSpring.join(" | ");
-	fLine += "\n-\n**Roll line for foraging on Arcadia in summer:**\n";
+	fLine += "\n\n**Roll line for foraging on Arcadia in summer:**\n";
 	fLine += lines.forageArcadiaSummer.join(" | ");
-	fLine += "\n-\n**Roll line for foraging on Arcadia in fall:**\n";
+	fLine += "\n\n**Roll line for foraging on Arcadia in fall:**\n";
 	fLine += lines.forageArcadiaFall.join(" | ");
-	fLine += "\n-\n**Roll line for foraging on Arcadia in winter:**\n";
+	fLine += "\n\n**Roll line for foraging on Arcadia in winter:**\n";
 	fLine += lines.forageArcadiaWinter.join(" | ");
-	fLine += "\n-\n**Roll line for foraging on Elysia:**\n";
+	fLine += "\n\n**Roll line for foraging on Elysia:**\n";
 	fLine += lines.forageElysia.join(" | ");
 
 	return fLine;
@@ -171,11 +143,11 @@ function getForageLine(){
 function getCritterCatchRolls(){
 	var cLine = "**Roll line for critter catching in spring:**\n";
 	cLine += lines.springCritterLine.join(" | ");
-	cLine += "\n-\n**Roll line for critter catching in summer:**\n";
+	cLine += "\n\n**Roll line for critter catching in summer:**\n";
 	cLine += lines.summerCritterLine.join(" | ");
-	cLine += "\n-\n**Roll line for critter catching in fall:**\n";
+	cLine += "\n\n**Roll line for critter catching in fall:**\n";
 	cLine += lines.fallCritterLine.join(" | ");
-	cLine += "\n-\n**Roll line for critter catching in winter:**\n";
+	cLine += "\n\n**Roll line for critter catching in winter:**\n";
 	cLine += lines.winterCritterLine.join(" | ");
 
 	return cLine;
@@ -184,15 +156,15 @@ function getCritterCatchRolls(){
 function getStoneBreakingRolls(){
 	var mLine = "**Roll line for using a rusty hammer:**\n";
 	mLine += lines.rustyHammerLine.join(" | ");
-	mLine += "\n-\n**Roll line for using an ordinary hammer:**\n";
+	mLine += "\n\n**Roll line for using an ordinary hammer:**\n";
 	mLine += lines.ordinaryHammerLine.join(" | ");
-	mLine += "\n-\n**Roll line for using a copper hammer:**\n";
+	mLine += "\n\n**Roll line for using a copper hammer:**\n";
 	mLine += lines.copperHammerLine.join(" | ");
-	mLine += "\n-\n**Roll line for using a silver hammer:**\n";
+	mLine += "\n\n**Roll line for using a silver hammer:**\n";
 	mLine += lines.silverHammerLine.join(" | ");
-	mLine += "\n-\n**Roll line for using a gold hammer:**\n";
+	mLine += "\n\n**Roll line for using a gold hammer:**\n";
 	mLine += lines.goldHammerLine.join(" | ");
-	mLine += "\n-\n**Roll line for using a mythic hammer:**\n";
+	mLine += "\n\n**Roll line for using a mythic hammer:**\n";
 	mLine += lines.mysticHammerLine.join(" | ");
 
 	return mLine;
@@ -201,15 +173,15 @@ function getStoneBreakingRolls(){
 function getLoggingRolls(){
 	var mLine = "**Roll line for using a rusty axe:**\n";
 	mLine += lines.rustyAxeLine.join(" | ");
-	mLine += "\n-\n**Roll line for using an axe:**\n";
+	mLine += "\n\n**Roll line for using an axe:**\n";
 	mLine += lines.axeLine.join(" | ");
-	mLine += "\n-\n**Roll line for using a copper axe:**\n";
+	mLine += "\n\n**Roll line for using a copper axe:**\n";
 	mLine += lines.copperAxeLine.join(" | ");
-	mLine += "\n-\n**Roll line for using a silver axe:**\n";
+	mLine += "\n\n**Roll line for using a silver axe:**\n";
 	mLine += lines.silverAxeLine.join(" | ");
-	mLine += "\n-\n**Roll line for using a gold axe:**\n";
+	mLine += "\n\n**Roll line for using a gold axe:**\n";
 	mLine += lines.goldAxeLine.join(" | ");
-	mLine += "\n-\n**Roll line for using a mythic axe:**\n";
+	mLine += "\n\n**Roll line for using a mythic axe:**\n";
 	mLine += lines.mysticAxeLine.join(" | ");
 
 	return mLine;
@@ -218,17 +190,22 @@ function getLoggingRolls(){
 function getMineRolls(){
 	var mLine = "**Roll line for using a hammer:**\n";
 	mLine += lines.mineHammerLine.join(" | ");
-	mLine += "\n-\n**Roll line for using a hoe:**\n";
+	mLine += "\n\n**Roll line for using a hoe:**\n";
 	mLine += lines.mineHoeLine.join(" | ");
 
 	return mLine;
 
 }
 
+function getCategoryFromList(itemName){
+	var item = null;
+	if(Object.keys(botvars.piAllItemMap).includes(itemName)){
+		item =botvars.piAllItemMap[itemName];
+	} else{
+		return "Invalid Object " + itemName;
+	}
 
-//get category generic
-function getCategoryFromList(categoryList, itemName){
-	var item = categoryList[itemName];
+	//console.log("ITEM: " + item);
 	var itemString =  "**Details for " + item.name;
 	
 	if(item.hasOwnProperty("price")){
@@ -264,122 +241,4 @@ function getCategoryFromList(categoryList, itemName){
 	}
 
 	return itemString;
-}
-
-//get category
-
-function findCritterRaw(critterName, categoryName){
-	switch(categoryName){
-		case "bees":
-			return botvars.piBeesList[critterName];
-		case "beetles":
-			return botvars.piBeetlesList[critterName];
-		case "butterflies":
-			return botvars.piButterfliesList[critterName];
-		case "cicadas":
-			return botvars.piCicadasList[critterName];
-		case "crickets":
-			return botvars.piCricketsList[critterName];
-		case "dragonflies":
-			return botvars.piDragonfliesList[critterName];
-		case "fireflies":
-			return botvars.piFirefliesList[critterName];
-		case "frogs":
-			return botvars.piFrogsList[critterName];
-		case "ladybugs":
-			return botvars.piLadybugsList[critterName];
-		default:
-			return "Invalid Critter Category " + categoryName;
-	}
-
-}
-
-function findCritter(critterName, categoryName){
-
-	var item = null;
-
-	switch(categoryName){
-		case "bees":
-			return getCategoryFromList(botvars.piBeesList, critterName);
-		case "beetles":
-			return getCategoryFromList(botvars.piBeetlesList, critterName);
-		case "butterflies":
-			return getCategoryFromList(botvars.piButterfliesList, critterName);
-		case "cicadas":
-			return getCategoryFromList(botvars.piCicadasList, critterName);
-		case "crickets":
-			return getCategoryFromList(botvars.piCricketsList, critterName);
-		case "dragonflies":
-			return getCategoryFromList(botvars.piDragonfliesList, critterName);
-		case "fireflies":
-			return getCategoryFromList(botvars.piFirefliesList, critterName);
-		case "frogs":
-			return getCategoryFromList(botvars.piFrogsList, critterName);
-		case "ladybugs":
-			return getCategoryFromList(botvars.piLadybugsList, critterName);
-		default:
-			return {};
-	}
-}
-
-
-//find item from category
-function findItem(itemName, categoryName){
-	if (botvars.piCritterCatchCategories.includes(categoryName)){
-		return findCritter(itemName, categoryName);
-	}
-
-	switch(categoryName){
-		case "crops":
-			return getCategoryFromList(itemName, botvars.piCropsList);
-		case "crystals":
-			return getCategoryFromList(itemName, botvars.piCrystalsList);
-		case "gems":
-			return getCategoryFromList(botvars.piGemsList, itemName);
-		case "fabrics":
-			return getCategoryFromList(botvars.piFabricList, itemName);
-		case "fish":
-			return getCategoryFromList(botvars.piFishList, itemName);
-		case "flowers":
-			return getCategoryFromList(botvars.piFlowerList, itemName);
-		case "herbs":
-			return getCategoryFromList(botvars.piHerbsList, itemName);
-		case "lumber":
-			return getCategoryFromList(botvars.piLumberList, itemName);
-		case "monsterparts":
-			return getCategoryFromList(botvars.piMonsterPartsList, itemName);
-		case "ores":
-			return getCategoryFromList(botvars.piOresList, itemName);
-		case "roots":
-			return getCategoryFromList(botvars.piRootsList, itemName);
-		case "spores":
-			return getCategoryFromList(botvars.piSporesList, itemName);
-		case "stones":
-			return getCategoryFromList(botvars.piStonesList, itemName);
-		case "wildfood":
-			return getCategoryFromList(botvars.piWildFoodList, itemName);
-		case "misc":
-			return getCategoryFromList(botvars.piMiscList, itemName);
-		case "mineForge":
-			//be sure that armor bleeds into this one
-			return getCategoryFromList(botvars.piMineForgeList, itemName);
-		default:
-			return "Something went wrong. Contact Katie about category " + categoryName;
-	}
-}
-
-//finding
-function findCateogry(itemName){
-	var itemCategories = Object.keys(botvars.piItemCategories);
-
-	for(var i = 0; i< itemCategories.length; i++){
-		var itemsForCat = botvars.piItemCategories[itemCategories[i]];
-
-		if (itemsForCat.includes(itemName)){
-			 return findItem(itemName, itemCategories[i]);
-		}
-	}
-
-	return "Invalid item name " + itemName;
-
 }

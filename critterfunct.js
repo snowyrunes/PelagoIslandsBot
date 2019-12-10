@@ -1,11 +1,38 @@
-var botvars = require('./variables/vars');
+const Minigame = require('./minigames');
 var lines = require('./variables/lines');
 var botfunct = require('./botfunct');
 var commaNumber = require('comma-number');
 
-module.exports = {
+module.exports = class CritterCatching extends Minigame {
 
-	critterOne: function(args){
+	constructor(name) {
+		super(name);
+		this.loadObtainables();
+  	}
+
+	loadObtainables(){
+  		super.loadObtainables();
+
+  		var critterLines = {};
+
+  		critterLines["Spring"] = [...new Set(lines.springCritterLine)];
+  		critterLines["Summer"] = [...new Set(lines.summerCritterLine)];
+  		critterLines["Fall"] = [...new Set(lines.fallCritterLine)];
+  		critterLines["Winter"] = [...new Set(lines.winterCritterLine)];
+
+  		var aKeys = Object.keys(critterLines);
+
+  		for(var k = 0; k< aKeys.length; k ++){
+
+  			//console.log(critterLines[aKeys[k]]);
+  			for(var i = 0; i< critterLines[aKeys[k]].length; i++ ){
+  				var itemName = critterLines[aKeys[k]][i];
+	  			super.getObtainablesConditonString(itemName, aKeys[k]);
+	  		}
+  		}
+  	}
+
+	critterOne(args){
 
 		if(args.length < 1 ){
 			return "Please provide a season."
@@ -29,9 +56,9 @@ module.exports = {
 				return "Invalid season " + season;
 		}
 
-	},
+	}
 
-	critterAll: function(args){
+	critterAll(args){
 		if(args.length < 1 ){
 			return "Please provide a season."
 		}
@@ -62,7 +89,7 @@ module.exports = {
 
 		for(var i = 0; i<10; i++){
 			var critterObjRaw = getCritterDetailsRaw(critterList);
-			if (critterObjRaw.name === undefined){
+			if (critterObjRaw === {} || critterObjRaw.name === undefined){
 				return "ERROR " + critterObjRaw
 			}
 			lineOutput += "**Roll " + (i+1) + ":** " + critterObjRaw.name + " - " + commaNumber(critterObjRaw.price) + "G\n";
@@ -76,26 +103,15 @@ module.exports = {
 
 function getCritterDetailsRaw(critterList){
 	var critter = critterList[botfunct.randomize(critterList.length)].toLowerCase();
-	var category = "";
-
-	for(var i = 0; i< botvars.piCritterCatchCategories.length; i++){
-		var categoryIndex = botvars.piCritterCatchCategories[i];
-
-		if (botvars.piItemCategories[categoryIndex].includes(critter)){
-			category = categoryIndex;
-			break;
-		}
-	}
-
-	if (category === ""){
-		return "Error with critter catching lookup, critter: " + critter;
-	}
-
-	return botfunct.findItemRawDetails(critter, category);
+	return botfunct.findItemRawDetails(critter);
 }
 
 function getCritterDetailsOne(critterList){
 	var critterObj =  getCritterDetailsRaw(critterList);
+
+	if(critterObj === {} || critterObj.name === undefined){
+		return "Something went wrong. Talk to Katie about Invalid !!! Result " + critter;
+	}
 
 	return critterObj.name + " - " + commaNumber(critterObj.price) + "G";
 

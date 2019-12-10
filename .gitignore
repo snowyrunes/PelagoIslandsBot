@@ -1,2 +1,4 @@
 /node_modules
 auth.json
+log_exports/*
+!log_exports/.gitkeep

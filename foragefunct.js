@@ -1,13 +1,42 @@
-var botvars = require('./variables/vars');
+const Minigame = require('./minigames');
 var lines = require('./variables/lines');
 var botfunct = require('./botfunct');
 var commaNumber = require('comma-number');
 
-module.exports =  {
-	forageOne: function(args){
+module.exports = class Foraging extends Minigame {
+
+	constructor(name) {
+		super(name);
+		this.loadObtainables();
+  	}
+
+	loadObtainables(){
+  		super.loadObtainables();
+
+  		var axeLines = {};
+
+  		axeLines["Spring"] = [...new Set(lines.forageArcadiaSpring)];
+  		axeLines["Summer"] = [...new Set(lines.forageArcadiaSummer)];
+  		axeLines["Fall"] = [...new Set(lines.forageArcadiaFall)];
+  		axeLines["Winter"] = [...new Set(lines.forageArcadiaWinter)];
+  		axeLines["Year-round on Elysia"] = [...new Set(lines.forageElysia)];
+
+  		var aKeys = Object.keys(axeLines);
+
+  		for(var k = 0; k< aKeys.length; k ++){
+
+  			//console.log(axeLines[aKeys[k]]);
+  			for(var i = 0; i< axeLines[aKeys[k]].length; i++ ){
+  				var itemName = axeLines[aKeys[k]][i];
+	  			super.getObtainablesConditonString(itemName, aKeys[k]);
+	  		}
+  		}
+  	}
+
+	forageOne(args){
 
 		if(args.length < 1 ){
-			return "Please provide a season or specify \"Elyisa\"."
+			return "Please provide a season or specify \"Elysia\"."
 		}
 
 		var lineOutput = "**Foraging Result:** \n" + "This minigame takes place on ";
@@ -29,9 +58,9 @@ module.exports =  {
 				return "Invalid Foraging Season/Location. Please use the following: Spring, Summer, Fall, Winter, or Elysia";
 		}
 
-	},
+	}
 
-	foraging: function(args){
+	foraging(args){
 
 		if(args.length < 1 ){
 			return "Please provide a season or specify \"Elyisa\"."
@@ -71,15 +100,13 @@ module.exports =  {
 
 		for (i = 0; i<10; i++){
 			var item = foragingLine[botfunct.randomize(foragingLine.length)].toLowerCase();
-			var category = getForgingCategory(item);
+			var itemDetails = botfunct.findItemRawDetails(item);
 
-			if(category != "INVALID") {
-				var itemDetails = botfunct.findItemRawDetails(item, category);
-				
+			if(itemDetails === {} || itemDetails == undefined){
+				return "Something went wrong! Ask Katie to look into Invalid category for item " + item;
+			} else {
 				lineOutput += "**Roll " + (i+1) + ":** " + itemDetails.name + " - " + commaNumber(itemDetails.price) + "G\n";
 				total += Number(itemDetails.price);
-			} else {
-				return "Something went wrong! Ask Katie to look into Invalid category for item " + item;
 			}
 		}
 
@@ -89,38 +116,15 @@ module.exports =  {
 }
 
 
-function getForgingCategory(itemName) {
-
-	for(var i = 0; i< botvars.piForagingCategories.length; i++){
-		var categoryIndex = botvars.piForagingCategories[i];
-
-		/*if (botvars.piItemCategories[categoryIndex] == undefined || categoryIndex == undefined){
-			return "item: " + itemName + " category:" + categoryIndex + " i:" + i;
-		}*/
-		if (botvars.piItemCategories[categoryIndex].includes(itemName)){
-			return categoryIndex;
-		}
-	}
-	return "INVALID";
-
-}
-
 function forageOne(forageList){
 	var item = forageList[botfunct.randomize(forageList.length)].toLowerCase();
-	var category = getForgingCategory(item);
 
-	//return getForgingCategory(item)
-	if(category != "INVALID") {
-		var itemDetails = botfunct.findItemRawDetails(item, category);
+	var itemDetails = botfunct.findItemRawDetails(item);
 
-		if( itemDetails == undefined){
-			return "Something went wrong! Ask Katie to look into category: " + category + " item:" + item;
-		}
-		
-		return "\nYou found a(n) " + itemDetails.name + ". It sells for " + commaNumber(itemDetails.price) + "G.";
-	} else {
-		return "Something went wrong! Ask Katie to look into Invalid category for item " + item;
+	if(itemDetails === {} || itemDetails == undefined){
+		return "Something went wrong! Ask Katie to look into item:" + item;
 	}
-	
+		
+	return "\nYou found a(n) " + itemDetails.name + ". It sells for " + commaNumber(itemDetails.price) + "G.";
 }
 

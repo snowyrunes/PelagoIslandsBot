@@ -1,11 +1,11 @@
 module.exports = {
 
+	piAllItemMap: {},
+	piAllMinigamesMap: {},
+
+
 	//List of Categories
 	piItemCategories: {},
-	piMiningCategories: {},
-	piLoggingCategories: {},
-	piCritterCatchCategories: {},
-	piForagingCategories: {},
 
 	//list of Items
 	piCropsList: {},
