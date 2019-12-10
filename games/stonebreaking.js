@@ -1,6 +1,6 @@
 const Minigame = require('./minigames');
-var lines = require('./variables/lines');
-var botfunct = require('./botfunct');
+var lines = require('../variables/lines');
+var botfunct = require('../botfunct');
 var commaNumber = require('comma-number');
 
 module.exports = class StoneBreaking extends Minigame {

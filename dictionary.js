@@ -5,11 +5,11 @@ var botfuncts = require('./botfunct');
 
 var msgWriter = require('./messageWriter');
 
-var Mining = require('./minefunct');
-var CritterCatching = require('./critterfunct');
-var Foraging = require('./foragefunct');
-var Logging = require('./logging');
-var StoneBreaking = require('./stonebreaking');
+var Mining = require('./games/minefunct');
+var CritterCatching = require('./games/critterfunct');
+var Foraging = require('./games/foragefunct');
+var Logging = require('./games/logging');
+var StoneBreaking = require('./games/stonebreaking');
 
 
 module.exports = {
@@ -61,6 +61,10 @@ module.exports = {
 
 		critters();
 
+		botvars.piMonsterList = loadCategory("monsters", "./data/monsters.tsv")
+		botvars.piDrinkList = loadCategory("drinks", "./data/drinks.tsv");
+		botvars.piGrillFryList = loadCategory("grillfrydish", "./data/grilledFried.tsv");
+		botvars.piMiscDishList = loadCategory("misc-dishes", "./data/misc-dish.tsv");
 		botvars.piCropsList = loadCategory("crops", "./data/crops.tsv");
 		botvars.piCrystalsList = loadCategory("crystals", "./data/crystal.tsv");
 		botvars.piFabricList = loadCategory("fabrics", "./data/fabrics.tsv");
@@ -72,7 +76,10 @@ module.exports = {
 		botvars.piMonsterPartsList = loadCategory("monsterparts", "./data/monsterparts.tsv")
 		botvars.piOresList = loadCategory("ores", "./data/ore.tsv");
 		botvars.piRootsList = loadCategory("roots", "./data/roots.tsv");
-		botvars.piSporesList = loadCategory("spores", "./data/spore.tsv");
+		botvars.piProduceList = loadCategory("produce", "./data/produce.tsv");
+		botvars.piPotionsList = loadCategory("potions", "./data/potions.tsv");
+		botvars.piPowdersList = loadCategory("powders", "./data/powders.tsv");
+		botvars.piSeedsList = loadCategory("seeds", "./data/seeds.tsv");
 		botvars.piStonesList = loadCategory("stones", "./data/stones.tsv");
 		botvars.piWildFoodList = loadCategory("wildfood", "./data/wildfoods.tsv");
 

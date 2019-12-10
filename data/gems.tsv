@@ -1,4 +1,4 @@
-name	price	rarity	wEffect:	eEffect
+name	price	rarity	wEffect	eEffect
 Adamantite	2200	N/A	N/A	N/A
 Agate	600	COMMON	M.ATK +1	M.DEF +1
 Alexandrite	5000	RARE	MP +5	MP +5
@@ -14,6 +14,7 @@ Emerald	1800	UNCOMMON	M.ATK +3	M.DEF +3
 Fluorite	800	COMMON	SPD +1	SPD +1
 Garnet	3000	UNCOMMON	M.ATK +3	M.DEF +3
 Jade	1000	N/A	N/A	N/A
+Lapis Lazuli	0	UNCOMMON	Water Elemental Attack	Water Resistance
 Malachite	1100	UNCOMMON	30% Chance of dealing Poision with every Hit	30% Chance of resisting Poison when hit
 Moon Stone	1500	UNCOMMON	Dark Elemental Attack	Dark Resistance
 Onyx	900	UNCOMMON	ATK +3	DEF +3

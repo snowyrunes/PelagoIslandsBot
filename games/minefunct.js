@@ -1,7 +1,7 @@
 const Minigame = require('./minigames');
-var botvars = require('./variables/vars');
-var lines = require('./variables/lines');
-var botfunct = require('./botfunct');
+var botvars = require('../variables/vars');
+var lines = require('../variables/lines');
+var botfunct = require('../botfunct');
 var commaNumber = require('comma-number');
 
 module.exports = class Mining extends Minigame {

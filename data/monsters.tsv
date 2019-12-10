@@ -1,0 +1,93 @@
+name	mLevel	resistance	weakness	drops	produce
+Airror	C	wind	N/A	wind crystal, magic crystal	magic crystal
+Ambrosia	BOSS	wind	earth	ambrosia's thorn, daisy	daisy
+Beetle	B	poison	N/A	insect horn, insect carapace, pretty carapace	insect horn
+Big Duck	A	N/A	N/A	yellow down, yellow feather	yellow feather
+Big Muck	C	paralysis, poison	N/A	spore, mushroom	spore
+Blackbird	C	wind	fire	black bird feather, branch, think stick	black bird feather
+Black Dragon	A	dark	light	black scale, dragon fang	dragon scale
+Blood Panther	A	fire, dark	N/A	devil blood, magic claw, fur	fur
+Blue Dragon	A	water	fire	dragon fang, blue scale	blue scale
+Blue Fairy	A	water	fire	water crystal, blue core (^20%)	water crystal
+Buffamoo	E	N/A	N/A	milk	milk
+Captain Goblin	B	N/A	N/A	skull, wine, proof of warrior, silk cloth	silk cloth
+Chimera	BOSS	N/A	N/A	chimera claw, devil blood	devil blood
+Chipsqueek	E	N/A	N/A	fur, branch, quality fur	fur
+Cluckadoodle	E	N/A	N/A	egg, bird's feather	egg
+Daemon	B	dark	light	devil blood	devil blood
+Dark Fairy	A	dark	light	dark crystal, fairy dust, prelude to love	dark crystal
+Dark Slime	C	dark	N/A	emerald, sapphire, dark crystal	emerald
+Dead Tree	BOSS	grass, wind	N/A	moving branch, apple, small crystal	small crystal
+Death Fungus	C	poison	fire	poison powder, holy spore, spore	poison powder
+Death Stalker	C	paralysis, poison	N/A	scorpion tail, pretty carapace, scorpion pincer	scorpion tail
+Demon	A	darkness	light	devil blood, hard horn	hard horn
+Duck	D	N/A	N/A	yellow down, bird's feather	yellow down
+Elefun	B	N/A	N/A	ivory tusk	ivory tusk
+Emperor Penguin	B	water	fire	penguin down	penguin down
+Fairy	C	magic	physical	love potion (^30%), fairy dust, prelude to love	fairy dust
+Faust	B	magic	physical	glistening blade, ghost hood	ghost hood
+Fire Elemental	C	fire	water	fire crystal	fire crystal
+Flower Crystal	C	grass	fire	plant stem, root, strong vine	plant stem
+Fortoise	C	water	fire	silver ore, gold ore, black tortoise shell	black tortoise shell
+Gaias	C	physical	magic	magic crystal, earth crystal	earth crystal
+Gasham	C	lightening	water	rusty screw, shiny screw	gold ore
+Ghost	D	physical	magic	ghost hood, thin stick	ghost hood
+Ghost Ray	B	physical	magic	thin stick, thick stick, ghost hood	thin stick
+Goblin	D	N/A	N/A	cheap bandage, blade shard	blade shard
+Goblin Archer	C	N/A	N/A	recovery potion, arrowhead, cheap bandage	arrowhead
+Goblin Don	B	N/A	N/A	proof of warrior, wine, skull	proof of warrior
+Goblin Gangster	B	fire	N/A	cheap bandage, oil	cheap bandage
+Goblin Pirate	B	N/A	N/A	pirate's armor, oil, quality cloth	quality cloth
+Goblin Sniper	C	fire	water	gunpowder, healing potion	gunpowder
+Golem	A	earth	N/A	silver ore, golem stone	gold ore
+Greater Daemon	BOSS	fire	N/A	chest hair, quality fur	quality fur
+Green Fairy	A	wind	earth	wind crystal, green core (^20%)	wind crystal
+Grimoire Dragon	BOSS	earth	N/A	grimoire scale, dragon fang	dragon fang
+Grim Reaper	BOSS	fire, dark	physical	cursed doll, quality cloth, shade stone	quality cloth
+Guardian Golem	BOSS	physical	magic	golem spirit stone, tablet of truth	golem stone
+Hell Spider	B	earth	wind	strong silk, pretty thread	pretty thread
+Heracles	B	poison	N/A	rigid horn, pretty carapace	rigid horn
+High Orc	D	earth	wind	cheap cloth, cheap bracelet, thin stick, glue	glue
+Hobgoblin	B	earth	wind	glue, silk cloth	glue
+Hornet	E	poison	N/A	honey, insect skin, insect jaw	honey
+Hover Solider	D	lightening	water	cheap propeller, iron ore	iron ore
+Hover Warrior	C	lightening	water	cheap propeller, iron ore, quality propeller	cheap propeller
+Hunter Wolf	A	N/A	N/A	gold wolf fang, quality fur	gold wolf fang
+Ignis	A	fire	water	fire crystal, thick stick, magic powder	magic powder
+King Bee	A	N/A	N/A	honey, insect skin, poison king	honey
+King Wooly	A	N/A	N/A	wooly furball, fur	wool
+Light Fairy	A	light	dark	light crystal, fairy dust, prelude to love	light crystal
+Little Dragon	B	N/A	N/A	dragon fang	dragon fang
+Little Golem	C	physical	magic	silver ore, ruby, tiny golem stone	silver ore
+Mamadoodle	A	N/A	N/A	big bird's comb, bird's feather, egg	egg
+Minotaur	A	fire	N/A	hammer piece, devil horn	hammer piece
+Monster Box	D	physical	N/A	broken hilt, failed dish	glue
+Mystery Fairy	BOSS	N/A	N/A	mysterious powder, fairy elixir, melody bottle	mysterious powder
+Necromancer	BOSS	physical	magic	dark crystal, puppetry strings, quality cloth	quality cloth
+Octopirate	BOSS	water	earth	ammonite, fish fossil	fish fossil
+Onion Ghost	B	physical	magic	onion, ghost hood, onion seeds	onion
+Orc	D	wind	earth	thin stick, cheap cloth, cheap bracelet	cheap cloth
+Orc Archer	D	wind	earth	thin stick, arrowhead, recovery potion	arrowhead
+Palm Cat	C	N/A	N/A	palm claw, fur	palm claw
+Pink Dragon	A	light	dark	love scale, dragon fang	love scale
+Pomme Pomme	D	N/A	N/A	apple, baked apple, apple seeds	apple
+Queen Ant	A	poison, paralysis	N/A	pretty carapace, insect carapace, queen's jaw	pretty carapace
+Rafflesia	BOSS	grass, status ailments	fire	rafflesia petal, root	root
+Red Fairy	B	fire	water	fire crystal, red core (^20%)	fire crystal
+Sealy	D	water	fire	fish bone, wet scale, can, rare can (^10%)	wet scale
+Shadow Panther	C	darkness	light	panther claw, quality fur	panther claw
+Silver Wolf	A	ice, water	N/A	quality fur, wolf fang	wolf fang
+Slime	E	N/A	N/A	amethyst, aquamarine, copper ore	aquamarine
+Sky Fish	E	water	fire	fish bones, can	can
+Spider	D	paralysis	N/A	strong string	spider silk
+Spirit	C	physical, dark	N/A	magic crystal, dark crystal	magic crystal
+Thunderbird	B	wind, fire	water	branch, thunderbird feather	thunderbird feather
+Tortas	E	physical	magic	tortoise shell, iron ore, copper ore	copper ore
+Troll	B	N/A	N/A	giant's nail, hammer piece	giant's nail
+Tundra	C	N/A	N/A	fairy dust, magic powder	magic powder
+Unicorn	A	wind	N/A	fairy dust, quality fur, light crystal	light crystal
+Water Elemental	D	water	earth	water crystal	water crystal
+Weagle	D	wind	earth	branch, thin stick, bird's feather	bird's feather
+Wooly	D	N/A	N/A	fur, wooly furball	wool
+Wyvern	BOSS	N/A	N/A	platinum, small crystal, wet scale, dragonic stone	wet scale
+Yellow Fairy	B	earth	wind	earth crystal, yellow core (^20%)	earth crystal
