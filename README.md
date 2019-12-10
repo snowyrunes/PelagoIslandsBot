@@ -2,6 +2,7 @@
 
 All right so you are gonna need to install Node with the following dependencies:
 comma-number
-discord.io
+discord.js
 winston
-d3 - I think?
+
+You will also need to make a folder called "log_exports" in the main directory.
