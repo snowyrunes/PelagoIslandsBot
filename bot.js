@@ -12,12 +12,6 @@ logger.add(new logger.transports.Console, {
 });
 logger.level = 'debug';
 
-// Initialize Discord Bot
-/*var bot = new Discord.Client({
-   token: auth.token,
-   autorun: true
-});*/
-
 const bot = new Discord.Client();
 bot.login(auth.token);
 
@@ -36,7 +30,7 @@ bot.on('ready', () => {
 
 bot.on('message', inMsg => {
     // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `!`  
+    // It will listen for messages that will start with 'pi!' 
     var message = inMsg.content;
     var author = inMsg.author;
     var channel = inMsg.channel;
@@ -75,9 +69,6 @@ bot.on('message', inMsg => {
 
 
 async function divideMessage(madeMsg, channel){
-    //var ms = Math.ceil(((madeMsg.length)/2000)*2);
-    //console.log("HERE");
-    //console.log(madeMsg);
     var ms = 1;
     var msgArray = [];
 
@@ -96,37 +87,6 @@ async function divideMessage(madeMsg, channel){
     }else{
         channel.send(madeMsg)
     }
-/*
-    if (msgLen > 1800){
-        var madeMsgArrayTemp = madeMsg.split("\n");
-        var splitOnLen = Math.floor((madeMsgArrayTemp.length)/2);
-
-        if(splitOnLen > 0){
-            var msgArrayTop = madeMsgArrayTemp.splice(0, splitOnLen);
-                //var msgArrayBottom = madeMsgArray.splice(splitOnLen);
-            var newTop = msgArrayTop.join("\n");
-            var msgArrayBottom = madeMsgArrayTemp.splice(1, splitOnLen);
-            var newBottom = msgArrayBottom.join("\n");
-
-            divideMessage(newTop, channel);
-            divieMessage(newBottom, channel);
-        }else {
-            sendMsg("TOO BIG FOR DISCORD", channel);
-        }
-
-    }else {
-        madeMsgArray[madeMsgArray.length] = madeMsg;
-        
-        for(i = 0; i< madeMsgArray.length; i++){
-            //sleepThenSend(madeMsgArray[i], channelId, ms, this.sendMes); 
-            sendMsg(("```===[Message " + (i+1) + " of " + (madeMsgArray.length) + " ]===```\n" + madeMsgArray[i] + "\n\n"), channel);
-            await sleep(500);
-        }
-
-
-
-    splitAndSend(madeMsg, channel, ms, msgArray);
-    //await sleep(1000);*/
 }
 
 
@@ -178,7 +138,6 @@ async function splitOnly(msgToSplit){
         //console.log("ORIGINAL " + msgToSplit + ", NEW TOP: " + newTop + ", NEW BOTTOM: " + newBottom);
         return retArray;
     }else {
-            //sendMsg("TOO BIG FOR DISCORD", channel);
         console.log("TOO BIG");
             retArray =  ["TOO BIG FOR DISCORD", "TOO BIG FOR DISCORD"];
             return retArray;
@@ -222,10 +181,6 @@ async function splitAndSend(madeMsg, channel, ms, madeMsgArray){
 
 function sendMsg(outMsg, channel){
     channel.send(outMsg);
-    /*bot.sendMessage({
-        to: channelId,
-        message: outMsg
-    })*/
 }
 
 function sleep(ms){
@@ -233,10 +188,3 @@ function sleep(ms){
         setTimeout(resolve,ms)
     })
 }
-
-/*function sleepThenSend(madeMsg, channelId, ms, callback){
-   //await sleep(1000 * ms)
-   //await sleep(500);
-   callback(madeMsg, channelId)
-   //await sleep(1000);
-}*/
