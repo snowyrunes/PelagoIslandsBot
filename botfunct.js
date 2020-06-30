@@ -102,21 +102,21 @@ module.exports = {
 
 }
 
-function giveFieldPrice(sDescript, field){
+function giveFieldPrice(sDescript, field, endString){
 	if (field === "N/A"){
 		return ""
 	}
 
-	return sDescript + commaNumber(field) + "G";
+	return sDescript + commaNumber(field) + "G" + endString;
 }
 
 //local functions
-function giveField(sDescript, field){
+function giveField(sDescript, field, endString){
 	if (field === "N/A"){
 		return "";
 	}
 
-	return sDescript + field;
+	return sDescript + field + endString;
 }
 
 function parseObtain(oString){
@@ -206,39 +206,79 @@ function getCategoryFromList(itemName){
 	}
 
 	//console.log("ITEM: " + item);
-	var itemString =  "**Details for " + item.name;
+	var itemString =  "**Details for " + item.name + ":**";
 	
 	if(item.hasOwnProperty("price")){
-		itemString += ":\n**Price: *" + commaNumber(item.price) + "G";
+		itemString += giveFieldPrice("\nPrice: *", item.price, "*");
 	}
 
 	if(item.hasOwnProperty("seedPrice")){
-		itemString += giveFieldPrice("*,\nSeed Price: *", item.seedPrice);
+		itemString += giveFieldPrice("\nSeed Price: *", item.seedPrice, "*");
 	}
 
 	if(item.hasOwnProperty("rarity")){
-		itemString += giveField("*,\nRarity: *", item.rarity);
+		itemString += giveField("\nRarity: *", item.rarity, "*");
+	}
+
+	if (item.hasOwnProperty("effect")){
+		itemString += giveField("\nEffect: *", item.effect, "*");
 	}
 
 	if(item.hasOwnProperty("wEffect")){
-		itemString += giveField("*,\nWeapon Upgrade Effect: *", item.wEffect);
+		itemString += giveField("\nWeapon Upgrade Effect: *", item.wEffect, "*");
 	}
 
 	if (item.hasOwnProperty("eEffect")){
-		itemString += giveField("*,\nEquipment Updgrade Effect: *", item.eEffect);
+		itemString += giveField("\nEquipment Updgrade Effect: *", item.eEffect, "*");
 	}
 
-	if(item.hasOwnProperty("obtainFrom")){
-		itemString += "*,\nObtainable From: *" + parseObtain(item.obtainFrom) + "*";
+	if (item.hasOwnProperty("recipeSize")){
+		itemString += giveField("\nRecipe Size: *", item.recipeSize, "*");
+	}
+
+	if (item.hasOwnProperty("pSize")){
+		itemString += giveField("\nRecipe Size: *", item.pSize, "*");
+	}
+
+	if (item.hasOwnProperty("season")){
+		itemString += giveField("\nGrowing Season: *", item.season, "*");
+	}
+
+	if (item.hasOwnProperty("recipe")){
+		itemString += giveField("\nRecipe: *", item.recipe, "*");
 	}
 
 	if(item.hasOwnProperty("isKingFish")){
-		itemString += giveField("*,\nIs it a kingfish? *", item.isKingFish);
+		itemString += giveField("\nIs it a kingfish? *", item.isKingFish, "*");
 	}
 
-	if(item.hasOwnProperty("locations")){
-		itemString += giveField("*,\nFishing Locations: *", item.locations);
+	if (item.hasOwnProperty("mLevel")){
+		itemString += giveField("\nLevel: *", item.mLevel, "*");
 	}
+
+	if (item.hasOwnProperty("resistance")){
+		itemString += giveField("\nResistant to: *", item.resistance, "*");
+	}
+
+	if (item.hasOwnProperty("weakness")){
+		itemString += giveField("\nWeak Against: *", item.weakness, "*");
+	}
+
+	if (item.hasOwnProperty("drops")){
+		itemString += giveField("\nDrops: *", item.drops, "*");
+	}
+
+	if (item.hasOwnProperty("produce")){
+		itemString += giveField("\nProduce: *", item.produce, "*");
+	}
+
+	if(item.hasOwnProperty("obtainFrom")){
+		itemString += giveField("\nObtainable From: *", parseObtain(item.obtainFrom), "*");
+	}
+
+	/*if(item.hasOwnProperty("locations")){
+		itemString += giveField("*,\nFishing Locations: *", item.locations);
+	}*/
 
 	return itemString;
 }

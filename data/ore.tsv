@@ -1,7 +1,8 @@
 name	price	rarity	wEffect	eEffect
-Copper Ore	50	COMMON	ATK +1	DEF +1
+Iron Ore	100	COMMON	ATK +1	DEF +1
+Copper Ore	150	COMMON	ATK +1	DEF +1
 Gold Ore	700	UNCOMMON	ATK +3	DEF +3
-Junk Ore	10	COMMON	ATK +1	DEF +1
+Junk Ore	20	COMMON	ATK +1	DEF +1
 Light Ore	6000	RARE	M.ATK +5	M.DEF +5
 Mithril	1200	UNCOMMON	M.ATK +3	M.DEF +3
 Mystrile Ore	100	COMMON	MP +1	MP +1
@@ -9,4 +10,4 @@ Mythic Ore	1	COMMON	M.ATK +1	M.DEF +1
 Orichalcum	1200	UNCOMMON	M.ATK +3	M.DEF +3
 Platinum	5500	RARE	ATK +5	DEF +5
 Scrap Metal	50	COMMON	ATK +1	DEF +1
-Silver Ore	150	UNCOMMON	ATK +3	DEF+3
+Silver Ore	250	UNCOMMON	ATK +3	DEF+3

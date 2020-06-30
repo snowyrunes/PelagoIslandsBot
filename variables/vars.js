@@ -8,6 +8,10 @@ module.exports = {
 	piItemCategories: {},
 
 	//list of Items
+	piMonsterList: {},
+	piGrillFryList: {},
+	piMiscDishList: {},
+	piDrinkList: {},
 	piCropsList: {},
 	piCrystalsList: {},
 	piFabricList: {},
@@ -20,7 +24,10 @@ module.exports = {
 	piMonsterPartsList: {},
 	piOresList: {},
 	piRootsList: {},
-	piSporesList: {},
+	piPotionsList: {},
+	piPowdersList: {},
+	piProduceList: {},
+	piSeedsList: {},
 	piStonesList: {},
 	piWildFoodList: {},
 
