@@ -64,12 +64,44 @@ module.exports = {
 
 		//console.log(Object.keys(botvars.piAllItemMap));
 		if(Object.keys(botvars.piAllItemMap).includes(itemName)){
-			return getCategoryFromList(itemName);
+			return getCategoryFromList(itemName, botvars.piAllItemMap);
 		}else{
 			return "Invalid item name " + itemName;
 		}
 		
 		//return findCateogry(itemName);	
+
+	},
+    
+    monsterDetails: function (args) {
+		if (args.length < 1){
+			return ("Please include a monster name.");
+		}
+
+		var monsterName =  ""+ args.join(" ").trim().toLowerCase() + "";
+
+		//console.log(Object.keys(botvars.piAllMonstersMap));
+		if(Object.keys(botvars.piAllMonstersMap).includes(monsterName)){
+			return getCategoryFromList(monsterName, botvars.piAllMonstersMap);
+		}else{
+			return "Invalid monster name " + monsterName;
+		}
+
+	},
+
+	livestockDetails: function (args) {
+		if (args.length < 1){
+			return ("Please include an animal name (must be livestock).");
+		}
+
+		var livestockName =  ""+ args.join(" ").trim().toLowerCase() + "";
+
+		//console.log(Object.keys(botvars.piAllMonstersMap));
+		if(Object.keys(botvars.piAllLivestockMap).includes(livestockName)){
+			return getCategoryFromList(livestockName, botvars.piAllLivestockMap);
+		}else{
+			return "Invalid livestock name " + livestockName;
+		}
 
 	},
 
@@ -197,10 +229,10 @@ function getMineRolls(){
 
 }
 
-function getCategoryFromList(itemName){
+function getCategoryFromList(itemName, cItemMap){
 	var item = null;
-	if(Object.keys(botvars.piAllItemMap).includes(itemName)){
-		item =botvars.piAllItemMap[itemName];
+	if(Object.keys(cItemMap).includes(itemName)){
+		item =cItemMap[itemName];
 	} else{
 		return "Invalid Object " + itemName;
 	}

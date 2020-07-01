@@ -103,6 +103,7 @@ module.exports = class CritterCatching extends Minigame {
 
 function getCritterDetailsRaw(critterList){
 	var critter = critterList[botfunct.randomize(critterList.length)].toLowerCase();
+    //console.log(critter);
 	return botfunct.findItemRawDetails(critter);
 }
 
@@ -110,7 +111,7 @@ function getCritterDetailsOne(critterList){
 	var critterObj =  getCritterDetailsRaw(critterList);
 
 	if(critterObj === {} || critterObj.name === undefined){
-		return "Something went wrong. Talk to Katie about Invalid !!! Result " + critter;
+		return "Something went wrong. Talk to Katie about Invalid Result " + critter;
 	}
 
 	return critterObj.name + " - " + commaNumber(critterObj.price) + "G";
