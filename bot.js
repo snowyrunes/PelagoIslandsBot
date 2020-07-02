@@ -63,15 +63,23 @@ bot.on('message', inMsg => {
         }
 
         //messages must be divided in order to send.
-        divideMessage(botmsg, channel)
+        //divideMessage(botmsg, channel)
+        var returnArray = [];
+        divideMessage(botmsg, channel, 1, returnArray);
      }
 });
 
 
-async function divideMessage(madeMsg, channel){
-    var ms = 1;
-    var msgArray = [];
+async function divideMessage(madeMsg, channel, ms, returnArray){
+    
+    divideMessage2(madeMsg, channel, ms, returnArray);
 
+    for(var i = 0; i< returnArray.length; i++){
+        channel.send(returnArray[i]);
+    }
+}
+async function divideMessage2(madeMsg, channel, ms, returnArray){
+    var msgArray = [];
 
     if (madeMsg.length > 1800){
         var madeMsgArrayTemp = madeMsg.split("\n");
@@ -79,112 +87,26 @@ async function divideMessage(madeMsg, channel){
         var msgArrayTop = madeMsgArrayTemp.splice(0, splitOnLen);
         var newTop = msgArrayTop.join("\n");
         var msgArrayBottom =  madeMsgArrayTemp;//madeMsgArrayTemp.splice(1, splitOnLen);
-        msgArrayBottom.unshift("---");
+        msgArrayBottom.unshift("_");
         var newBottom = msgArrayBottom.join("\n");
 
-        splitCombo(newTop, newBottom, channel);
+        ms = divideMessage2(newTop, channel, ms, returnArray);
+        ms = divideMessage2(newBottom, channel, ms, returnArray);
 
     }else{
-        channel.send(madeMsg)
-    }
-}
-
-
-async function splitCombo(topHalfMsg, bottomHalfMsg, channel){
-
-    //console.log("NEW TOP: " + topHalfMsg + ", NEW BOTTOM: " + bottomHalfMsg);
-    if (topHalfMsg.length > 1800){
-        splitOnly(topHalfMsg).then(function(result){ 
-            console.log("ORG TOP: " + topHalfMsg + "NEW TOP" + result[0] + "NEW BOTTOM" + result[1]);
-            splitCombo(result[0], result[1], channel);
-        });
-        
-    } else {
-        channel.send(topHalfMsg);
+        returnArray.push(madeMsg);
+        ms = ms + 1;
+        return ms;
     }
 
-    if (bottomHalfMsg.length > 1800){
-        splitOnly(bottomHalfMsg).then(function(result){
-            splitCombo(result[0], result[1], channel);
-        });
-    } else {
-        channel.send(bottomHalfMsg);
-    }
-
- 
-}
-
-async function splitOnly(msgToSplit){
-
-    var madeMsgArrayTemp = msgToSplit.split("\n");
-    console.log(madeMsgArrayTemp.length);
-    var splitOnLen = Math.floor((madeMsgArrayTemp.length)/2);
-    var retArray;
-
-    if(splitOnLen > 0){
-            var msgArrayTop = madeMsgArrayTemp.splice(0, splitOnLen);
-            var newTop = msgArrayTop.join("\n");
-            console.log(msgArrayTop.length);
-            console.log("NEW TOP" + newTop);
-            //var msgArrayBottom = madeMsgArrayTemp.splice(0, splitOnLen);
-            var newBottom = madeMsgArrayTemp.join("\n");
-
-            console.log(madeMsgArrayTemp.length);
-            console.log("NEW BOTTOM" + newBottom);
-            retArray = [newTop, newBottom];
-
-        //console.log("NEW TOP: " + newTop);
-        //console.log("NEW BOT: " + newBottom);
-        //console.log("ORIGINAL " + msgToSplit + ", NEW TOP: " + newTop + ", NEW BOTTOM: " + newBottom);
-        return retArray;
-    }else {
-        console.log("TOO BIG");
-            retArray =  ["TOO BIG FOR DISCORD", "TOO BIG FOR DISCORD"];
-            return retArray;
-     }
-
+    return ms;
 }
 
 
-async function splitAndSend(madeMsg, channel, ms, madeMsgArray){
-     var msgLen = madeMsg.length;
-
-     if (msgLen > 1800){
-        var madeMsgArrayTemp = madeMsg.split("\n");
-
-            var splitOnLen = Math.floor((madeMsgArrayTemp.length)/2);
-
-            if(splitOnLen > 0){
-                var msgArrayTop = madeMsgArrayTemp.splice(0, splitOnLen);
-                //var msgArrayBottom = madeMsgArray.splice(splitOnLen);
-                madeMsgArray[madeMsgArray.length] = msgArrayTop.join("\n");
-                // sendMsg(msgTop, channel);
-                var redoMsg = madeMsgArrayTemp.join("\n");
-
-                splitAndSend(redoMsg, channel, ms, madeMsgArray);
 
 
-            }else {
-                sendMsg("TOO BIG FOR DISCORD", channel);
-            }
-
-     } else {
-        madeMsgArray[madeMsgArray.length] = madeMsg;
-        
-        for(i = 0; i< madeMsgArray.length; i++){
-            //sleepThenSend(madeMsgArray[i], channelId, ms, this.sendMes); 
-            sendMsg(("```===[Message " + (i+1) + " of " + (madeMsgArray.length) + " ]===```\n" + madeMsgArray[i] + "\n\n"), channel);
-            await sleep(500);
-        }
-    }
-}
-
-function sendMsg(outMsg, channel){
-    channel.send(outMsg);
-}
-
-function sleep(ms){
+/*function sleep(ms){
     return new Promise(resolve=>{
         setTimeout(resolve,ms)
     })
-}
+}*/

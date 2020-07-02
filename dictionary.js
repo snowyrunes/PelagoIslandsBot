@@ -11,6 +11,7 @@ var Foraging = require('./games/foragefunct');
 var ProduceCollection = require('./games/produceCollection');
 var Logging = require('./games/logging');
 var StoneBreaking = require('./games/stonebreaking');
+var Fishing = require('./games/fishing');
 
 
 module.exports = {
@@ -41,6 +42,10 @@ module.exports = {
 		methodDict['forageone'] = botvars.piAllMinigamesMap["Foraging"].forageOne;
 		methodDict['foraging'] = botvars.piAllMinigamesMap["Foraging"].foraging;
 
+		//fishing
+		methodDict['fishone'] = botvars.piAllMinigamesMap["Fishing"].fishOne;
+		methodDict['fishing'] = botvars.piAllMinigamesMap["Fishing"].fishing;
+
         //monster games
         methodDict['produce'] = botvars.piAllMinigamesMap["Produce Collection"].produceCollection;
         
@@ -59,14 +64,18 @@ module.exports = {
 
 	initMethodArray: function (){
 
+		//Preload Data For Dependant Minigames. Will Load Again After.
+        preloadFileCategory("monsters", "./data/monsters.tsv")
+        preloadFileCategory("livestock", "./data/livestock.tsv")
+        preloadFileCategory("fish", "./data/fish.tsv");
+
+        //load minigames
 		botvars.piAllMinigamesMap["Logging"] = new Logging("Logging");
 		botvars.piAllMinigamesMap["Stone Breaking"] = new StoneBreaking("Stone Breaking");
 		botvars.piAllMinigamesMap["Critter Catching"] = new CritterCatching("Critter Catching");
 		botvars.piAllMinigamesMap["Foraging"] = new Foraging("Foraging");
 		botvars.piAllMinigamesMap["Mining"] = new Mining("Mining");
-        
-        botvars.piMonsterList = loadCategory("monsters", "./data/monsters.tsv")
-        botvars.piLivestockList = loadCategory("livestock", "./data/livestock.tsv")
+		botvars.piAllMinigamesMap["Fishing"] = new Fishing("Fishing");
 
         botvars.piAllMinigamesMap["Produce Collection"] = new ProduceCollection("Produce Collection");
 
@@ -78,11 +87,13 @@ module.exports = {
 		botvars.piCropsList = loadCategory("crops", "./data/crops.tsv");
 		botvars.piCrystalsList = loadCategory("crystals", "./data/crystal.tsv");
 		botvars.piFabricList = loadCategory("fabrics", "./data/fabrics.tsv");
-		botvars.piFishList = loadCategory("fish", "./data/fish.tsv");
+		botvars.piFishList = loadCategory("fish","./data/fish.tsv");
 		botvars.piFlowerList = loadCategory("flowers", "./data/flowers.tsv");
 		botvars.piHerbsList = loadCategory("herbs", "./data/herbs.tsv");
 		botvars.piGemsList = loadCategory("gems", "./data/gems.tsv");
+		botvars.piLivestockList = loadCategory("livestock", "./data/livestock.tsv")
 		botvars.piLumberList = loadCategory("lumber", "./data/lumber.tsv");
+		botvars.piMonsterList = loadCategory("monsters", "./data/monsters.tsv")
 		botvars.piMonsterPartsList = loadCategory("monsterparts", "./data/monsterparts.tsv")
 		botvars.piOresList = loadCategory("ores", "./data/ore.tsv");
 		botvars.piRootsList = loadCategory("roots", "./data/roots.tsv");
@@ -132,6 +143,36 @@ function getObtainableFromProperty(itemName){
 	return obtainableFrom;
 }
 
+//preload for minigames with dependencies for read
+function preloadFileCategory(categoryName, filePath){
+	var listRaw = readFile(filePath).split("\n");
+	var propertyNames = listRaw[0].trim().split("\t");
+	var categoryList = [];
+
+	for(i = 1; i< listRaw.length; i++){
+		var item = listRaw[i].trim().split("\t");
+		
+		var tempItem = {};
+
+		for(j = 0; j< propertyNames.length; j++){
+			tempItem[propertyNames[j]] = item[j];
+		}
+
+		//some categories need to be loaded early
+		categoryList[(item[0].trim().toLowerCase())] = tempItem;
+
+			if("monsters" == categoryName){
+	            botvars.piAllMonstersMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+	        }else if("livestock" == categoryName){
+	        	botvars.piAllLivestockMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+	        }else if(("fish" == categoryName) && ("yes" == tempItem["isKingFish"].toLowerCase()) ){
+	        	//secret kingfish mapping for minigame
+	        	botvars.piKingFishMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+	        }
+		
+	}
+
+}
 
 function getFileCategoryListing(categoryName, filePath){
 	var listRaw = readFile(filePath).split("\n");
@@ -150,14 +191,14 @@ function getFileCategoryListing(categoryName, filePath){
 		tempItem["obtainFrom"] = getObtainableFromProperty(tempItem["name"].toLowerCase());
 		//assume name is always in item[0]
 		categoryList[(item[0].trim().toLowerCase())] = tempItem;
-        
-        if("monsters" == categoryName){
-            botvars.piAllMonstersMap[tempItem["name"].toLowerCase()] = tempItem;
-        }else if("livestock" == categoryName){
-        	botvars.piAllLivestockMap[tempItem["name"].toLowerCase()] = tempItem;
-        }else{
-            botvars.piAllItemMap[tempItem["name"].toLowerCase()] = tempItem;
-        }
+	        
+	    if("monsters" == categoryName){
+	        botvars.piAllMonstersMap[tempItem["name"].toLowerCase()] = tempItem;
+	    }else if("livestock" == categoryName){
+	        botvars.piAllLivestockMap[tempItem["name"].toLowerCase()] = tempItem;
+		}else{
+	        botvars.piAllItemMap[tempItem["name"].toLowerCase()] = tempItem;
+	    }
 		
 	}
 

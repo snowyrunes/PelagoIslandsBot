@@ -117,5 +117,41 @@ module.exports = {
 	forageElysia: ["Small Branch", "Branch", "Black Branch", "Elli Leaves", "Medicinal Herb", "White Herb", "Black Herb", "Indigo Herb", "Green Herb", 
 					"Red Herb", "Purple Herb", "Blue Herb", "Lavender", "Sage", "Weed", "Walnut", "Cranberry", "Blackberry", "Golden Lumber", 
 					"Antidote Herb", "4 Leaf Clover", "Earth Crystal", "Rune Crystal", "Water Crystal", "Magic Crystal", "Mint", "Chamomile", 
-					"Weed", "Vine", "Strong Vine", "Red Magic Flower", "Blue Magic Flower", "Pink Cat", "Moondrop Flower"]
+					"Weed", "Vine", "Strong Vine", "Red Magic Flower", "Blue Magic Flower", "Pink Cat", "Moondrop Flower"],
+
+	fishLeuda: ["Black Bass", "Black Bass", "Horse Mackerel", "Fish Fossil", "Puffer Fish", "Sardine", "Horse Mackerel", "Sea Bream", "Bonito", "Mackerel", 
+				"Saury", "Angler Fish", "Tuna", "Dogfish Shark", "Rubber Boot", "Rubber Boot", "Bottle", "Sardine", "Amago Trout", "Stick", "Stick", 
+				"Fish Bone", "Pacific Halibut", "Fish Bone", "Black Bass", "Black Bass", "Sardine", "Sardine", "Barracuda", "Flounder", "Sea Bass", 
+				"Black Bass", "Large Trout", "Amago Trout", "Cod", "Squid", "Octopus", "Pirate Treasure", "Horse Mackerel", "Sea Bream", "Saury", 
+				"Dogfish Shark", "Sea Bass", "Black Bass", "Cod", "Flounder", "Amago Trout", "Black Bass", "Sea Bass", "Rare Can", "Sardine"],
+
+	fishArcadia: ["Goby", "Char", "Carp", "Catfish", "Crawfish", "Freshwater Prawn", "Brown Trout", "Sweetfish", "Shisamo", "Funa", "Amago Trout", 
+					"Sardine", "Cod", "Pond Smelt", "Rainbow Trout", "Icefish", "Eel", "Herring", "Glitter Snapper", "Puffer Fish", "Goby", "Fish Fossil", 
+					"Stick", "Rubber Boot", "Bottle", "Fish Bone", "Giant Arowana", "Stick", "Rubber Boot", "Bottle", "Fish Bone", "Stick", "Char", "Carp", 
+					"Rare Can", "Pirate Treasure", "Brown Trout", "Sweetfish", "Shisamo", "Amago Trout", "Sardine", "Cod", "Pond Smelt", "Rainbow Trout", 
+					"Icefish", "Eel", "Herring", "Goby", "Freshwater Prawn", "Puffer Fish"],
+
+	fishShallow: ["Salmon", "Rainbow Trout", "Salmon", "Masu Trout", "Icefish", "Steelhead", "Eel", "Salmon", "Needlefish", "Moray Eel", "Large Goby", 
+					"Sweetfish", "Shisamo", "Icefish", "Loach", "Funa", "Salmon", "Black Bass", "Sardine", "Cod", "Yellowtail", "Goby", "Fish Fossil", 
+					"Stick", "Bottle", "Fish Bone", "Rubber Boot", "Stick", "King Salmon", "Stick", "Fish Bone", "Fish Bone", "Stick", "Stick", 
+					"Rainbow Trout", "Steelhead", "Masu Trout", "Salmon", "Nautilus", "Large Goby", "Shisamo", "Eel", "Icefish", "Loach", "Black Bass", 
+					"Sardine", "Cod", "Goby", "Yellowtail", "Salmon", "Rare Can"],
+
+	fishMid: ["Pond Smelt", "Pale Chub", "Black Bass", "Funa", "Loach", "Sweetfish", "Large Trout", "Amago Trout", "Sardine", "Cod", "Fish Fossil", 
+				"Yellowtail", "Herring", "Eel", "Puffer Fish", "Goby", "Horse Mackerel", "Skull Jellyfish", "Eel", "Rubber Boot", "Bottle", "Fish Bone", 
+				"Dorado", "Stick", "Rubber Boot", "Bottle", "Fish Bone", "Tarpon", "Black Bass", "Dragon Fin", "Shisamo", "Black Bass", "Shisamo", 
+				"Sardine", "Pond Smelt", "Pond Smelt", "Sweetfish", "Sardine", "Rare Can", "Horse Mackerel", "Puffer Fish", "Eel", "Herring", 
+				"Large Trout", "Loach", "Black Bass", "Pale Chub", "Herring", "Funa"],
+
+	fishDeep: ["Rare Can", "Cod", "Mahi-Mahi", "Manta Ray", "Rockfish", "Cod", "Rock Trout", "Yellowtail", "Conger Eel", "Halibut", "Flounder", "Squid", 
+				"Octopus", "Rock Lobster", "Lobster", "Herring", "Giant Halibut", "Rockfish", "Ocean Sunfish", "Legendary Scale", "Lobster", "Herring", 
+				"Stick", "Goby", "Bottle", "Dragon Carp", "Stick", "Rubber Boot", "Giant Catfish", "Bottle", "Fish Bone", "Rubber Boot", "Goby", "Stick", 
+				"Rubber Boot", "Giant Huchen", "Fish Bone", "Legendary Scale", "Rock Lobster", "Fish Fossil", "Swordfish", "Goby", "Mahi-Mahi", "Manta Ray", 
+				"Rockfish", "Rock Trout", "Yellowtail", "Conger Eel", "Halibut", "Flounder", "Goby"],
+
+	fishRustyReq: ["Shallow Water Level"],
+	fishCopperReq: ["Shallow Water Level", "Shallow Water Level", "Shallow Water Level", "Mid Water Level", "Mid Water Level"],
+	fishGoldReq: ["Shallow Water Level", "Shallow Water Level", "Shallow Water Level", "Mid Water Level", "Mid Water Level", "Deep Water Level"]
+
+
 }

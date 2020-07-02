@@ -1,6 +1,6 @@
 {
     "name": "pelago-bot",
-    "version": "2.5.0",
+    "version": "3.0.0",
     "description": "Pelago Islands Bot",
     "main": "bot.js",
     "author": "Katharine Craven",

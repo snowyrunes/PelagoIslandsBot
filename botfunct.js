@@ -126,6 +126,9 @@ module.exports = {
 			case "forageone":
 			case "foraging":
 				return getForageLine();
+			case "fishone":
+			case "fishing":
+				return getFishingLine();
 			default:
 				return ("No minigame command found for " + args[0]);
 		}
@@ -156,6 +159,27 @@ function parseObtain(oString){
 }
 
 //roll line functions
+
+function getFishingLine(){
+	var fLine = "**Roll line for fishing at Leuda Beach:**\n";
+	fLine += lines.fishLeuda.join(" | ");
+	fLine += "\n\n**Roll line for fishing at Arcadia Port:**\n";
+	fLine += lines.fishArcadia.join(" | ");
+	fLine += "\n\n**Roll line for fishing at Deep Sea (Shallow Water Level):**\n";
+	fLine += lines.fishShallow.join(" | ");
+	fLine += "\n\n**Roll line for fishing at Deep Sea (Mid Water Level):**\n";
+	fLine += lines.fishMid.join(" | ");
+	fLine += "\n\n**Roll line for fishing at Deep Sea (Deep Water Level):**\n";
+	fLine += lines.fishDeep.join(" | ");
+	fLine += "\n\n**Roll line for water level at Deep Sea with a Rusty/Ordinary Fishing Pole :**\n";
+	fLine += lines.fishRustyReq.join(" | ");
+	fLine += "\n\n**Roll line for water level at Deep Sea with a Copper/Silver Fishing Pole :**\n";
+	fLine += lines.fishCopperReq.join(" | ");
+	fLine += "\n\n**Roll line for water level at Deep Sea with a Gold/Mystic Fishing Pole :**\n";
+	fLine += lines.fishGoldReq.join(" | ");
+
+	return fLine;
+}
 
 function getForageLine(){
 	var fLine = "**Roll line for foraging on Arcadia in spring:**\n";
@@ -281,7 +305,7 @@ function getCategoryFromList(itemName, cItemMap){
 	}
 
 	if(item.hasOwnProperty("isKingFish")){
-		itemString += giveField("\nIs it a kingfish? *", item.isKingFish, "*");
+		itemString += giveField("\nIs it a kingfish: *", item.isKingFish, "*");
 	}
 
 	if (item.hasOwnProperty("mLevel")){

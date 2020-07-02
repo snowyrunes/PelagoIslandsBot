@@ -5,6 +5,10 @@ module.exports = {
     piAllLivestockMap: {},
 	piAllMinigamesMap: {},
 
+	//preloads map
+	piAllMonstersMapPreload: {},
+    piAllLivestockMapPreload: {},
+	piKingFishMapPreload: {},
 
 	//List of Categories
 	piItemCategories: {},
@@ -50,6 +54,10 @@ module.exports = {
 	//special item categories
 	piMineForgeList: {},
 
+	//Weather Options: Sunny, Rainy, Cloudy, Thunderstorm, Snowy (Winter Only), Snowstorm (Winter Only), Typhoon (Summer Only), Blizzard, Hurricane
+	weather: ["Sunny", "Rainy", "Cloudy", "Thunderstorm", "Snowy", "Snowstorm", "Typhoon", "Blizzard", "Hurricane"],
+
+	//mining line descriptions
 	tunnelDesc: "\nYou have fallen down a hole and discovered the Underground Tunnel connecting Arcadia and Leuda! " + 
 					"Its existence is currently only known to guild members and a few other individuals– will you tell your friends about this? Or will you just keep this information to yourself….?",
 
@@ -66,5 +74,6 @@ module.exports = {
 	encounterMonst: "\nYou've lost everything you've collected from mining so far, AND you cannot play the Mining minigame anymore this acvitiy period." +
 					"\nYou may play the Monster Hunting minigame as a result of this roll.",
 
-	mineHole:  "\nYou fall through a hole and lose 5HP. (You have 5 less rolls remaining for the mining minigame this activity period.)"
+	mineHole:  "\nYou fall through a hole and lose 5HP. (You have 5 less rolls remaining for the mining minigame this activity period.)",
+
 }

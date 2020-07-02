@@ -1,5 +1,70 @@
-name	price	isKingfish	seaLocations
-Ammonite	3200	No	N/A
-Oyster	360	No	N/A
-Mussel	360	No	N/A
-Sea Urchin	350	No	N/A
+name	price	isKingFish	minRod	weather
+Ammonite	3200	No	N/A	N/A
+Oyster	360	No	N/A	N/A
+Mussel	360	No	N/A	N/A
+Sea Urchin	350	No	N/A	N/A
+Amago Trout	1300	No	N/A	N/A
+Angler Fish	3630	No	N/A	N/A
+Barracuda	15000	Yes	Rusty Fishing Pole	Sunny, Cloudy, Thunderstorm, Snowstorm, Typhoon
+Black Bass	280	No	N/A	N/A
+Bonito	2600	No	N/A	N/A
+Brown Trout	279	No	N/A	N/A
+Carp	360	No	N/A	N/A
+Catfish	306	No	N/A	N/A
+Char	250	No	N/A	N/A
+Cod	230	No	N/A	N/A
+Conger Eel	339	No	N/A	N/A
+Crawfish	47	No	N/A	N/A
+Dogfish Shark	420	No	N/A	N/A
+Dorado	25000	Yes	Copper Fishing Pole	Rainy, Snowy, Snowstorm, Thunderstorm, Blizzard, Hurricane
+Dragon Carp	30000	Yes	Gold Fishing Pole	Thunderstorm, Snowstorm, Blizzard, Hurricane
+Eel	310	No	N/A	N/A
+Flounder	1200	No	N/A	N/A
+Freshwater Prawn	43	No	N/A	N/A
+Funa	506	No	N/A	N/A
+Giant Arowana	15000	Yes	Rusty Fishing Pole	Rainy, Snowy, Thunderstorm, Snowstorm, Blizzard, Hurricane
+Giant Catfish	40000	Yes	Mystic Fishing Pole	Rainy, Snowy, Snowstorm, Thunderstorm
+Giant Halibut	5350	No	N/A	N/A
+Giant Huchen	40000	Yes	Mystic Fishing Pole	Blizzard, Hurricane
+Glitter Snapper	25000	Yes	Copper Fishing Pole	Sunny, Cloudy, Rainy, Snowy
+Goby	83	No	N/A	N/A
+Halibut	325	No	N/A	N/A
+Herring	176	No	N/A	N/A
+Horse Mackerel	181	No	N/A	N/A
+Icefish	100	No	N/A	N/A
+King Salmon	15000	Yes	Rusty Fishing Pole	Sunny, Typhoon, Blizzard, Hurricane
+Large Goby	360	No	N/A	N/A
+Large Trout	720	No	N/A	N/A
+Loach	350	No	N/A	N/A
+Lobster	480	No	N/A	N/A
+Mackerel	840	No	N/A	N/A
+Mahi-Mahi	586	No	N/A	N/A
+Manta Ray	473	No	N/A	N/A
+Masu Trout	209	No	N/A	N/A
+Moray Eel	1120	No	N/A	N/A
+Nautilus	20000	Yes	Ordinary Fishing Pole	Rainy, Snowy
+Needlefish	1269	No	N/A	N/A
+Ocean Sunfish	4200	No	N/A	N/A
+Octopus	5400	No	N/A	N/A
+Pacific Halibut	30000	Yes	Silver Fishing Pole	Sunny
+Pale Chub	254	No	N/A	N/A
+Pond Smelt	50	No	N/A	N/A
+Puffer Fish	560	No	N/A	N/A
+Rainbow Trout	158	No	N/A	N/A
+Rockfish	176	No	N/A	N/A
+Rock Lobster	191	No	N/A	N/A
+Rock Trout	319	No	N/A	N/A
+Salmon	390	No	N/A	N/A
+Sardine	100	No	N/A	N/A
+Saury	192	No	N/A	N/A
+Sea Bass	500	No	N/A	N/A
+Sea Bream	349	No	N/A	N/A
+Shisamo	140	No	N/A	N/A
+Skull Jellyfish	5965	No	N/A	N/A
+Squid	5400	No	N/A	N/A
+Steelhead	172	No	N/A	N/A
+Sweetfish	240	No	N/A	N/A
+Swordfish	522	No	N/A	N/A
+Tarpon	35000	Yes	Silver Fishing Pole	Sunny, Cloudy, Typhoon, Blizzard, Hurricane
+Tuna	2600	No	N/A	N/A
+Yellowtail	777	No	N/A	N/A

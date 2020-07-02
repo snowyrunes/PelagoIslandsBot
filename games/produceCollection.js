@@ -13,19 +13,19 @@ module.exports = class ProduceCollection extends Minigame {
 	loadObtainables(){
   		super.loadObtainables();
 
-        var aKeys = Object.keys(botvars.piAllMonstersMap);
+        var aKeys = Object.keys(botvars.piAllMonstersMapPreload);
         //console.log(aKeys);
 
   		for(var i = 0; i< aKeys.length; i++ ){
-            var monsterData = botvars.piAllMonstersMap[aKeys[i]];
+            var monsterData = botvars.piAllMonstersMapPreload[aKeys[i]];
 	  		super.getObtainablesConditonString(monsterData.produce, monsterData.name);
   		}
 
-      var lKeys = Object.keys(botvars.piAllLivestockMap);
+      var lKeys = Object.keys(botvars.piAllLivestockMapPreload);
 
       for(var i = 0; i< lKeys.length; i++ ){
 
-        var livestockData = botvars.piAllLivestockMap[lKeys[i]];
+        var livestockData = botvars.piAllLivestockMapPreload[lKeys[i]];
         super.getObtainablesConditonString(livestockData.produce, livestockData.name);
       }
 
