@@ -123,7 +123,7 @@ function fishingFunctOne(location, rodLevel, weather){
 
 	var totalPrice = 0;
 	var lineOutput = "***Fishing Minigame:***\n";
-	lineOutput = lineOutput + "You are using a " + getNameFromLevel(rodLevel) + ".\nFishing Location: *";
+	lineOutput = lineOutput + "You are using a(n) " + getNameFromLevel(rodLevel) + ".\nFishing Location: *";
 
 	switch(location){
 		case "Sea: Shallow Water Level":
@@ -136,7 +136,7 @@ function fishingFunctOne(location, rodLevel, weather){
 			break;
 	}
 
-	lineOutput = lineOutput + "\n\nYou caught a(n) **";
+	lineOutput = lineOutput + "\nWeather: *" + weather + "*\n\nYou caught a(n) **";
 
 	var rollLine = getLine(location);
 	var result = hookFish(rollLine, rodLevel, weather);
@@ -153,7 +153,7 @@ function fishingFunct(location, rodLevel, weather){
 	var totalPrice = 0;
 	var lineOutput = "***Fishing Minigame:***\n";
 	var fishOutput = [];
-	lineOutput = lineOutput + "You are using a " + getNameFromLevel(rodLevel) + ".\nFishing Location: *";
+	lineOutput = lineOutput + "You are using a(n) " + getNameFromLevel(rodLevel) + ".\nFishing Location: *";
 
 	switch(location){
 		case "Sea: Shallow Water Level":
@@ -166,7 +166,7 @@ function fishingFunct(location, rodLevel, weather){
 			break;
 	}
 
-	lineOutput = lineOutput + "\n\n";
+	lineOutput = lineOutput + "\nWeather: *" + weather + "*\n\n";
 
 	for(var i = 0; i<10; i++){
 		var rollLine = getLine(location);

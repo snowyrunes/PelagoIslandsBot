@@ -1,14 +1,21 @@
 module.exports = {
 
+	//preloads map
+	piAllMonstersMapPreload: {},
+    piAllLivestockMapPreload: {},
+	piKingFishMapPreload: {},
+	piMonsterLocationMapPreload: {},
+	piMonsterIslandMapPreload: {},
+
+	//loaded maps
 	piAllItemMap: {},
     piAllMonstersMap: {},
     piAllLivestockMap: {},
 	piAllMinigamesMap: {},
 
-	//preloads map
-	piAllMonstersMapPreload: {},
-    piAllLivestockMapPreload: {},
-	piKingFishMapPreload: {},
+	//list of locations
+	piAllLocationMap: {},
+	piAllIslandMap: {},
 
 	//List of Categories
 	piItemCategories: {},
@@ -76,4 +83,16 @@ module.exports = {
 
 	mineHole:  "\nYou fall through a hole and lose 5HP. (You have 5 less rolls remaining for the mining minigame this activity period.)",
 
+	//monster taming descriptions
+	tamingSuccess: "You have successfully tamed the monster! You may only tame one monster per activity period.",
+
+	deathCurse: "You have been inflicted with a strange curse that gradually saps you of health and energy over time. Your mood will also grow lower as time goes on, and not only will you feel constantly sick, you will also have an increase in violent tendencies and dark thoughts. This ailment may only be cured by employees at the **Dragon King Shrine** or **Celestia Church**.",
+
+	attacked: "The monster has become irritated, and has attacked you. This can lead to one round of the Monster Hunting Minigame (not mandatory). You may also rp this result if you wish.",
+
+	kidnapped: "The monster you were attempting to befriend has kidnapped you instead. Let’s hope there’s someone nearby to help you out...",
+
+	knockedOut: "The monster has resisted all of your attempts to befriend it, and dealt a devastating blow in its anger- depleting all of your HP and rendering you unconscious. You may not play the Monster Taming Minigame any more this Activity Period.",
+
+	statusCurse: "The monster might curse you, or maybe you’ll be cursed from running into some of those funky mushroom spores in your attempts to escape from said raging monster. How it happens is up to you, as long as it results in the given status ailment. ;)"
 }

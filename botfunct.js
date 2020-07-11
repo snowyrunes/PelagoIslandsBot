@@ -105,6 +105,39 @@ module.exports = {
 
 	},
 
+	locationDetails: function (args) {
+		if (args.length < 1){
+			return ("Please include a location name (note that islands are separate).");
+		}
+
+		var locationName =  ""+ args.join(" ").trim().toLowerCase() + "";
+
+		//console.log(Object.keys(botvars.piAllMonstersMap));
+		if(Object.keys(botvars.piAllLocationMap).includes(locationName)){
+			return getCategoryFromList(locationName, botvars.piAllLocationMap);
+		}else{
+			return "Invalid location name " + locationName + " (note that islands are input as pi!island ISLAND NAME)";
+		}
+
+	},
+
+
+	islandDetails: function (args) {
+		if (args.length < 1){
+			return ("Please include an island name (note that locations are separate).");
+		}
+
+		var islandName =  ""+ args.join(" ").trim().toLowerCase() + "";
+
+		//console.log(Object.keys(botvars.piAllMonstersMap));
+		if(Object.keys(botvars.piAllIslandMap).includes(islandName)){
+			return getCategoryFromList(islandName, botvars.piAllIslandMap);
+		}else{
+			return "Invalid island name " + islandName + " (note that islands are not the same as locations)";
+		}
+
+	},
+
 	rollLine: function(args) {
 		if (args.length < 1){
 			return ("Please include a minigame roll command.");
@@ -129,6 +162,9 @@ module.exports = {
 			case "fishone":
 			case "fishing":
 				return getFishingLine();
+			case "tameone":
+			case "taming":
+				return getTamingRolls();
 			default:
 				return ("No minigame command found for " + args[0]);
 		}
@@ -159,6 +195,24 @@ function parseObtain(oString){
 }
 
 //roll line functions
+
+function getTamingRolls(){
+	var mLine = "**Roll line for taming Level E monsters:**\n";
+	mLine += lines.tameLevelE.join(" | ");
+	mLine +=  "\n\n**Roll line for taming Level D monsters:**\n";
+	mLine += lines.tameLevelD.join(" | ");
+	mLine +=  "\n\n**Roll line for taming Level C monsters:**\n";
+	mLine += lines.tameLevelC.join(" | ");
+	mLine +=  "\n\n**Roll line for taming Level B monsters:**\n";
+	mLine += lines.tameLevelB.join(" | ");
+	mLine +=  "\n\n**Roll line for taming Level A monsters:**\n";
+	mLine += lines.tameLevelA.join(" | ");
+	mLine +=  "\n\n**Roll line for taming Boss Level monsters:**\n";
+	mLine += lines.tameLevelBoss.join(" | ");
+
+	return mLine;
+
+}
 
 function getFishingLine(){
 	var fLine = "**Roll line for fishing at Leuda Beach:**\n";
@@ -326,6 +380,58 @@ function getCategoryFromList(itemName, cItemMap){
 
 	if (item.hasOwnProperty("produce")){
 		itemString += giveField("\nProduce: *", item.produce, "*");
+	}
+
+	if (item.hasOwnProperty("owner")){
+		itemString += giveField("\nOwner: *", item.owner, "*");
+	}
+
+	if (item.hasOwnProperty("discovered")){
+		itemString += giveField("\nDiscovered: *", item.discovered, "*");
+	}
+
+	if (item.hasOwnProperty("destroyed")){
+		itemString += giveField("\nDestroyed: *", item.destroyed, "*");
+	}
+
+	if (item.hasOwnProperty("accessibility")){
+		itemString += giveField("\nAccessibility: *", item.accessibility, "*");
+	}
+
+	if (item.hasOwnProperty("locations")){
+		itemString += giveField("\nLocations: *", item.locations, "*");
+	}
+
+	if (item.hasOwnProperty("monsters")){
+		itemString += giveField("\nMonsters: *", item.monsters, "*");
+	}
+
+	if (item.hasOwnProperty("expE")){
+		itemString += giveField("\nEXP earned for defeating/Taming **level E** monsters: *", item.expE, "*");
+	}
+
+	if (item.hasOwnProperty("expD")){
+		itemString += giveField("\nEXP earned for defeating/Taming **level D** monsters: *", item.expD, "*");
+	}
+
+	if (item.hasOwnProperty("expC")){
+		itemString += giveField("\nEXP earned for defeating/Taming **level C** monsters: *", item.expC, "*");
+	}
+
+	if (item.hasOwnProperty("expB")){
+		itemString += giveField("\nEXP earned for defeating/Taming **level B** monsters: *", item.expB, "*");
+	}
+
+	if (item.hasOwnProperty("expA")){
+		itemString += giveField("\nEXP earned for defeating/Taming **level A** monsters: *", item.expA, "*");
+	}
+
+	if (item.hasOwnProperty("expBoss")){
+		itemString += giveField("\nEXP earned for defeating/Taming **Boss level** monsters: *", item.expBoss, "*");
+	}
+
+	if (item.hasOwnProperty("description")){
+		itemString += giveField("\nDescription: *", item.description, "*");
 	}
 
 	if(item.hasOwnProperty("obtainFrom")){

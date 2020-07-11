@@ -121,8 +121,8 @@ function exportLogic(msgCollection, colorMatches, channelUp){
 	    var html = preHtml+compilation+postHtml;
 
 	    var dt = new Date();
-	    var dtString = "" + dt.getYear() + "-" + dt.getMonth() + "-" + dt.getDate();
-	    var filename = 'log_exports\\'+ channel + '-' + dtString + '-Output.doc';
+	    var dtString = "" + dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
+	    var filename = 'log_exports/'+ channel + '_' + dtString + '_Output.doc';
 
 	    fs.writeFile(filename, html, (err) => { 
             // In case of a error throw err. 

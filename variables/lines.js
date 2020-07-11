@@ -151,7 +151,53 @@ module.exports = {
 
 	fishRustyReq: ["Shallow Water Level"],
 	fishCopperReq: ["Shallow Water Level", "Shallow Water Level", "Shallow Water Level", "Mid Water Level", "Mid Water Level"],
-	fishGoldReq: ["Shallow Water Level", "Shallow Water Level", "Shallow Water Level", "Mid Water Level", "Mid Water Level", "Deep Water Level"]
+	fishGoldReq: ["Shallow Water Level", "Shallow Water Level", "Shallow Water Level", "Mid Water Level", "Mid Water Level", "Deep Water Level"],
 
+
+	//monster taming lines
+	tameLevelE: ["Success!", "Ignored", "Success!", "Ignored", "Success!", "Success!", "Ignored", "Success!", "Ignored", "Success!", "Ignored", "Success!", 
+					"Attacked", "Success!", "Attacked", "Success!", "Attacked", "Success!", "Attacked and lost 5000G", "Success!", 
+					"Attacked and lost 1000G", "Success!", "Cursed with Poison", "Success!", "Success!", "Cursed with Paralysis", "Success!", 
+					"Cursed with Sickness", "Success!", "Death Curse", "Success!", "Cursed with Silence", "Success!", "Inflicted with Confusion", 
+					"Success!", "Success!", "Success!", "Kidnapped", "Success!", "Success!", "Success!", "Success!", "Success!", "Kidnapped", 
+					"Success!", "Success!", "Success!", "Success!", "Success!", "Success!"],
+
+	tameLevelD: ["Success!", "Ignored", "Success!", "Ignored", "Success!", "Success!", "Ignored", "Success!", "Ignored", "Success!", "Ignored", "Success!", 
+					"Attacked", "Success!", "Attacked", "Success!", "Attacked", "Success!", "Attacked and lost 5000G", "Success!", 
+					"Attacked and lost 1000G", "Success!", "Cursed with Poison", "Success!", "Success!", "Cursed with Paralysis", "Success!", 
+					"Cursed with Sickness", "Success!", "Death Curse", "Success!", "Cursed with Silence", "Success!", "Inflicted with Confusion", 
+					"Success!", "Success!", "Success!", "Kidnapped", "Success!", "Success!", "Success!", "Success!", "Success!", "Kidnapped", "Success!", 
+					"Success!", "Attacked and lost 5000G", "Kidnapped", "Cursed with Poison", "Attacked"],
+
+	tameLevelC: ["Success!", "Ignored", "Success!", "Ignored", "Success!", "Success!", "Ignored", "Success!", "Ignored", "Success!", "Ignored", "Success!", 
+					"Attacked", "Success!", "Attacked", "Success!", "Attacked", "Success!", "Attacked and lost 5000G", "Success!", "Attacked and lost 1000G", 
+					"Success!", "Cursed with Poison", "Success!", "Success!", "Cursed with Paralysis", "Success!", "Cursed with Sickness", "Success!", 
+					"Death Curse", "Success!", "Cursed with Silence", "Success!", "Inflicted with Confusion", "Kidnapped", "Success!", "Success!", "Success!", 
+					"Success!", "Success!", "Kidnapped", "Success!", "Success!", "Attacked and lost 5000G", "Kidnapped", "Cursed with Poison", "Attacked", 
+					"Cursed with Paralysis", "Attacked and lost 2000G", "Ignored"],
+
+	tameLevelB: ["Success!", "Ignored", "Success!", "Ignored", "Success!", "Success!", "Ignored", "Success!", "Ignored", "Attacked", "Ignored", 
+					"Cursed with Sickness", "Attacked", "Ignored", "Attacked", "Success!", "Attacked", "Success!", "Attacked and lost 5000G", "Success!", 
+					"Attacked and lost 1000G", "Success!", "Cursed with Poison", "Success!", "Attacked", "Cursed with Paralysis", "Success!", 
+					"Cursed with Sickness", "Success!", "Death Curse", "Attacked and lost 5000G", "Cursed with Silence", "Success!", 
+					"Inflicted with Confusion", "Kidnapped", "Success!", "Success!", "Attacked and lost 1000G", "Kidnapped", "Success!", 
+					"Cursed with Sickness", "Attacked and lost 5000G", "Kidnapped", "Cursed with Poison", "Attacked", "Cursed with Paralysis", 
+					"Attacked and lost 2000G", "Ignored", "Knocked Out Instantly", "Attacked"],
+
+	tameLevelA: ["Success!", "Ignored", "Success!", "Ignored", "Success!", "Attacked", "Ignored", "Success!", "Ignored", "Cursed with Poison", "Ignored", 
+					"Cursed with Paralysis", "Attacked", "Attacked and lost 2000G", "Attacked", "Success!", "Attacked", "Attacked and lost 2000G", 
+					"Attacked and lost 5000G", "Success!", "Attacked and lost 1000G", "Success!", "Cursed with Poison", "Kidnapped", "Attacked", 
+					"Cursed with Paralysis", "Success!", "Cursed with Sickness", "Success!", "Death Curse", "Success!", "Cursed with Silence", 
+					"Attacked and lost 1000G", "Inflicted with Confusion", "Kidnapped", "Success!", "Attacked", "Ignored", "Kidnapped", 
+					"Knocked Out Instantly", "Cursed with Poison", "Attacked and lost 5000G", "Kidnapped", "Death Curse", "Attacked", 
+					"Cursed with Paralysis", "Attacked and lost 2000G", "Ignored", "Knocked Out Instantly", "Success!"],
+
+	tameLevelBoss: ["Success!", "Ignored", "Attacked", "Ignored", "Attacked", "Cursed with Poison", "Ignored", "Attacked", "Ignored", "Death Curse", 
+						"Ignored", "Success!", "Attacked", "Success!", "Attacked", "Kidnapped", "Attacked", "Success!", "Attacked and lost 5000G", 
+						"Knocked Out Instantly", "Attacked and lost 1000G", "Death Curse", "Cursed with Poison", "Attacked", "Ignored", "Death Curse", 
+						"Attacked and lost 10000G", "Cursed with Sickness", "Success!", "Death Curse", "Attacked", "Cursed with Silence", 
+						"Attacked and lost 5000G", "Inflicted with Confusion", "Kidnapped", "Knocked Out Instantly", "Attacked", "Ignored", "Kidnapped", 
+						"Cursed with Sickness", "Kidnapped", "Attacked and lost 5000G", "Kidnapped", "Death Curse", "Attacked", "Cursed with Paralysis", 
+						"Attacked and lost 2000G", "Ignored", "Knocked Out Instantly", "Success!"]
 
 }

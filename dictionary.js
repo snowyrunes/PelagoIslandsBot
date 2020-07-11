@@ -12,6 +12,7 @@ var ProduceCollection = require('./games/produceCollection');
 var Logging = require('./games/logging');
 var StoneBreaking = require('./games/stonebreaking');
 var Fishing = require('./games/fishing');
+var Taming = require('./games/taming');
 
 
 module.exports = {
@@ -19,9 +20,13 @@ module.exports = {
 		//general functions
 		methodDict['rtest'] = botfuncts.randomTest;
 		methodDict['list'] = botfuncts.listItemsFromCategory;
+		
 		methodDict['item'] = botfuncts.itemDetails;
         methodDict['monster'] = botfuncts.monsterDetails;
         methodDict['livestock'] = botfuncts.livestockDetails;
+        methodDict['location'] = botfuncts.locationDetails;
+        methodDict['island'] = botfuncts.islandDetails;
+
 		methodDict['getline'] = botfuncts.rollLine;
 
 		//mining functions
@@ -48,6 +53,9 @@ module.exports = {
 
         //monster games
         methodDict['produce'] = botvars.piAllMinigamesMap["Produce Collection"].produceCollection;
+
+        methodDict['tameone'] = botvars.piAllMinigamesMap["Monster Taming"].tameOne;
+        methodDict['taming'] = botvars.piAllMinigamesMap["Monster Taming"].taming;
         
 		//randomline
 		methodDict['choose'] = botfuncts.randomFromLine;
@@ -68,6 +76,8 @@ module.exports = {
         preloadFileCategory("monsters", "./data/monsters.tsv")
         preloadFileCategory("livestock", "./data/livestock.tsv")
         preloadFileCategory("fish", "./data/fish.tsv");
+        preloadFileCategory("locations", "./data/locations.tsv");
+        preloadFileCategory("islands", "./data/islands.tsv");
 
         //load minigames
 		botvars.piAllMinigamesMap["Logging"] = new Logging("Logging");
@@ -76,8 +86,8 @@ module.exports = {
 		botvars.piAllMinigamesMap["Foraging"] = new Foraging("Foraging");
 		botvars.piAllMinigamesMap["Mining"] = new Mining("Mining");
 		botvars.piAllMinigamesMap["Fishing"] = new Fishing("Fishing");
-
         botvars.piAllMinigamesMap["Produce Collection"] = new ProduceCollection("Produce Collection");
+        botvars.piAllMinigamesMap["Monster Taming"] = new Taming("Monster Taming");
 
 		critters();
 
@@ -103,6 +113,9 @@ module.exports = {
 		botvars.piSeedsList = loadCategory("seeds", "./data/seeds.tsv");
 		botvars.piStonesList = loadCategory("stones", "./data/stones.tsv");
 		botvars.piWildFoodList = loadCategory("wildfood", "./data/wildfoods.tsv");
+
+		botvars.piIslands = loadCategory("islands", "./data/islands.tsv");
+		botvars.piLocations = loadCategory("locations", "./data/locations.tsv");
 
 		//items that don't fit other categories
 		botvars.piMiscList = loadCategory("misc", "./data/misc.tsv");
@@ -168,6 +181,14 @@ function preloadFileCategory(categoryName, filePath){
 	        }else if(("fish" == categoryName) && ("yes" == tempItem["isKingFish"].toLowerCase()) ){
 	        	//secret kingfish mapping for minigame
 	        	botvars.piKingFishMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+	        }else if("islands" == categoryName){
+	        	if(!("N/A" == tempItem.monsters || "See Individual Locations" == tempItem.monsters)){
+	        		botvars.piMonsterIslandMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+	        	}
+	        }else if("locations" == categoryName){
+	        	if(!("N/A" == tempItem.monsters)){
+	        		botvars.piMonsterLocationMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+	        	}
 	        }
 		
 	}
@@ -196,6 +217,10 @@ function getFileCategoryListing(categoryName, filePath){
 	        botvars.piAllMonstersMap[tempItem["name"].toLowerCase()] = tempItem;
 	    }else if("livestock" == categoryName){
 	        botvars.piAllLivestockMap[tempItem["name"].toLowerCase()] = tempItem;
+		}else if("locations" == categoryName){
+	        botvars.piAllLocationMap[tempItem["name"].toLowerCase()] = tempItem;
+		}else if("islands" == categoryName){
+	        botvars.piAllIslandMap[tempItem["name"].toLowerCase()] = tempItem;
 		}else{
 	        botvars.piAllItemMap[tempItem["name"].toLowerCase()] = tempItem;
 	    }
