@@ -73,11 +73,11 @@ module.exports = {
 	initMethodArray: function (){
 
 		//Preload Data For Dependant Minigames. Will Load Again After.
-        preloadFileCategory("monsters", "./data/monsters.tsv")
-        preloadFileCategory("livestock", "./data/livestock.tsv")
+        preloadFileCategory("monsters", "./data/livestock/monsters.tsv")
+        preloadFileCategory("livestock", "./data/livestock/livestock.tsv")
         preloadFileCategory("fish", "./data/fish.tsv");
-        preloadFileCategory("locations", "./data/locations.tsv");
-        preloadFileCategory("islands", "./data/islands.tsv");
+        preloadFileCategory("locations", "./data/places/locations.tsv");
+        preloadFileCategory("islands", "./data/places/islands.tsv");
 
         //load minigames
 		botvars.piAllMinigamesMap["Logging"] = new Logging("Logging");
@@ -91,31 +91,31 @@ module.exports = {
 
 		critters();
 
-		botvars.piDrinkList = loadCategory("drinks", "./data/drinks.tsv");
-		botvars.piGrillFryList = loadCategory("grillfrydish", "./data/grilledFried.tsv");
-		botvars.piMiscDishList = loadCategory("misc-dishes", "./data/misc-dish.tsv");
-		botvars.piCropsList = loadCategory("crops", "./data/crops.tsv");
+		botvars.piDrinkList = loadCategory("drinks", "./data/dishes/drinks.tsv");
+		botvars.piGrillFryList = loadCategory("grillfrydish", "./data/dishes/grilledFried.tsv");
+		botvars.piMiscDishList = loadCategory("misc-dishes", "./data/dishes/misc-dish.tsv");
+		//botvars.piCropsList = loadCategory("crops", "./data/gardening/crops.tsv");
 		botvars.piCrystalsList = loadCategory("crystals", "./data/crystal.tsv");
 		botvars.piFabricList = loadCategory("fabrics", "./data/fabrics.tsv");
 		botvars.piFishList = loadCategory("fish","./data/fish.tsv");
-		botvars.piFlowerList = loadCategory("flowers", "./data/flowers.tsv");
-		botvars.piHerbsList = loadCategory("herbs", "./data/herbs.tsv");
+		botvars.piFlowerList = loadCategory("flowers", "./data/gardening/flowers.tsv");
+		botvars.piHerbsList = loadCategory("herbs", "./data/wildplants/herbs.tsv");
 		botvars.piGemsList = loadCategory("gems", "./data/gems.tsv");
-		botvars.piLivestockList = loadCategory("livestock", "./data/livestock.tsv")
+		botvars.piLivestockList = loadCategory("livestock", "./data/livestock/livestock.tsv")
 		botvars.piLumberList = loadCategory("lumber", "./data/lumber.tsv");
-		botvars.piMonsterList = loadCategory("monsters", "./data/monsters.tsv")
-		botvars.piMonsterPartsList = loadCategory("monsterparts", "./data/monsterparts.tsv")
+		botvars.piMonsterList = loadCategory("monsters", "./data/livestock/monsters.tsv")
+		botvars.piMonsterPartsList = loadCategory("monsterparts", "./data/livestock/monsterparts.tsv")
 		botvars.piOresList = loadCategory("ores", "./data/ore.tsv");
-		botvars.piRootsList = loadCategory("roots", "./data/roots.tsv");
-		botvars.piProduceList = loadCategory("produce", "./data/produce.tsv");
+		botvars.piRootsList = loadCategory("roots", "./data/wildplants/roots.tsv");
+		botvars.piProduceList = loadCategory("produce", "./data/livestock/produce.tsv");
 		botvars.piPotionsList = loadCategory("potions", "./data/potions.tsv");
 		botvars.piPowdersList = loadCategory("powders", "./data/powders.tsv");
-		botvars.piSeedsList = loadCategory("seeds", "./data/seeds.tsv");
+		//botvars.piSeedsList = loadCategory("seeds", "./data/gardening/seeds.tsv");
 		botvars.piStonesList = loadCategory("stones", "./data/stones.tsv");
-		botvars.piWildFoodList = loadCategory("wildfood", "./data/wildfoods.tsv");
+		botvars.piWildFoodList = loadCategory("wildfood", "./data/wildplants/wildfoods.tsv");
 
-		botvars.piIslands = loadCategory("islands", "./data/islands.tsv");
-		botvars.piLocations = loadCategory("locations", "./data/locations.tsv");
+		botvars.piIslands = loadCategory("islands", "./data/places/islands.tsv");
+		botvars.piLocations = loadCategory("locations", "./data/places/locations.tsv");
 
 		//items that don't fit other categories
 		botvars.piMiscList = loadCategory("misc", "./data/misc.tsv");
@@ -123,7 +123,7 @@ module.exports = {
 		//combinations
 
 		//be sure to include this in the receipe list later
-		botvars.piMineForgeList = loadCategory("accessories", "./data/accessories.tsv");
+		botvars.piMineForgeList = loadCategory("accessories", "./data/crafting/accessories.tsv");
     }
 
 }
