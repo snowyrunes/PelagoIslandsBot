@@ -68,7 +68,7 @@ function exportLogic(msgCollection, colorMatches, channelUp){
 		
 		for(var a = 0; a < messages.length; a++){
 			z = md.render(messages[a].content);
-			var username = messages[a].author.username;
+			var username = messages[a].author.username.toLowerCase();
 			//console.log(z);
 
 			if(Object.keys(colorMapMap).includes(username)){
@@ -155,7 +155,7 @@ function getColors(userColorArray) {
  }
 
   var stringsOnly = userColorArray.replace("[", "");
-  stringsOnly = stringsOnly.replace("]", "");
+  stringsOnly = stringsOnly.replace("]", "").toLowerCase();
 
   var stringsArr = stringsOnly.split(",");
 
