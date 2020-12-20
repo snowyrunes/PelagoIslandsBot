@@ -1,3 +1,6 @@
 name	price	recipeSize	effects	recipe
 Failed Dish	50	Universal	"INFLICTS POISON ON CONSUMER, HP -5, ALL STATS -5"	Get a 'Fails' result
-Oil	300	N/A	N/A	N/A
+Butter	200	Small	DEF + 2	Milk
+Disastrous Dish	100	Universal	"INFLICTS POISON ON CONSUMER, HP -10, ALL STATS -10"	Get a 'Disaster' result
+Corn On The Cob	250	Small	M.ATK + 2	Corn
+Dumplings	300	Small	M.DEF + 2	Rice Flour

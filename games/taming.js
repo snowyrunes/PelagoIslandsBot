@@ -68,7 +68,7 @@ module.exports = class Taming extends Minigame {
       locationName = argsString2[1].trim().toLowerCase()
 
     }else{
-        removeArray= removeStringDetails[1].split("|");
+        removeArray= botfunct.splitCommaOrBar(removeStringDetails[1]);
         argsString2 = argsString.replace(removeStringDetails[0], "").split(",");
 
         if(argsString2.length < 2){
@@ -131,7 +131,7 @@ module.exports = class Taming extends Minigame {
       locationName = argsString2[1].trim().toLowerCase()
 
     }else{
-        removeArray= removeStringDetails[1].split("|");
+        removeArray= botfunct.splitCommaOrBar(removeStringDetails[1]);
         argsString2 = argsString.replace(removeStringDetails[0], "").split(",");
 
         if(argsString2.length < 2){
@@ -189,6 +189,7 @@ function tameMonsterOnce(monsterObj, locationObj, removeLinesArr){
 
   lineOutput = lineOutput +"You are taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
   lineOutput = lineOutput + "*(Beastmasters can remove five options. Earthmates can remove three options. People who are both can remove eight options.)*\n";
+  lineOutput = lineOutput + "*(If you have a food or dish that heals HP, you may use up **one** per activty check to remove a number of options equal to the HP it would heal.)*\n";
 
   //if lines removed
   lineOutput = lineOutput + linesRemoved + "\n";
@@ -272,6 +273,7 @@ function tameMonsterMultiAttempt(monsterObj, locationObj, removeLinesArr){
 
   lineOutput = lineOutput +"You are taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
   lineOutput = lineOutput + "*(Beastmasters can remove five options. Earthmates can remove three options. People who are both can remove eight options.)*\n";
+  lineOutput = lineOutput + "*(If you have a food or dish that heals HP, you may use up **one** per activty check to remove a number of options equal to the HP it would heal.)*\n";
 
   //if lines removed
   lineOutput = lineOutput + linesRemoved + "\n";
@@ -394,6 +396,10 @@ function removeLines(rollLine, removeArr){
     }
   }
 
+  if(rollLine2.length < 1){
+    return null;
+  }
+
   return rollLine2;
 }
 
@@ -414,6 +420,10 @@ function removeLinesErrorCatch(rollLine, removeArr){
       index = rollLine2Lower.indexOf(removeOpt);
       rollLine2.splice(index, 1); //removes the option from array only once.
     }
+  }
+
+  if(rollLine2.length < 1){
+    return "Error: No lines left to roll";
   }
 
   return "Threw an error once, but cannot duplicate.";

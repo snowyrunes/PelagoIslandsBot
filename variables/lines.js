@@ -51,6 +51,26 @@ module.exports = {
 	goldHammerLine: ["Old Stone", "Small Stone", "Stone", "Black Stone", "Stone", "Black Stone", "Stone", "Black Stone", "Black Stone", "Stone"],
 	mysticHammerLine: ["Old Stone", "Small Stone", "Stone", "Black Stone", "Stone", "Black Stone", "Stone", "Black Stone", "Black Stone", "Black Stone"],
 
+	//gardening lines
+	rustyWateringCanLine: ["dried up", "eaten by stray", "poor", "success", "dried up", "eaten by stray", "poor", "success", "success", 
+							"eaten by stray", "poor", "success", "dried up", "poor", "eaten by stray","poor", "success", "dried up", "poor", "success"],
+
+	ordinaryWateringCanLine: ["poor", "success", "poor", "overwatered", "success", "poor", "success", "poor", "success", "eaten by stray", "success", 
+								"dried up", "success", "dried up", "eaten by stray", "success", "poor", "success", "poor", "success"],
+
+	copperWateringCanLine: ["success", "success", "poor", "overwatered", "success", "poor", "success", "poor", "success", "eaten by stray", "success",
+							"dried up", "success", "overwatered", "eaten by stray", "success", "poor", "success", "poor", "overgrown"],
+
+	silverWateringCanLine: ["success", "success", "poor", "overwatered", "success", "poor", "success", "poor", "success", "eaten by stray", "success", 
+							"overwatered", "success", "overwatered", "eaten by stray", "success", "poor", "overgrown", "poor", "overgrown"],
+
+	goldWateringCanLine: ["success", "success", "overgrown", "overwatered", "success", "poor", "success", "poor", "success", "eaten by stray", "success",
+							"overwatered", "success", "overwatered", "eaten by stray", "success", "success", "overgrown", "success", "overgrown"],
+
+	mysticWateringCanLine: ["success", "success", "overgrown", "overwatered", "golden", "poor", "success", "success", "success", "eaten by stray",
+							"success", "overwatered", "success", "overwatered", "eaten by stray", "success", "success", "overgrown", "success", "golden"],
+
+
 	//critter catching lines
 	springCritterLine: ["Tree Frog", "White-lipped Frog", "Red-eyed Tree Frog", "Common Frog", "Spotted Pond Frog", "Goliath Frog", "Oki Butterfly", 
 						"Bushbrown", "Small White", "Nymph Butterfly", "White Swallowtail", "White Morpho", "Swallowtail", "Pale Cloud Yellow", 

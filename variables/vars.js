@@ -6,6 +6,9 @@ module.exports = {
 	piKingFishMapPreload: {},
 	piMonsterLocationMapPreload: {},
 	piMonsterIslandMapPreload: {},
+	piFlowersPreload: {},
+	piSeedsPreload: {},
+	piCropsPreload:{},
 
 	//loaded maps
 	piAllItemMap: {},
@@ -44,6 +47,7 @@ module.exports = {
 	piPowdersList: {},
 	piProduceList: {},
 	piSeedsList: {},
+	piSticksList: {},
 	piStonesList: {},
 	piWildFoodList: {},
 
@@ -82,6 +86,16 @@ module.exports = {
 					"\nYou may play the Monster Hunting minigame as a result of this roll.",
 
 	mineHole:  "\nYou fall through a hole and lose 5HP. (You have 5 less rolls remaining for the mining minigame this activity period.)",
+
+	//gardening lines
+	driedUp: "Dried up! Welp, looks like you didn't give your plant enough water… now it's all dried up and withered. Shame on you, plants can be pretty thirsty, too!",
+	
+	overwatered: "Overwatered! Looks like you gave your plant a little too much to drink. Now it's all swelled up and drowned and… eugh, that's not so edible, is it…",
+	
+	eatenByStray: "Eaten by a stray! Looks like a wild animal/monster wandered by while you weren't looking, and ended up taking a nice, big bite out of your growing plant! No one wants to buy a half eaten crop, I'm sure.",
+
+	gardenLineMapping: {},
+	gardenReRollsMapping: {},
 
 	//monster taming descriptions
 	tamingSuccess: "You have successfully tamed the monster! You may only tame one monster per activity period.",

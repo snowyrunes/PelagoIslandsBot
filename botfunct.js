@@ -28,6 +28,18 @@ module.exports = {
 		return "Result: " + rArray[rNum].trim();
 	},
 
+	splitCommaOrBar: function(arrLine){
+		var rArray = null;
+
+		if(arrLine.includes("|")){
+			rArray = arrLine.split("|").map(m => m.trim());
+		}else{
+			rArray = arrLine.split(",").map(m => m.trim());
+		}
+
+		return rArray;
+	},
+
 	findItemRawDetails: function(itemName){
 		if(Object.keys(botvars.piAllItemMap).includes(itemName)){
 			return botvars.piAllItemMap[itemName];
@@ -165,6 +177,9 @@ module.exports = {
 			case "tameone":
 			case "taming":
 				return getTamingRolls();
+			case "gardenone":
+			case "gardening":
+				return getGardeningRolls();
 			default:
 				return ("No minigame command found for " + args[0]);
 		}
@@ -195,6 +210,23 @@ function parseObtain(oString){
 }
 
 //roll line functions
+
+function getGardeningRolls(){
+	var gLine = "**Roll line for using a rusty watering can**\n";
+	gLine += lines.rustyWateringCanLine.join(" | ");
+	gLine += "\n\n**Roll line for using an ordinary watering can:**\n";
+	gLine += lines.ordinaryWateringCanLine.join(" | ");
+	gLine += "\n\n**Roll line for using a copper watering can:**\n";
+	gLine += lines.copperWateringCanLine.join(" | ");
+	gLine += "\n\n**Roll line for using a silver watering can:**\n";
+	gLine += lines.silverWateringCanLine.join(" | ");
+	gLine += "\n\n**Roll line for using a gold watering can:**\n";
+	gLine += lines.goldWateringCanLine.join(" | ");
+	gLine += "\n\n**Roll line for using a mythic watering can:**\n";
+	gLine += lines.mysticWateringCanLine.join(" | ");
+
+	return gLine;
+}
 
 function getTamingRolls(){
 	var mLine = "**Roll line for taming Level E monsters:**\n";
@@ -320,6 +352,18 @@ function getCategoryFromList(itemName, cItemMap){
 	
 	if(item.hasOwnProperty("price")){
 		itemString += giveFieldPrice("\nPrice: *", item.price, "*");
+	}
+
+	if(item.hasOwnProperty("poorPrice")){
+		itemString += giveFieldPrice("\nPoor Quality Price: *", item.poorPrice, "*");
+	}
+
+	if(item.hasOwnProperty("overgrownPrice")){
+		itemString += giveFieldPrice("\nOvergrown Price: *", item.overgrownPrice, "*");
+	}
+
+	if(item.hasOwnProperty("goldenPrice")){
+		itemString += giveFieldPrice("\nGolden Price: *", item.goldenPrice, "*");
 	}
 
 	if(item.hasOwnProperty("seedPrice")){
