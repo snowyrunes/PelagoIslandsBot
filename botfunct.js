@@ -40,6 +40,15 @@ module.exports = {
 		return rArray;
 	},
 
+	rollDie: function(args){
+
+		if(isNaN(args[0])){
+			return args[0] + " is not a number.";
+		}
+
+		return "Rolling a d" + args[0] + ".\nResult: " + (Math.floor(Math.random() * args[0]) + 1);
+	},
+
 	findItemRawDetails: function(itemName){
 		if(Object.keys(botvars.piAllItemMap).includes(itemName)){
 			return botvars.piAllItemMap[itemName];

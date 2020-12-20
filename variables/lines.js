@@ -218,6 +218,23 @@ module.exports = {
 						"Attacked and lost 10000G", "Cursed with Sickness", "Success!", "Death Curse", "Attacked", "Cursed with Silence", 
 						"Attacked and lost 5000G", "Inflicted with Confusion", "Kidnapped", "Knocked Out Instantly", "Attacked", "Ignored", "Kidnapped", 
 						"Cursed with Sickness", "Kidnapped", "Attacked and lost 5000G", "Kidnapped", "Death Curse", "Attacked", "Cursed with Paralysis", 
-						"Attacked and lost 2000G", "Ignored", "Knocked Out Instantly", "Success!"]
+						"Attacked and lost 2000G", "Ignored", "Knocked Out Instantly", "Success!"],
+
+	//alchemy lines
+	smallChemistrySet: ["fails", "success", "explodes", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", 
+						"explodes", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", 
+						"success", "fails", "success", "explodes", "success", "fails", "success", "fails", "explodes", "fails", "success", "fails", 
+						"success", "fails", "explodes", "fails", "success", "fails", "success", "fails", "explodes", "fails", "success", "fails", "success"],
+
+	mediumChemistrySet: ["fails", "success", "explodes", "success", "explodes", "success", "fails", "success", "success", "success", "success", "success", 
+						"explodes", "success", "fails", "success", "success", "success", "success", "success", "fails", "success", "success", "success", 
+						"fails", "success", "fails", "success", "explodes", "success", "fails", "success", "explodes", "success", "fails", "success", 
+						"fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "explodes", "success", "success", "fails", 
+						"success"],
+	largeChemistrySet: ["fails", "success", "explodes", "success", "explodes", "success", "success", "success", "success", "success", "success", "success", 
+						"explodes", "success", "fails", "success", "success", "success", "success", "success", "fails", "success", "success", "success", 
+						"success", "success", "fails", "success", "explodes", "success", "fails", "success", "explodes", "success", "success", "success", 
+						"fails", "success", "success", "success", "success", "success", "fails", "success", "success", "explodes", "success", "success", 
+						"fails", "success"]
 
 }

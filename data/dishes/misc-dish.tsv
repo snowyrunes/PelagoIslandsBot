@@ -1,6 +1,7 @@
 name	price	recipeSize	effects	recipe
-Failed Dish	50	Universal	"INFLICTS POISON ON CONSUMER, HP -5, ALL STATS -5"	Get a 'Fails' result
+Failed Dish	50	Universal	INFLICTS POISON ON CONSUMER, HP -5, ALL STATS -5	Get a 'Fails' result
 Butter	200	Small	DEF + 2	Milk
-Disastrous Dish	100	Universal	"INFLICTS POISON ON CONSUMER, HP -10, ALL STATS -10"	Get a 'Disaster' result
+Disastrous Dish	100	Universal	INFLICTS POISON ON CONSUMER, HP -10, ALL STATS -10	Get a 'Disaster' result
 Corn On The Cob	250	Small	M.ATK + 2	Corn
 Dumplings	300	Small	M.DEF + 2	Rice Flour
+Tortilla	700	Small	ATK + 4, SPD + 4	Milk + Corn

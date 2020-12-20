@@ -6,9 +6,10 @@ module.exports = {
 	piKingFishMapPreload: {},
 	piMonsterLocationMapPreload: {},
 	piMonsterIslandMapPreload: {},
-	piFlowersPreload: {},
+	//piFlowersPreload: {},
 	piSeedsPreload: {},
-	piCropsPreload:{},
+	//piCropsPreload:{},
+	piPotionsPreload:{},
 
 	//loaded maps
 	piAllItemMap: {},
@@ -38,6 +39,7 @@ module.exports = {
 	piFlowerList: {},
 	piGemsList: {},
 	piHerbsList: {},
+	piIngredientsList: {},
 	piLumberList: {},
 	piMiscList: {},
 	piMonsterPartsList: {},
@@ -108,5 +110,10 @@ module.exports = {
 
 	knockedOut: "The monster has resisted all of your attempts to befriend it, and dealt a devastating blow in its anger- depleting all of your HP and rendering you unconscious. You may not play the Monster Taming Minigame any more this Activity Period.",
 
-	statusCurse: "The monster might curse you, or maybe you’ll be cursed from running into some of those funky mushroom spores in your attempts to escape from said raging monster. How it happens is up to you, as long as it results in the given status ailment. ;)"
+	statusCurse: "The monster might curse you, or maybe you’ll be cursed from running into some of those funky mushroom spores in your attempts to escape from said raging monster. How it happens is up to you, as long as it results in the given status ailment. ;)",
+
+	//alchemy game stuff
+	smallPotionExp: 25,
+	mediumPotionExp: 50,
+	largePotionExp: 100
 }

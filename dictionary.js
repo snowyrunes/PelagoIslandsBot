@@ -14,6 +14,7 @@ var StoneBreaking = require('./games/stonebreaking');
 var Fishing = require('./games/fishing');
 var Taming = require('./games/taming');
 var Gardening = require('./games/gardening');
+var Alchemy = require('./games/alchemy');
 
 
 module.exports = {
@@ -59,11 +60,16 @@ module.exports = {
         methodDict['taming'] = botvars.piAllMinigamesMap["Monster Taming"].taming;
 
         //gardening
-        methodDict['gardenone'] = botvars.piAllMinigamesMap["Gardening"].gardenOne;
-        methodDict['gardening'] = botvars.piAllMinigamesMap["Gardening"].gardening;
+        //methodDict['gardenone'] = botvars.piAllMinigamesMap["Gardening"].gardenOne;
+        //methodDict['gardening'] = botvars.piAllMinigamesMap["Gardening"].gardening;
+
+        //alchemy
+        methodDict['alchemyone'] = botvars.piAllMinigamesMap["Alchemy"].alchemyOne;
+        methodDict['alchemy'] = botvars.piAllMinigamesMap["Alchemy"].alchemy;
         
 		//randomline
 		methodDict['choose'] = botfuncts.randomFromLine;
+		methodDict['rolldie'] = botfuncts.rollDie;
 
 		//message logging
 		methodDict['export'] = msgWriter.export;
@@ -83,6 +89,7 @@ module.exports = {
         preloadFileCategory("fish", "./data/fish.tsv");
         preloadFileCategory("locations", "./data/places/locations.tsv");
         preloadFileCategory("islands", "./data/places/islands.tsv");
+        preloadFileCategory("potions", "./data/alchemy/potions.tsv");
 
         floraPreload();
        
@@ -96,10 +103,13 @@ module.exports = {
         botvars.piAllMinigamesMap["Produce Collection"] = new ProduceCollection("Produce Collection");
         botvars.piAllMinigamesMap["Monster Taming"] = new Taming("Monster Taming");
         botvars.piAllMinigamesMap["Gardening"] = new Gardening("Gardening");
+        botvars.piAllMinigamesMap["Alchemy"] = new Alchemy("Alchemy");
 
         //group calls
 		critters();
 		flora();
+
+		botvars.piIngredientsList = loadCategory("ingredients", "./data/dishes/ingredients.tsv");
 
 		botvars.piDrinkList = loadCategory("drinks", "./data/dishes/drinks.tsv");
 		botvars.piGrillFryList = loadCategory("grillfrydish", "./data/dishes/grilledFried.tsv");
@@ -108,7 +118,6 @@ module.exports = {
 		botvars.piCrystalsList = loadCategory("crystals", "./data/materials/crystal.tsv");
 		botvars.piFabricList = loadCategory("fabrics", "./data/fabrics.tsv");
 		botvars.piFishList = loadCategory("fish","./data/fish.tsv");
-		botvars.piHerbsList = loadCategory("herbs", "./data/wildplants/herbs.tsv");
 		botvars.piGemsList = loadCategory("gems", "./data/materials/gems.tsv");
 		botvars.piLivestockList = loadCategory("livestock", "./data/livestock/livestock.tsv")
 		botvars.piLumberList = loadCategory("lumber", "./data/materials/lumber.tsv");
@@ -204,6 +213,8 @@ function preloadFileCategory(categoryName, filePath){
 	            botvars.piFlowersPreload[tempItem["name"].toLowerCase()] = tempItem;
 	        }else if("seeds" == categoryName){
 	            botvars.piSeedsPreload[tempItem["name"].toLowerCase()] = tempItem;
+	        }else if("potions" == categoryName){
+	        	botvars.piPotionsPreload[tempItem["name"].toLowerCase()] = tempItem;
 	        }
 		
 	}
@@ -259,10 +270,12 @@ function getGardeningFileCategoryListing(categoryName, filePath){
 			tempItem[propertyNames[j]] = item[j];
 		}
 
-		tempItem["poorPrice"] = tempItem["price"]/2;
-		tempItem["overgrownPrice"] = tempItem["price"]*2;
-		tempItem["goldenPrice"] = tempItem["price"]*5;
-
+		if(Object.keys(botvars.piAllMinigamesMap["Gardening"].itemConditions).includes(tempItem.name.toLowerCase().trim())){
+			tempItem["poorPrice"] = tempItem["price"]/2;
+			tempItem["overgrownPrice"] = tempItem["price"]*2;
+			tempItem["goldenPrice"] = tempItem["price"]*5;
+		}
+		
 		tempItem["obtainFrom"] = getObtainableFromProperty(tempItem["name"].toLowerCase());
 		//assume name is always in item[0]
 		categoryList[(item[0].trim().toLowerCase())] = tempItem;
@@ -305,14 +318,16 @@ function critters(){
 
 function flora(){
 	botvars.piSeedsList = loadCategory("seeds", "./data/gardening/seeds-old.tsv");
+	
 	botvars.piCropsList = loadGardenCategory("crops", "./data/gardening/crops-old.tsv");
 	botvars.piFlowerList = loadGardenCategory("flowers", "./data/gardening/flowers-old.tsv");
+	botvars.piHerbsList = loadGardenCategory("herbs", "./data/wildplants/herbs.tsv");
 }
 
 function floraPreload(){
 	preloadFileCategory("seeds", "./data/gardening/seeds-old.tsv");
-	preloadFileCategory("crops", "./data/gardening/crops-old.tsv");
-	preloadFileCategory("flowers", "./data/gardening/flowers-old.tsv");
+	//preloadFileCategory("crops", "./data/gardening/crops-old.tsv");
+	//preloadFileCategory("flowers", "./data/gardening/flowers-old.tsv");
 }
 
 

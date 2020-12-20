@@ -1,11 +1,11 @@
 name	price	effect	pSize	recipe
-Healing Potion	750	"Heals 5 HP, and allows you five re-rolls in any minigame of your choice"	Medium	Medicinal Herb + Red Herb
-Love Potion	1000	"The drinker will fall madly in love with the first person they see. Lasts from a day to a week, depending on how much you drink"	Medium	Strawberry + Honey + Any Red Flower + Wine
-Recovery Potion	500	"Heals 3 HP, and allows you three re-rolls in a minigame"	Small	Medicinal Herb + Green Herb
-Para-gone	250	"Cures Paralysis, as well as nullifies any paralysis-related results in minigames"	Small	Indigo Herb + Indigo Herb
-Roundoff	250	"Cures Silence, as well as nullifies any silence-related results in minigames."	Small	Black Herb + Black Herb
-Antidote Potion	300	"Cures Poison, as well as nullifies any poison-related results in minigames"	Small	Antidote Herb + Yellow Herb
-Cold Medicine	300	"Cures Sickness, as well as nullifies any sickness-related results in minigames"	Small	Orange Herb + Toy Flower
+Healing Potion	750	Heals 5 HP, and allows you five re-rolls in any minigame of your choice	Medium	Medicinal Herb + Red Herb
+Love Potion	1000	The drinker will fall madly in love with the first person they see. Lasts from a day to a week, depending on how much you drink	Medium	Strawberry + Honey + Any Red Flower + Wine
+Recovery Potion	500	Heals 3 HP, and allows you three re-rolls in a minigame	Small	Medicinal Herb + Green Herb
+Para-gone	250	Cures Paralysis, as well as nullifies any paralysis-related results in minigames	Small	Indigo Herb (x2)
+Roundoff	250	Cures Silence, as well as nullifies any silence-related results in minigames.	Small	Black Herb (x2)
+Antidote Potion	300	Cures Poison, as well as nullifies any poison-related results in minigames	Small	Antidote Herb + Yellow Herb
+Cold Medicine	300	Cures Sickness, as well as nullifies any sickness-related results in minigames	Small	Orange Herb + Toy Flower
 Heavy Spice	350	N/A	Small	Purple Herb
 Sweet Powder	350	N/A	Small	Apple
 Sour Drop	350	N/A	Small	Orange
@@ -14,53 +14,54 @@ Ether	500	Heals 2 MP	Small	Sage + Elli Leaves
 Life Bottle	550	Revives a character with 2 HP	Small	White Herb + Black Herb
 Sunshine Potion	600	Makes you totally happy and upbeat for a day	Small	Yellow Herb + Orange Herb
 Shade Potion	600	Puts you into an incredibly low mood for a day	Small	Indigo Herb + Black Herb
-Object X	600	"Depletes half of HP (or 30% of HP for some summons and bosses) as well as inflicting the drinker with poison, sickness, silence, and paralysis. Better go see a doctor or a priest for it…"	Small	Poison Mushroom + Weed + Black Herb |OR| Obtain a 'Fail!' Result in the Alchemy Minigame
-Object XX	600	"Inflicts a Death Curse, Depletes half of HP (or 30% of HP for some summons and bosses) as well as inflicting the drinker with poison, sickness, silence, and paralysis. Better go see a doctor or a priest for it…"	Small	Obtain a 'Fail!' Result in the Alchemy Minigame when trying to craft Object X
+Object X	600	Depletes half of HP (or 30% of HP for some summons and bosses) as well as inflicting the drinker with poison, sickness, silence, and paralysis. Better go see a doctor or a priest for it...	Small	Poison Mushroom + Weed + Black Herb **OR** Obtain a 'Fail!' Result in the Alchemy Minigame
+Object XX	600	Inflicts a Death Curse, Depletes half of HP (or 30% of HP for some summons and bosses) as well as inflicting the drinker with poison, sickness, silence, and paralysis. Better go see a doctor or a priest for it...	Small	Obtain a 'Fail!' Result in the Alchemy Minigame when trying to craft Object X
 Navigation Potion	700	Allows you to take 3 choices in the voyage minigame and turn them into whatever you want	Medium	Coconut + Sage + Orange Herb
 Second Chance Potion	700	Allows you one re-roll for  any minigame or chatzy rolls	Medium	Red Herb + Pink Cat + Blue Magic Flower
 Float Potion	700	Allows you to float in midair for a limited period of time	Medium	Bird's Feather + Wind Crystal + Chamomile
 Mew Mew Potion	800	Turns you into a cat for three days	Medium	Pink Cat + Very Berry + Sage
 Ribbit Ribbit Potion	800	Turns you into a frog for three days	Medium	Fugue Mushroom + Toadstool + Blackberry
 Aging Potion	850	Ages the drinker up to a certain stage in life. The more you drink the older you get. Lasts for a day	Medium	Sage + Elli Leaves + Fugue Mushroom
-De-Aging Potion	850	"Makes the drinker younger and brings them down to a certain stage in life. The more you drink, the younger you get. Lasts for a day."	Medium	Very Berry + Elli Leaves + Fugue Mushroom
+De-Aging Potion	850	Makes the drinker younger and brings them down to a certain stage in life. The more you drink, the younger you get. Lasts for a day.	Medium	Very Berry + Elli Leaves + Fugue Mushroom
 Formula A	700	Doubles the value of a crop/fruit/flower grown in the gardening minigame	Medium	Weed + Blue Herb + Black Herb
 Hi-Ether	800	Heals 6 MP	Medium	Sage + Elli Leaves + Ether
 Formula B	850	Triples the value of a crop/fruit/flower grown in the gardening minigame	Medium	Yellow Herb + Pink Cat + 4 Leaf Clover
-Truth Potion	900	"Makes it so that you blurt out everything on your mind, and are compelled to tell the truth at all times. Lasts from a day to a week, depending on how much you drink."	Medium	Sage + Elli Leaves + Indigo Herb + Moondrop Flower
-Mystery Potion	900	"Heals 7 HP, and allows you 7 rerolls for any minigame of your choice"	Medium	Medicinal Herb + White Herb
-Elemental Resistance Potion	900	"Gives the drinker temporary immunity to the elements of water, fire, grass, wind, and earth, nullifying attacks from those elements for 5 of their rp turns"	Medium	Red Herb + Green Herb + Yellow Herb + Blue Herb
-Terra's Mallet	900	"Causes a massive tremor in the area, inflicting -2 HP in earth-elemental damage on all enemies (-3 HP for enemies that are weak to earth)"	Medium	Earth Crystal + Black Rock + Purple Herb
-Ven's Gust	900	"Summons a cyclone of wind, inflicting -2 HP in wind-elemental damage on all enemies (-3 HP for enemies that are weak to wind)"	Medium	Wind Crystal + Green Herb + Bird's Feather
-Fier's Rage	900	"Conjures up a fiery inferno, inflicting -2 HP in fire-elemental damage on all enemies (-3 HP for enemies that are weak to fire)"	Medium	Fire Crystal + Red Herb + Ruby
+Truth Potion	900	Makes it so that you blurt out everything on your mind, and are compelled to tell the truth at all times. Lasts from a day to a week, depending on how much you drink.	Medium	Sage + Elli Leaves + Indigo Herb + Moondrop Flower
+Mystery Potion	900	Heals 7 HP, and allows you 7 rerolls for any minigame of your choice	Medium	Medicinal Herb + White Herb
+Elemental Resistance Potion	900	Gives the drinker temporary immunity to the elements of water, fire, grass, wind, and earth, nullifying attacks from those elements for 5 of their rp turns	Medium	Red Herb + Green Herb + Yellow Herb + Blue Herb
+Terra's Mallet	900	Causes a massive tremor in the area, inflicting -2 HP in earth-elemental damage on all enemies (-3 HP for enemies that are weak to earth)	Medium	Earth Crystal + Black Rock + Purple Herb
+Ven's Gust	900	Summons a cyclone of wind, inflicting -2 HP in wind-elemental damage on all enemies (-3 HP for enemies that are weak to wind)	Medium	Wind Crystal + Green Herb + Bird's Feather
+Fier's Rage	900	Conjures up a fiery inferno, inflicting -2 HP in fire-elemental damage on all enemies (-3 HP for enemies that are weak to fire)	Medium	Fire Crystal + Red Herb + Ruby
 Aqua's Tide	900	Creates a swirling vortex of water that inflicts -2 HP in water-elemental damage on all enemies (-3 HP for enemies that are weak to water)	Medium	Water Crystal + Blue Herb + Ice
 Mind Reading Potion	900	Allows the drinker to hear other people's thoughts and inner monologues	Medium	Sage + Lavender + Rosemary
 Smol Potion	900	Shrinks the user to a miniature size	Medium	Toadstool + Red Magic Flower + Toy Flower
 Tol Potion	900	Makes the user grow to a large size	Medium	Very Berry + Blue Magic Flower + Fugue Mushroom
 Holy Bottle	900	Wards off disaster. Allows you to erase five attack/monster attack results in the monster taming and voyage minigames	Medium	White Herb + Toy Flower + Light Crystal
 Dark Bottle	900	Attracts disaster. Changes five results in the monster taming and voyage minigames into monster attacks	Medium	Black Herb + Blackberry + Dark Crystal
-Personality Switch Potion	950	"The drinker's personality will do a complete 180, causing them to act the exact opposite as they normally would. Lasts from a day to a week, depending on how much you drink."	Medium	Red Magic Flower + Blue Magic Flower + Indigo Herb
+Personality Switch Potion	950	The drinker's personality will do a complete 180, causing them to act the exact opposite as they normally would. Lasts from a day to a week, depending on how much you drink.	Medium	Red Magic Flower + Blue Magic Flower + Indigo Herb
 Water Breathing Potion	950	Allows you to breathe underwater	Medium	Indigo Herb + Blue Herb + Seaweed
-Appearance Change Potion	1000	"The drinker changes into whatver appearance they wish, whether it be a monster, magical being, animal, or another person"	Large	Red Magic Flower + Toadstool + Blackberry
-Memory Potion	1000	"Will give the drinker temporary amnesia. Can last a week up to a month, depending on how much yo drink"	Large	Plum + Coral Mushroom + Shimeji + Rosemary
+Appearance Change Potion	1000	The drinker changes into whatver appearance they wish, whether it be a monster, magical being, animal, or another person	Large	Red Magic Flower + Toadstool + Blackberry
+Memory Potion	1000	Will give the drinker temporary amnesia. Can last a week up to a month, depending on how much yo drink	Large	Plum + Coral Mushroom + Shimeji + Rosemary
 Body Switch Potion	1100	The drinker with switch bodies with the person they have strong feelings for- negative or positive	Large	Coconut + Black Herb + Bamboo Shoot + 4 Leaf Clover
 Gender Swap Potion	1100	The drinker will transform into the gender opposite theirs. Lasts for 48 hours	Large	Pom-Pom Grass + Magic Red Flower + Fugue Mushroom + Shimeji
-Monster Potion	1200	"Weaker version of Appearance Change Potion, where the drinker will be able to change into whatever monster they wish"	Large	Blackberry + Fugue Mushroom + Seaweed + Wolf's Fang
-Lust Potion	1300	"Causes the drinker to fall madly in **Lust** with the first person they see. If you become the target of this, you better be careful… It lasts from a day to a week, depending how much you drink"	Large	Strawberry + Love Crystal + Love Potion + Red Rose + Wine
-Sleeping Potion	1300	"The drinker will fall into a deep sleep. Lasts for about a week to a month, depending on how much you drink"	Large	Chamomile + Aloe + Green Herb + Sage
+Monster Potion	1200	Weaker version of Appearance Change Potion, where the drinker will be able to change into whatever monster they wish	Large	Blackberry + Fugue Mushroom + Seaweed + Wolf's Fang
+Lust Potion	1300	Causes the drinker to fall madly in **Lust** with the first person they see. If you become the target of this, you better be careful... It lasts from a day to a week, depending how much you drink	Large	Strawberry + Love Crystal + Love Potion + Red Rose + Wine
+Sleeping Potion	1300	The drinker will fall into a deep sleep. Lasts for about a week to a month, depending on how much you drink	Large	Chamomile + Aloe + Green Herb + Sage
 Invisibilty Potion	1500	The drinker will become invisible for an hour (one thread). What can you do in that time?~	Large	White Herb + Black Herb + Chamomile + Shade Stone
 Flight Potion	1500	Stronger version of Float Potion. Grants a person the ability to fly for 48 hours	Large	Wind Crystal + Bird's Feather + Chamomile + Green Crystal Flower
-Magical Potion	1500	"Heals 10 HP, and allows you 10 rerolls in any minigame of your choice"	Large	Medicinal Herb + Elli Herb
-Tetra Assult	1500	"The wrath of the four elements is sent down on foes, inflicting -3 HP in Water/Fire/Earth/Wind Elemental damage on all enemies (-4HP for ones weak to any of those elements)"	Large	Water Crystal + Fire Crystal + Earth Crystal + Wind Crystal + Rune Crystal
-Lux's Judgement	1700	"Envelopes the area in a bright, blinding light and inflicts -4 HP in light elemental damage (-5 HP for those weak to light)"	Large	Light Crystal + White Herb + Glitta Augite + Yellow Herb
-Tene's Damnation	1700	"Envelopes enemies in tendrils of darkness that emerge from the ground, inflicting -4 HP in dark elemental damage (-5 HP for those weak to dark)"	Large	Dark Crystal + Shade Stone + Black Herb + Indigo Herb
+Magical Potion	1500	Heals 10 HP, and allows you 10 rerolls in any minigame of your choice	Large	Medicinal Herb + Elli Herb
+Tetra Assult	1500	The wrath of the four elements is sent down on foes, inflicting -3 HP in Water/Fire/Earth/Wind Elemental damage on all enemies (-4HP for ones weak to any of those elements)	Large	Water Crystal + Fire Crystal + Earth Crystal + Wind Crystal + Rune Crystal
+Lux's Judgement	1700	Envelopes the area in a bright, blinding light and inflicts -4 HP in light elemental damage (-5 HP for those weak to light)	Large	Light Crystal + White Herb + Glitta Augite + Yellow Herb
+Tene's Damnation	1700	Envelopes enemies in tendrils of darkness that emerge from the ground, inflicting -4 HP in dark elemental damage (-5 HP for those weak to dark)	Large	Dark Crystal + Shade Stone + Black Herb + Indigo Herb
 Turbo Ether	1700	Heals 10 MP	Large	Sage + Elli Leaves + Hi-Ether
-Pancea	2000	"Removes all status ailments from a character, except for Death Curses. Nullifies any status ailment result in a minigame (except for Death Curses)"	Large	Cold Medicine + Roundoff + Para-gone + Antidote Potion + Medicinal Herb +Pontata Root
+Pancea	2000	Removes all status ailments from a character, except for Death Curses. Nullifies any status ailment result in a minigame (except for Death Curses)	Large	Cold Medicine + Roundoff + Para-gone + Antidote Potion + Medicinal Herb +Pontata Root
 No Rot	1500	Nullifies the 'dried up' result in the gardening minigame	Large	Weed + Toy Flower
-Lucky Potion	2000	"The drinker will be in a great mood, lift the moods of others around them, be much less likely to be attacked by monsters and animals, and have a 20% chance of finding 5,000G on the sidewalk (pi!choose FIND CASH, NOTHING, NOTHING, NOTHING, NOTHING) **twice** in the day that the potion is taken"	Large	Elli Leaves + Blueberry + Apricot + Emery Flower
-Unlucky Potion	2000	"The drinker will be in a horrible mood, and feel like they hate everything- especially people they love- and will be more likely to get attacked by monsters and animals. They have a 20% chance of randomly losing 5,000G (pi!choose LOSE CASH, KEEP, KEEP, KEEP, KEEP) **twice** in the day that the potion is taken"	Large	Fugue Mushroom + Coral Mushroom + Poison Mushroom + Crystal Flower
+Lucky Potion	2000	The drinker will be in a great mood, lift the moods of others around them, be much less likely to be attacked by monsters and animals, and have a 20% chance of finding 5,000G on the sidewalk (pi!choose FIND CASH, NOTHING, NOTHING, NOTHING, NOTHING) **twice** in the day that the potion is taken	Large	Elli Leaves + Blueberry + Apricot + Emery Flower
+Unlucky Potion	2000	The drinker will be in a horrible mood, and feel like they hate everything- especially people they love- and will be more likely to get attacked by monsters and animals. They have a 20% chance of randomly losing 5,000G (pi!choose LOSE CASH, KEEP, KEEP, KEEP, KEEP) **twice** in the day that the potion is taken	Large	Fugue Mushroom + Coral Mushroom + Poison Mushroom + Crystal Flower
 Gigantizer	3000	Changes one result in the gardening minigame to 'overgrown'	Large	Lamp Grass + Weed + Green Herb
 Levelizer	3000	Allows the drinker to go up one level	Large	Crystal Flower + Emery Flower + Ironleaf + Blue Rose
-Devil's Curse	4000	"Changes the drinker's personality to a more negative inclination. One who drinks this will become very hateful, violent, pessimistic and sadistic, and they will take on all of the negative aspects of human nature. Can only be cured by a blessing from one from the shrine or church."	Large	Dark Crystal + Tene's Damnation + Poison Mushroom + Fugue Mushroom + Dark Bottle
-Angel's Blessing	4000	"Changes the drinker's personality to a more positive inclination. One who drinks this will become very loving, peaceful, optimistic and compassionate, and will take on all of the positive aspects of human nature. Can only be cured by a blessing from one of the shrine or church"	Large	Light Crystal + Lux's Judgement + Fugue Mushroom + Bird's Feather + Holy Bottle
+Devil's Curse	4000	Changes the drinker's personality to a more negative inclination. One who drinks this will become very hateful, violent, pessimistic and sadistic, and they will take on all of the negative aspects of human nature. Can only be cured by a blessing from one from the shrine or church.	Large	Dark Crystal + Tene's Damnation + Poison Mushroom + Fugue Mushroom + Dark Bottle
+Angel's Blessing	4000	Changes the drinker's personality to a more positive inclination. One who drinks this will become very loving, peaceful, optimistic and compassionate, and will take on all of the positive aspects of human nature. Can only be cured by a blessing from one of the shrine or church	Large	Light Crystal + Lux's Judgement + Fugue Mushroom + Bird's Feather + Holy Bottle
 Mega Phoenix	4500	Revives all KO-ed allies and restores them to half-health	Large	Recovery Potion + Healing Potion + Mystery Potion + Magical Potion + Life Bottle
-Cure-All	5000	"Healls all HP, injuries, and ailments- even death curses- restoring a person back to top form"	Large	Antidote Herb + Green Herb + Medicinal Herb + Emery Flower + Crystal Flower + Lamp Grass + Fugue Mushroom
+Cure-All	5000	Healls all HP, injuries, and ailments- even death curses- restoring a person back to top form	Large	Antidote Herb + Green Herb + Medicinal Herb + Emery Flower + Crystal Flower + Lamp Grass + Fugue Mushroom
+Ultra Cure-All	10,000	Healls all HP, injuries, and ailments- even death curses- for the whole party, restoring a everyone back to top form	Large	Antidote Herb (x2) + Green Herb (x2) + Medicinal Herb (x3) + Emery Flower (x2) + Crystal Flower (x2) + Lamp Grass (x2) + Fugue Mushroom (x3)

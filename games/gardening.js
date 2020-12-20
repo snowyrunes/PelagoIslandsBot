@@ -42,7 +42,7 @@ module.exports = class Gardening extends Minigame{
   gardenOne(args){
 
     if(args.length < 1){
-      return "Please provide type of seed and type of watering can. Example: pi!gardenOne apple, rusty watering can"
+      return "Please provide type of seed and type of watering can. Example: pi!gardenOne winter, apple, rusty watering can"
     }
 
     var argsString = args.join(" ");
@@ -52,20 +52,21 @@ module.exports = class Gardening extends Minigame{
 
     var newargs = argsString.replace("[" + removeStringDetails +"]", "").split(",").map(a => a.trim());
 
-    if(newargs.length < 2){
-      return "Please provide type of seed and type of watering can. Example: pi!gardenOne apple, rusty watering can"
+    if(newargs.length < 3){
+      return "Please provide type of seed and type of watering can. Example: pi!gardenOne winter, apple, rusty watering can"
     }
 
-    var canLevel = getWateringCanLevel(newargs[1])
+    var canLevel = getWateringCanLevel(newargs[2])
 
     if(0 ==canLevel){
-      return "Invalid Watering Can Name: " + newargs[1];
+      return "Invalid Watering Can Name: " + newargs[2];
     }
 
-    var floraName = newargs[0];
+    var floraName = newargs[1];
     var seedName = floraName+ " Seeds";
     var seedData = getSeed(seedName.toLowerCase());
     var cropResult = getCropOrFlower(floraName.toLowerCase());
+    var seasonIn = newargs[0].toLowerCase().trim();
 
     if(null === seedData){
       return "\"" + floraName + " Seeds\" do not exist.";
@@ -75,9 +76,13 @@ module.exports = class Gardening extends Minigame{
       return "Could not find Crop or Flower: " + floraName;
     }
 
+    if(!validateSeason(getSeason(seasonIn).toLowerCase(), seedData)){
+      return "Cannot grow " + seedData.name + " in season: " + newargs[0];
+    }
+
     var lineOutput = "***Gardening Minigame (Single ReRoll Command):***\n";
     lineOutput += "*(For full minigame and rules, please use the pi!gardening command)*\n"
-    lineOutput += "Grass/Earth mages can remove two options. Earthmates can remove three options. People who are both can remove five options.\n";
+    lineOutput += "Grass/Earth mages can remove two options. Earthmates can remove three options. People who are both can remove **five** options.\n";
 
     var price = 0;
     var lineOutputObj = {}
@@ -93,7 +98,7 @@ module.exports = class Gardening extends Minigame{
     var result = rollLine[botfunct.randomize(rollLine.length)];
 
 
-    lineOutput = lineOutput + "\nYou are re-rolling a single **" + cropResult.name + " Seed** using a(n) **" + getNameFromLevel(canLevel) + "**\n\n";
+    lineOutput = lineOutput + "\nYou are re-rolling growing a single **" + cropResult.name + " Seed** during **"+ getSeason(seasonIn) +"** using a(n) **" + getNameFromLevel(canLevel) + "**\n\n";
 
     switch(result){
       case "success":
@@ -121,7 +126,7 @@ module.exports = class Gardening extends Minigame{
   gardening(args){
 
     if(args.length < 1){
-      return "Please provide type of seed and type of watering can. Example: pi!gardenOne apple, rusty watering can"
+      return "Please provide location, number of seeds, type of seed, and type of watering can. Example: pi!gardening leuda, 5, apple, rusty watering can";
     }
 
     var argsString = args.join(" ");
@@ -131,8 +136,8 @@ module.exports = class Gardening extends Minigame{
 
     var newargs = argsString.replace("[" + removeStringDetails +"]", "").split(",").map(a => a.trim());
 
-    if((newargs.length < 4) || isNaN(newargs[1])){
-      return "Please provide location, number of seeds, type of seed, and type of watering can. Example: pi!gardening Leuda, 5, apple, rusty watering can";
+    if((newargs.length < 5) || isNaN(newargs[2])){
+      return "Please provide location, season, number of seeds, type of seed, and type of watering can. Example: pi!gardening leuda, winter, 5, apple, rusty watering can";
     }
 
     var locationNum= getLocationNum(newargs[0]);
@@ -141,10 +146,10 @@ module.exports = class Gardening extends Minigame{
       return "Invalid Location: " + newargs[0];
     }
 
-    var canLevel = getWateringCanLevel(newargs[3])
+    var canLevel = getWateringCanLevel(newargs[4])
 
     if(0 ==canLevel){
-      return "Invalid Watering Can Name : " + newargs[3];
+      return "Invalid Watering Can Name : " + newargs[4];
     }
 
     var maxNum = 5;
@@ -153,16 +158,17 @@ module.exports = class Gardening extends Minigame{
       maxNum = 10;
     }
 
-    if(1 == locationNum && newargs[1] > 5){
+    if(1 == locationNum && newargs[2] > 5){
       return "You cannot plant more than 5 seeds on Leuda per check.";
-    } else if(newargs[1] > 10){
+    } else if(newargs[2] > 10){
       return "You cannot plant more than 10 seeds on Arcadia per check.";
     }
 
-    var floraName = newargs[2];
+    var floraName = newargs[3];
     var seedName = floraName + " Seeds";
     var seedData = getSeed(seedName.toLowerCase());
     var cropResult = getCropOrFlower(floraName.toLowerCase());
+    var seasonIn = newargs[1].toLowerCase().trim();
 
     if(null === seedData){
       return "\"" + floraName + " Seeds\" do not exist.";
@@ -172,9 +178,14 @@ module.exports = class Gardening extends Minigame{
       return "Could not find Crop or Flower: " + floraName;
     }
 
+    if(!validateSeason(getSeason(seasonIn).toLowerCase(), seedData)){
+      return "Cannot grow " + seedData.name + " in season: " + newargs[1];
+    }
+
     var lineOutput = "***Gardening Minigame:***\n";
     lineOutput += "*(Grass/Earth mages can remove two options. Earthmates can remove three options. People who are both can remove five options.)*\n\n";
-    lineOutput += "You are growing **" + newargs[1] + " " + seedData.name + "** on **" + getLocationName(locationNum) + "** with a(n) **" + getNameFromLevel(canLevel) + "**\n";
+    lineOutput += "You are growing **" + newargs[2] + " " + seedData.name + "** on **" + getLocationName(locationNum) + "** during **"+ getSeason(seasonIn) 
+      + "** with a(n) **" + getNameFromLevel(canLevel) + "**\n";
 
     lineOutput += "You may plant a maximum of **" + maxNum + " seeds** of any kind this check.\n";
     lineOutput += "You get **" + botvars.gardenReRollsMapping[canLevel] + " rerolls** from using your "+ getNameFromLevel(canLevel) + ".\n";
@@ -198,7 +209,7 @@ module.exports = class Gardening extends Minigame{
     lineOutput += "\n";
     
 
-    for(var i =0; i<newargs[1]; i++){
+    for(var i =0; i<newargs[2]; i++){
       var result = rollLine[botfunct.randomize(rollLine.length)];
       var price = 0;
 
@@ -284,6 +295,8 @@ function getCropOrFlower(floraName){
     }else if (Object.keys(botvars.piFlowerList).includes(floraName)){
       return botvars.piFlowerList[floraName];
 
+    }else if(Object.keys(botvars.piHerbsList).includes(floraName)){
+      return botvars.piHerbsList[floraName];
     }else {
       return null;
     }
@@ -334,6 +347,22 @@ function getLocationName(locationNum){
     }
   }
 
+function getSeason(seasonName){
+  switch(seasonName.toLowerCase().trim()){
+    case "spring":
+      return "Spring";
+    case "summer":
+      return "Summer";
+    case "fall":
+    case "autumn":
+      return "Fall";
+    case "winter":
+      return "Winter";
+    default:
+      return "Invalid Season";
+  }
+}
+
 function getLine(canLevel, removeStringDetails, lineOutputObj){
     var lineToModify = Array.from(botvars.gardenLineMapping[canLevel]);
     lineOutputObj["lineOutput"] = "";
@@ -369,6 +398,16 @@ function getLine(canLevel, removeStringDetails, lineOutputObj){
     
     return lineToModify;
   }
+
+function validateSeason(season, seed){
+  var seasonArr = seed.season.split(",").map(s => s.toLowerCase().trim());
+
+  if(seasonArr.includes(season)){
+    return true;
+  }
+
+  return false;
+}
 
 function removeLinesErrorCatch(canLevel, removeStringDetails){
   var lineToModify = Array.from(botvars.gardenLineMapping[canLevel]);
