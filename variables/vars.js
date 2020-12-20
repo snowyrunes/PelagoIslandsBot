@@ -115,5 +115,10 @@ module.exports = {
 	//alchemy game stuff
 	smallPotionExp: 25,
 	mediumPotionExp: 50,
-	largePotionExp: 100
+	largePotionExp: 100,
+
+	//cooking game stuff
+	smallDishExp: 25,
+	mediumDishExp: 50,
+	largeDishExp: 100
 }

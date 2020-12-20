@@ -58,6 +58,7 @@ module.exports = {
 
         methodDict['tameone'] = botvars.piAllMinigamesMap["Monster Taming"].tameOne;
         methodDict['taming'] = botvars.piAllMinigamesMap["Monster Taming"].taming;
+        methodDict['monstercare'] = botvars.piAllMinigamesMap["Monster Taming"].monsterCare;
 
         //gardening
         //methodDict['gardenone'] = botvars.piAllMinigamesMap["Gardening"].gardenOne;
@@ -106,14 +107,9 @@ module.exports = {
         botvars.piAllMinigamesMap["Alchemy"] = new Alchemy("Alchemy");
 
         //group calls
+        cooking();
 		critters();
 		flora();
-
-		botvars.piIngredientsList = loadCategory("ingredients", "./data/dishes/ingredients.tsv");
-
-		botvars.piDrinkList = loadCategory("drinks", "./data/dishes/drinks.tsv");
-		botvars.piGrillFryList = loadCategory("grillfrydish", "./data/dishes/grilledFried.tsv");
-		botvars.piMiscDishList = loadCategory("misc-dishes", "./data/dishes/misc-dish.tsv");
 		
 		botvars.piCrystalsList = loadCategory("crystals", "./data/materials/crystal.tsv");
 		botvars.piFabricList = loadCategory("fabrics", "./data/fabrics.tsv");
@@ -322,6 +318,14 @@ function flora(){
 	botvars.piCropsList = loadGardenCategory("crops", "./data/gardening/crops-old.tsv");
 	botvars.piFlowerList = loadGardenCategory("flowers", "./data/gardening/flowers-old.tsv");
 	botvars.piHerbsList = loadGardenCategory("herbs", "./data/wildplants/herbs.tsv");
+}
+
+function cooking(){
+	botvars.piIngredientsList = loadCategory("ingredients", "./data/dishes/ingredients.tsv");
+
+	botvars.piDrinkList = loadCategory("drinks", "./data/dishes/drinks.tsv");
+	botvars.piGrillFryList = loadCategory("grillfrydish", "./data/dishes/grilledFried.tsv");
+	botvars.piMiscDishList = loadCategory("misc-dishes", "./data/dishes/misc-dish.tsv");
 }
 
 function floraPreload(){

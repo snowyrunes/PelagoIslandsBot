@@ -164,6 +164,20 @@ module.exports = class Taming extends Minigame {
     return tameMonsterMultiAttempt(monster, location, removeArray);
 
   }
+
+  monsterCare(){
+    var lineOutput = "If you’re planning on collecting more than one monster, then it would also be advisable to buy a **Monster Hut** for **10,000G** from "
+      +" the Paws to Palm Clinic & Shop (Leuda) or Barley’s Animal Shop/Eveningwood Carpentry (Arcadia).\n\n"
+
+    lineOutput += "If you live in an **inn or apartment** - These facilities already have Monster Huts that are usable for all tenants, so purchasing "
+      +"one is not necessary if you live in either of these places. However, since they are shared universally by all tenants, their monster carrying limit "
+      +"is very small. For **inns**, you will only be able to hold **three** monsters, and in **apartments**, **five**.\n\n"
+
+    lineOutput += "If you own (and live in) a **business** or live in a **house/home/manor** - You can purchase **Monster Huts** to be built on these properties,"
+      +" and the monster carrying limit for these will be **fifteen** monsters (which is **the max a person can have**)."
+
+    return lineOutput;
+  }
 }
 function tameMonsterOnce(monsterObj, locationObj, removeLinesArr){
 
@@ -185,11 +199,12 @@ function tameMonsterOnce(monsterObj, locationObj, removeLinesArr){
   }
 
 
-  var lineOutput = "***Taming Minigame:***\n";
+  var lineOutput = "***Taming Minigame (Single ReRoll Command):***\n";
 
   lineOutput = lineOutput +"You are taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
-  lineOutput = lineOutput + "*(Beastmasters can remove five options. Earthmates can remove three options. People who are both can remove eight options.)*\n";
-  lineOutput = lineOutput + "*(If you have a food or dish that heals HP, you may use up **one** per activty check to remove a number of options equal to the HP it would heal.)*\n";
+  lineOutput += "**Note**: this game requires a **Monster Glove**, and a living space for your monster. For more details, use **pi!monstercare**.\n\n"
+  lineOutput = lineOutput + "*(Beastmasters can remove five options. Earthmates can remove three options. People who are both can remove eight options. ";
+  lineOutput = lineOutput + "If you have a food or dish that heals HP, you may use up **one** per activty check to remove a number of options equal to the HP it would heal.)*\n";
 
   //if lines removed
   lineOutput = lineOutput + linesRemoved + "\n";
@@ -272,8 +287,9 @@ function tameMonsterMultiAttempt(monsterObj, locationObj, removeLinesArr){
   var lineOutput = "***Taming Minigame:***\n";
 
   lineOutput = lineOutput +"You are taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
-  lineOutput = lineOutput + "*(Beastmasters can remove five options. Earthmates can remove three options. People who are both can remove eight options.)*\n";
-  lineOutput = lineOutput + "*(If you have a food or dish that heals HP, you may use up **one** per activty check to remove a number of options equal to the HP it would heal.)*\n";
+  lineOutput += "**Note**: this game requires a **Monster Glove**, and a living space for your monster. For more details, use **pi!monstercare**.\n\n"
+  lineOutput = lineOutput + "*(Beastmasters can remove five options. Earthmates can remove three options. People who are both can remove eight options. ";
+  lineOutput = lineOutput + "If you have a food or dish that heals HP, you may use up **one** per activty check to remove a number of options equal to the HP it would heal.)*\n";
 
   //if lines removed
   lineOutput = lineOutput + linesRemoved + "\n";
