@@ -1,6 +1,6 @@
 var Discord = require('discord.js');
 var logger = require('winston');
-var auth = require('./authdev.json');
+var auth = require('./auth.json');
 var piVarInit = require('./dictionary');
 var fs =require('fs');
 
