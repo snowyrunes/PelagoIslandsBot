@@ -1,0 +1,12 @@
+name,price,rarity,wEffect,eEffect,obtainFrom
+Copper Ore,50,COMMON,ATK +1,DEF +1, Mining Minigame (Hoe)
+Gold Ore,700,UNCOMMON,ATK +3,DEF +3,Mining Minigame (Hammer + Hoe)
+Junk Ore,10,COMMON,ATK +1,DEF +1,Mining Minigame (Hoe)
+Light Ore,6000,RARE,M.ATK +5,M.DEF +5,Mining Minigame (Hammer)
+Mithril,1200,UNCOMMON,M.ATK +3,M.DEF +3,Mining Minigame (Hammer)
+Mystrile Ore,100,COMMON,MP +1,MP +1,Mining Minigame (Hoe)
+Mythic Ore,1,COMMON,M.ATK +1,M.DEF +1,Mining Minigame (Hammer)
+Orichalcum,1200,UNCOMMON,M.ATK +3,M.DEF +3,Mining Minigame (Hammer)
+Platinum,5500,RARE,ATK +5,DEF +5,Mining Minigame (Hammer)
+Scrap Metal,50,COMMON,ATK +1,DEF +1,Mining Minigame (Hammer)
+Silver Ore,150,UNCOMMON,ATK +3,DEF+3,Mining Minigame (Hoe)

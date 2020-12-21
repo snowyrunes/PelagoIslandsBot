@@ -20,7 +20,7 @@ var Alchemy = require('./games/alchemy');
 module.exports = {
 	initMethodDict: function (methodDict) {
 		//general functions
-		methodDict['rtest'] = botfuncts.randomTest;
+		//methodDict['rtest'] = botfuncts.randomTest;
 		methodDict['list'] = botfuncts.listItemsFromCategory;
 		
 		methodDict['item'] = botfuncts.itemDetails;
