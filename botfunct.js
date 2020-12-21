@@ -189,6 +189,9 @@ module.exports = {
 			case "gardenone":
 			case "gardening":
 				return getGardeningRolls();
+			case "alchemyone":
+			case "alchemy":
+				return getAlchemyRolls();
 			default:
 				return ("No minigame command found for " + args[0]);
 		}
@@ -219,6 +222,17 @@ function parseObtain(oString){
 }
 
 //roll line functions
+
+function getAlchemyRolls(){
+	var aLine = "**Roll line for using a Small Chemistry Set**\n"
+	aLine += lines.smallChemistrySet.join(" | ");
+	aLine += "\n\n**Roll line for using a Medium Chemistry Set**\n"
+	aLine += lines.mediumChemistrySet.join(" | ");
+	aLine += "\n\n**Roll line for using a Large Chemistry Set**\n"
+	aLine += lines.largeChemistrySet.join(" | ");
+
+	return aLine;
+}
 
 function getGardeningRolls(){
 	var gLine = "**Roll line for using a rusty watering can**\n";
