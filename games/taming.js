@@ -203,7 +203,7 @@ function tameMonsterOnce(monsterObj, locationObj, removeLinesArr){
 
   lineOutput = lineOutput +"You are taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
   lineOutput += "**Note**: this game requires a **Monster Glove**, and a living space for your monster. For more details, use **pi!monstercare**.\n\n"
-  lineOutput = lineOutput + "*(Beastmasters can remove five options. Earthmates can remove three options. People who are both can remove eight options. ";
+  lineOutput = lineOutput + "*(Beastmasters gain EXP and may remove five options. Earthmates may remove three options. People who are both can remove eight options. ";
   lineOutput = lineOutput + "If you have a food or dish that heals HP, you may use up **one** per activty check to remove a number of options equal to the HP it would heal.)*\n";
 
   //if lines removed
@@ -288,7 +288,7 @@ function tameMonsterMultiAttempt(monsterObj, locationObj, removeLinesArr){
 
   lineOutput = lineOutput +"You are taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
   lineOutput += "**Note**: this game requires a **Monster Glove**, and a living space for your monster. For more details, use **pi!monstercare**.\n\n"
-  lineOutput = lineOutput + "*(Beastmasters can remove five options. Earthmates can remove three options. People who are both can remove eight options. ";
+  lineOutput = lineOutput + "*(Beastmasters can gain EXP and may remove five options. Earthmates can remove three options. People who are both can remove eight options. ";
   lineOutput = lineOutput + "If you have a food or dish that heals HP, you may use up **one** per activty check to remove a number of options equal to the HP it would heal.)*\n";
 
   //if lines removed

@@ -1,7 +1,31 @@
 name	price	recipeSize	effects	recipe
-Failed Dish	50	Universal	INFLICTS POISON ON CONSUMER, HP -5, ALL STATS -5	Get a 'Fails' result
+Box Lunch	1000	Medium	ATK +6, M.ATK +6	Rice + Egg + Any Vegetable + Any Fish
 Butter	200	Small	DEF + 2	Milk
-Disastrous Dish	100	Universal	INFLICTS POISON ON CONSUMER, HP -10, ALL STATS -10	Get a 'Disaster' result
-Corn On The Cob	250	Small	M.ATK + 2	Corn
+Cheese	570	Small	DEF +4, M.DEF +4	Sour Drop + Milk
+Chinese Manju	750	Medium	DEF +4, Grants Earth attribute	Flour + Bamboo Shoot
+Churros	850	Medium	SPD +4, ATK +4	Flour + Oil + Egg
+Corn Cereal	680	Small	M.ATK +4, M.DEF +4	Corn + Milk
+Corn on the Cob	250	Small	M.ATK +2	Corn
+Curry Manju	750	Medium	ATK +4, Grants Fire attribute	Flour + Curry Powder
+Disastrous Dish	100	Universal	NFLICTS POISON ON CONSUMER, HP -10, ALL STATS -10	Get a 'Disaster' result
 Dumplings	300	Small	M.DEF + 2	Rice Flour
+Failed Dish	50	Universal	INFLICTS POISON ON CONSUMER, HP -5, ALL STATS -5	Get a 'Fails' result
+Farmer's Breakfast	1120	Medium	M.DEF +7, Adds 50 to EXP earned	Onion + Potato + Cheese + Butter
+Fish and Chips	1060	Medium	M.ATK +6, Grants Water attribute	Potato + Flour + Oil + Any Fish
+French Fries	810	Medium	M.ATK +4, M.DEF +4	Oil + Potato
+Hearty Lunch	2300	Large	SPD +10, ATK +10, DEF +10, Max HP +3	Bread + Butter + Egg + Mayonnaise + Any Vegetable
+Ketchup	400	Small	ATK +3, M.ATK +3	Sour Drop + Tomato
+Kimchi	940	Medium	SPD +5, ATK +5	Carrot + Cabbage + Hot Pepper
+Mashed Potatoes	890	Medium	DEF +5, M.DEF +5	Potato + Butter + Milk
+Mayonnaise	450	Small	SPD +3, ATK +3	Oil + Egg
+Pizza	1290	Medium	ATK +8, DEF +8, Prevents Poison	Flour + Cheese + Ketchup + Eggplant + Bell Pepper
+Popcorn	620	Small	M.ATK +4, DEF +4	Corn + Butter
+Quesadilla	2250	Large	M.ATK +9, M.DEF +9, Blocks two HITS a battle	Tortilla + Onion + Tomato + Bell Pepper + Cheese
+Relax Tea Leaves	3000	Large	All Stats +10, Resists all elements	Red Herb + Orange Herb + Yellow Herb + Green Herb + Purple Herb + Blue Herb + Indigo Herb + Weed
+Seafood Pizza	1360	Large	ATK +8, DEF +8, M.ATK +8, Adds 1 point of damage to magical attacks	Flour + Cheese + Ketchup + Shrimp + Squid
+Tacos	2000	Large	TK +9, DEF +9, SPD +9, Changes two HITS on an enemy's line to MISSES	Tortilla + Lettuce + Tomato + Onion + Cheese
 Tortilla	700	Small	ATK + 4, SPD + 4	Milk + Corn
+Tortilla Chips	330	Small	ATK +2	Tortilla
+Vegetable Pizza	1500	Large	ATK +8, DEF +8, M.DEF +8, Adds 2 points of recovery to healing items/spells	Flour + Cheese + Tomato + Potato + Bell Pepper
+Yam of the Ages	1200	Medium	Max HP +2, DEF +7	Sweet Powder + Butter + Milk + Yam
+Yogurt	510	Small	Prevents Poison	Sweet Powder + Milk

@@ -1,3 +1,73 @@
 name	price	recipeSize	effect	recipe
+Aloe Juice	1490	Medium	Max HP +2, Adds 1 point of recovery to healing spells	Aloe + Honey
+Amazake	800	Small	ATK +4, SPD +4	Rice
+Apple Tea	1880	Medium	SPD +7, DEF +7	Tea Leaf + Apple
+Banana Au Lait	2400	Medium	DEF +8, SPD +8, M.ATK +8	Banana + Milk + Honey
+Banana Juice	370	Small	SPD +2	Banana
+Banana Shake	3540	Large	M.DEF +9, DEF +9, Max HP +3, Entire party retains 1 HP upon first killing blow	Ice + Milk + Banana
+Berry Shake	4710	Large	SPD +10, M.DEF +10, M.ATK +10, DEF +10	Ice + Milk + Raspberry + Blackberry + Blueberry
+Blueberry Tea	1900	Medium	DEF +7, M.DEF +7	Tea Leaf + Blueberry
+Butter Tea	1960	Medium	DEF +7, ATK +7	Tea Leaf + Butter
+Cafe Mocha	2340	Medium	DEF +8, SPD +8, M.DEF +8	Milk + Coffee Pack + Chocolate
+Cappucino	1560	Medium	DEF +6, SPD +6	Milk + Coffee Pack
+Carrot Juice	270	Small	M.DEF +2	Carrot
+Ceremonial Tea	2000	Medium	DEF +7, M.DEF +7, M.ATK +7	Tea Leaf + Sugar
+Chai Tea	2220	Medium	ATK +7, DEF +7, Doubles damage output once a battle	Tea Leaf + Milk + Heavy Spice
+Cheese Drink	1240	Medium	DEF +6, ATK +6	Cheese + Milk
+Cherry Peach Shake	4250	Large	SPD +10, ATK +10, DEF +10, M.ATK +10	Ice + Milk + Cherry + Peach
+Cherry Shake	3500	Large	ATK +9, DEF +9, M.ATK +9, Adds 1 point of damage to magical attacks	Ice + Milk + Cherry
+Cherry Tea	1810	Medium	ATK +6, Adds 1 point of damage to physical attacks	Tea Leaf + Cherry
+Chocolate Milk	1540	Medium	M.DEF +6, M.ATK +6	Chocolate + Milk
+Chocolate Shake	3800	Large	M.DEF +9, M.ATK +9, DEF +9, Adds 1 point of damage to the entire party’s magical attacks	Ice + Milk + Chocolate
+Coconut Milk	830	Small	DEF +4, M.ATK +4	Coconut
+Coffee	710	Small	SPD +4, M.ATK +4	Coffee Pack
+Earl Grey Tea	2880	Large	DEF +9, M.DEF +9, M.ATK +9, Max HP +3	Tea Leaf + Bergamot
+Eggnog	2280	Medium	SPD +8, ATK +8, DEF +8	Egg + Sugar + Milk
+Fruit Juice	560	Small	M.DEF +3, M.ATK +3	Any Fruit (x3)
+Fruit Smoothie	4460	Large	M.DEF +10, M.ATK +10, DEF +10, Prevents Death Curse	Yogurt + Milk + Fruit Juice + Any Fruit
+Gold Juice	7000	Large	All Stats +10, Max HP +3, Revives entire party with 2 HP upon first KO	Emery Flower + Golden Pumpkin + Golden Potato + Golden Turnip + Golden Cabbage
+Grape Juice	480	Small	M.DEF +3, M.ATK +3	Grape
+Grass Juice	2700	Medium	SPD +8, ATK +8, M.ATK +8, M.DEF +8	Carrot + Tomato + Spinach + Milk
+Green Plum Tea	1050	Medium	DEF +5, Prevents Poison	Tea Leaf + Plum
+Green Tea	850	Small	M.DEF +4, M.ATK +4, Grants Wind attribute	Tea Leaf (x2)
+Herb Tea	2910	Large	Adds 1 point of recovery to healing items/spells, adds 100 to EXP earned	Tea Leaf + Any Herb
+Hibiscus Tea	960	Medium	DEF +5, Grants Earth attribute	Hibiscus
+Honey Shake	3910	Large	Prevents ailments for entire party, Prevents Death Curse	Ice + Milk + Honey
+Honey Tea	3150	Large	DEF +9, M.ATK +9, ATK +9, Prevents all ailments	Tea Leaf + Honey
+Hot Chocolate	650	Small	M.DEF +4, M.ATK +4	Chocolate
+Hot Juice	1450	Medium	ATK +6, M.ATK +6, Subtracts 1 point of damage from Fire attacks	Heavy Spice + Hot-Hot Fruit
+Hot Milk	600	Small	Grants Fire/Light attribute	Milk
+Iced Cocoa	2490	Medium	M.DEF +8, M.ATK +8, DEF +8	Ice + Chocolate + Milk
+Kiwi Juice	350	Small	Prevents Sleep	Kiwi
+Kiwi Shake	3300	Large	Puts an enemy to sleep upon a successful HIT, twice a battle, causing them to skip a turn	Ice + Milk + Kiwi
+Lassi	1310	Medium	Prevents Paralysis, DEF +6	Yogurt + Milk
+Lemonade	2150	Medium	M.ATK +7, SPD +7, ATK +7	Lemon + Sugar
+Mango Juice	400	Small	DEF +3	Mango
+Mango Shake	3620	Large	DEF +9, SPD +9, Each member of the party can evade an attack once per battle	Ice + Milk + Mango
+Matcha	760	Small	M.DEF +4, DEF +4	Tea Leaf
+Matcha Milk	1120	Medium	DEF +6, Adds 50 to EXP earned	Tea Leaf + Milk
+Melon Soda	1000	Medium	SPD +5, Grants Water attribute	Ice + Melon
+Milk Tea	3000	Large	DEF +9, M.DEF +9, Subtracts 1 point of damage from physical attacks	Tea Leaf + Milk
+Mixed Berry Shake	4130	Large	DEF +10, M.DEF +10, Prevents all ailments	Ice + Milk + Strawberry + Blueberry
+Mixed Juice	4820	Large	SPD +10, M.DEF +10, DEF +10, Max HP +3	Apple + Grape + Orange + Pineapple + Strawberry + Milk
+Mixed Smoothie	4630	Large	SPD +10, M.ATK +10, M.DEF +10, DEF +10	Yogurt + Milk + Mixed Juice + Honey
+Orange Juice	520	Small	Max HP +1	Orange
+Orange Shake	3890	Large	Upon first KO, revives each member of the party with 2 HP	Ice + Milk + Orange
+Peach Tea	1770	Medium	SPD +6, DEF +6	Tea Leaf + Peach
+Peach Shake	3480	Large	[SPD +9, DEF +9, ATK +9, Changes two HITS on the enemy’s line to MISSES	Ice + Milk + Peach
+Pina Colada	4300	Large	M.DEF +10, M.ATK +10, SPD +10, Grants Light attribute	Ice + Milk + Pineapple + Coconut
+Pineapple Juice	300	Small	M.ATK +2	Pineapple
+Pineapple Shake	2630	Medium	DEF +8, M.ATK +8, ATK +8	Ice + Milk + Pineapple
 Prelude to Love	1390	Medium	SPD +6, Prevents poison	Pink Melon + Strawberry
+Relax Tea	4090	Large	DEF +10, M.DEF +10, Resists all elements	Relax Tea Leaves + Honey + Milk + Any Herb
+Smoothie	4000	Large	DEF +10, ATK +10, M.DEF +10, M.ATK +10	Yogurt + Milk + Any Fruit
+Strawberry Shake	2550	Medium	DEF +8, Prevents Poison and Paralysis	Ice + Milk + Strawberry
+Strawberry Tea	1670	Medium	M.ATK +6, ATK +6	Tea Leaf + Strawberry
+Tiramisu Shake	4790	Large	ATK +10, SPD +10, M.ATK +10, Doubles quantity of monster drops	Ice + Milk + Cheese + Egg + Chocolate
+Tomato Juice	250	Small	ATK +2	Tomato
+Vegetable Tea	1600	Medium	DEF +6, Max HP +2	Tea Leaf + Any Vegetable
+Veggie Smoothie	4570	Large	SPD +10, ATK +10, M.ATK +10, M.DEF +10	Yogurt + Milk + Grass Juice + Any Vegetable
+Watermelon Juice	330	Small	DEF +2	Watermelon
+Watermelon Shake	3220	Large	SPD +9, M.DEF +9, DEF +9, Resists Water	Ice + Milk + Watermelon
 Wine	700	N/A	N/A	N/A
+Yogurt Drink	900	Medium	Prevents Poison and Paralysis	Yogurt

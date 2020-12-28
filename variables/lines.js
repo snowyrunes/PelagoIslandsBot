@@ -231,10 +231,29 @@ module.exports = {
 						"fails", "success", "fails", "success", "explodes", "success", "fails", "success", "explodes", "success", "fails", "success", 
 						"fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "explodes", "success", "success", "fails", 
 						"success"],
+
 	largeChemistrySet: ["fails", "success", "explodes", "success", "explodes", "success", "success", "success", "success", "success", "success", "success", 
 						"explodes", "success", "fails", "success", "success", "success", "success", "success", "fails", "success", "success", "success", 
 						"success", "success", "fails", "success", "explodes", "success", "fails", "success", "explodes", "success", "success", "success", 
 						"fails", "success", "success", "success", "success", "success", "fails", "success", "success", "explodes", "success", "success", 
-						"fails", "success"]
+						"fails", "success"],
+
+	//cooking lines
+	smallKitchen: ["fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", "fire", "success", "fails", 
+					"success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", "success", "success", 
+					"success", "success", "fails", "success", "fire", "success", "disaster", "explodes", "disaster", "explodes", "shining", "explodes", 
+					"disaster", "success", "disaster", "explodes", "success", "success", "disaster", "explodes", "success", "explodes", "success", "success"],
+
+	mediumKitchen: ["fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", "success", "success", "success", 
+					"success", "fails", "success", "success", "success", "fails", "shining", "fails", "success", "fails", "success", "success", "success", 
+					"success", "success", "fails", "success", "fire", "success", "disaster", "explodes", "disaster", "explodes", "success", "success", 
+					"disaster", "success", "success", "explodes", "success", "success", "disaster", "explodes", "success", "explodes", "success", "success"],
+
+	largeKitchen: ["fails", "success", "success", "success", "fails", "success", "fails", "success", "shining", "success", "success", "success", "success", 
+					"success", "fails", "success", "success", "success", "success", "success", "shining", "success", "fails", "success", "success", 
+					"success", "success", "success", "success", "success", "fire", "success", "success", "success", "disaster", "success", "success", 
+					"success", "success", "success", "success", "explodes", "success", "success", "disaster", "explodes", "shining", "success", "success", 
+					"success"]
+
 
 }

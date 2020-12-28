@@ -192,6 +192,9 @@ module.exports = {
 			case "alchemyone":
 			case "alchemy":
 				return getAlchemyRolls();
+			case "cooking":
+			case "cookone":
+				return getCookingRolls();
 			default:
 				return ("No minigame command found for " + args[0]);
 		}
@@ -222,6 +225,17 @@ function parseObtain(oString){
 }
 
 //roll line functions
+
+function getCookingRolls(){
+	var aLine = "**Roll line for using a Small Kitchen**\n"
+	aLine += lines.smallKitchen.join(" | ");
+	aLine += "\n\n**Roll line for using a Medium Kitchen**\n"
+	aLine += lines.mediumKitchen.join(" | ");
+	aLine += "\n\n**Roll line for using a Large Kitchen**\n"
+	aLine += lines.largeKitchen.join(" | ");
+
+	return aLine;
+}
 
 function getAlchemyRolls(){
 	var aLine = "**Roll line for using a Small Chemistry Set**\n"
@@ -377,6 +391,10 @@ function getCategoryFromList(itemName, cItemMap){
 		itemString += giveFieldPrice("\nPrice: *", item.price, "*");
 	}
 
+	if(item.hasOwnProperty("shiningPrice")){
+		itemString += giveFieldPrice("\nShining Price: *", item.shiningPrice, "*");
+	}
+
 	if(item.hasOwnProperty("poorPrice")){
 		itemString += giveFieldPrice("\nPoor Quality Price: *", item.poorPrice, "*");
 	}
@@ -408,6 +426,15 @@ function getCategoryFromList(itemName, cItemMap){
 	if (item.hasOwnProperty("eEffect")){
 		itemString += giveField("\nEquipment Updgrade Effect: *", item.eEffect, "*");
 	}
+
+	if(item.hasOwnProperty("shiningStatBoost")){
+		itemString += giveField("\nShining Dish Stat Boost: *", item.shiningStatBoost, "*" );
+	}
+
+	if(item.hasOwnProperty("effects")){
+		itemString += giveField("\nEffects: *", item.effects, "*" );
+	}
+
 
 	if (item.hasOwnProperty("recipeSize")){
 		itemString += giveField("\nRecipe Size: *", item.recipeSize, "*");

@@ -1,2 +1,38 @@
 name	price	recipeSize	effect	recipe
 Baked Apple	150	Small	M.ATK +2, NULLIFIES PARALYSIS	Apple
+Baked Yam	210	Small	M.DEF +2	Yam
+Buttered Corn	620	Medium	M.ATK +5	Corn + Butter
+Buttered Turnip	570	Medium	DEF +5, Nullifies Poison	Turnip + Butter
+Candied Carrots	1100	Medium	M.DEF +7, SPD +7, Allows user to attack first in battle	Carrot + Butter + Sweet Powder
+Chili Shrimp	1150	Medium	ATK +8, M.DEF +8, Subtracts 1 point of damage from fire attacks	Shrimp + Tomato + Heavy Spice
+Chop Suey	8000	Large	SPD +10, ATK +10, M.DEF +10, DEF +10	Bamboo Shoot + Carrot + Egg + Bok Choy + Shiitake
+Fish Pie	420	Small	M.ATK +4, Adds 1 point of damage to magic attacks	Flour + Any Fish
+French Fries	360	Small	DEF +4, Block one HIT during a fight	Potato + Oil
+Fried Egg	250	Small	ATK +3, M.ATK +3	Egg
+Fried Udon	3000	Large	M.DEF +9, DEF +9, SPD +9, Adds +2 to max HP for the duration of use	Flour + Onion + Carrot + Cabbage
+Gratin	3900	Large	M.DEF +10, SPD +10, Doubles the effect of recovery items/spells	Flour + Milk + Broccoli + Carrot + Cheese
+Grilled Cheese	450	Small	M.DEF +4	Cheese + Bread
+Grilled Fish	330	Small	M.ATK +3, M.DEF +3	Any Fish
+Grilled Pumpkin	530	Medium	DEF +5, Blocks a HIT once a fight	Pumpkin
+Grilled Tomato	175	Small	ATK +2	Tomato
+Gyoza	3400	Large	DEF +10, Inflicts Poison on an enemy upon HIT	Shiitake + Cabbage + Bell Pepper + Flour
+Kinpira Burdock	500	Small	SPD +5	Burdock + Carrot
+Marlin Steak	4400	Large	DEF +10, M.DEF +10, SPD +10, Adds 1 point of damage to magic attacks	Tuna + Oil + Radish + Carrot + Any Herb
+Meuniere	1200	Medium	M.ATK +8, DEF +8, Nullifies Ailment	Any Fish + Flour + Milk + Any Herb
+Mushroom Pie	910	Medium	DEF +7, Nullifies Poison	Flour + Trumpet Mushroom + Common Mushroom
+Okonomiyaki	770	Medium	ATK +7, DEF +7	Cabbage + Flour + Egg
+Omelet	660	Medium	SPD +6, ATK +6	Egg + Butter
+Pissaladiere	5000	Large	M.ATK +10, DEF +10, Nullifies Ailments	Onion + Cheese + Sardine + Flour + Any Herb
+Pizza	1000	Medium	ATK +7, DEF +7	Tomato + Cheese + Flour
+Potato Pancake	650	Medium	SPD +5, M.DEF +5	Potato + Butter
+Quiche	2200	Large	ATK +9, DEF +9, M.ATK +9, M.DEF +9	Pumpkin + Spinach + Flour + Egg
+Raclette	700	Medium	M.DEF +6, DEF +6, Subtracts 1 point of damage from magic attacks	Potato + Cheese
+Roasted Corn	200	Small	ATK +2, DEF +2	Corn
+Roasted Mushrooms		Small	DEF +3, M.DEF +3	Any Mushroom
+Shredded Carrots	310	Small	SPD +3, Takes one MISS off your roll line	Carrot + Egg
+Spicy Stir-Fried Squid	720	Medium	ATK +6, M.ATK +6, Gives fire attribute	Squid + Heavy Spice
+Spinach Saute	230	Small	SPD +2	Spinach
+Stir-Fried Broccoli	890	Medium	Adds +1 to max HP for the duration of use	Broccoli + Trumpet Mushroom + Butter
+Terrine	1240	Medium	DEF +8, M.DEF +8, SPD +8	Turnip + Cabbage + Carrot + Any Herb
+Tofu Burger	750	Medium	SPD +6, ATK +6, Evades a HIT once during battle	Tofu + Egg + Flour
+Vegetable Stir-Fry	840	Medium	DEF +7, Nullifies Paralysis	Cabbage + Bell Pepper + Onion

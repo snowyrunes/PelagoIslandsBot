@@ -68,7 +68,7 @@ module.exports = class Alchemy extends Minigame{
 
       var lineOutput = "***Alchemy Minigame (Single ReRoll Command):***\n";
       lineOutput += "*(For full minigame and rules, please use the pi!alchemy command)*\n"
-      lineOutput += "Alchemists (and related classes) can remove five options.\n";
+      lineOutput += "Alchemists (and related classes) can gain EXP and may remove five options.\n";
 
       var price = 0;
       var exp = 0;
@@ -145,8 +145,8 @@ module.exports = class Alchemy extends Minigame{
         return "Please provide type of chemistry set, the number of potions, and the name of the potion. Example: pi!alchemy small, 10, object x"
       }
 
-      if(newargs[1] > 10){
-        return "You may not alchemize more than 10 potions per Activity Check.";
+      if(newargs[1] > 10 || newargs[1] < 1){
+        return "Invalid number ("+ newargs[1] +"). You may not alchemize more than 10 potions per Activity Check.";
       }
 
       var potionName = newargs[2].toLowerCase().trim();
@@ -163,7 +163,7 @@ module.exports = class Alchemy extends Minigame{
 
       var lineOutput = "***Alchemy Minigame:***\n";
       lineOutput += "You may alchemize a maximum of 10 potions per Activity Check.\n"
-      lineOutput += "Alchemists (and related classes) can remove five options.\n";
+      lineOutput += "Alchemists (and related classes) can gain EXP and may remove five options.\n";
 
       var totalPrice = 0;
       var totalExp = 0;
