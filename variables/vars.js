@@ -14,6 +14,7 @@ module.exports = {
 	piAllItemMap: {},
     piAllMonstersMap: {},
     piAllLivestockMap: {},
+    piAllClassesMap: {},
 	piAllMinigamesMap: {},
 
 	//list of locations
@@ -26,6 +27,9 @@ module.exports = {
 	//list of animals
 	piMonsterList: {},
 	piLivestockList: {},
+
+	//classes
+	piClassList: {},
 
 	//list of Items
 	piCropsList: {},

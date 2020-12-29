@@ -248,7 +248,7 @@ module.exports = class Cooking extends Minigame{
               break;
           case "shining":
               price = parseInt(dishData.shiningPrice);
-              exp = getDishExp(dishData);
+              exp = getDishExp(dishData) *2;
               totalPrice += price;
               totalExp += exp;
               ++totalShining;

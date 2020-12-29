@@ -22,6 +22,7 @@ Pizza	1290	Medium	ATK +8, DEF +8, Prevents Poison	Flour + Cheese + Ketchup + Egg
 Popcorn	620	Small	M.ATK +4, DEF +4	Corn + Butter
 Quesadilla	2250	Large	M.ATK +9, M.DEF +9, Blocks two HITS a battle	Tortilla + Onion + Tomato + Bell Pepper + Cheese
 Relax Tea Leaves	3000	Large	All Stats +10, Resists all elements	Red Herb + Orange Herb + Yellow Herb + Green Herb + Purple Herb + Blue Herb + Indigo Herb + Weed
+Sashimi	500	Small	M.DEF +2	Any Fish
 Seafood Pizza	1360	Large	ATK +8, DEF +8, M.ATK +8, Adds 1 point of damage to magical attacks	Flour + Cheese + Ketchup + Shrimp + Squid
 Tacos	2000	Large	TK +9, DEF +9, SPD +9, Changes two HITS on an enemy's line to MISSES	Tortilla + Lettuce + Tomato + Onion + Cheese
 Tortilla	700	Small	ATK + 4, SPD + 4	Milk + Corn

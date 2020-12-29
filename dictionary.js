@@ -16,6 +16,7 @@ var Taming = require('./games/taming');
 var Gardening = require('./games/gardening');
 var Alchemy = require('./games/alchemy');
 var Cooking = require('./games/cooking');
+var LevelUp = require('./games/levelup');
 
 
 module.exports = {
@@ -29,6 +30,7 @@ module.exports = {
         methodDict['livestock'] = botfuncts.livestockDetails;
         methodDict['location'] = botfuncts.locationDetails;
         methodDict['island'] = botfuncts.islandDetails;
+        methodDict['class'] = botfuncts.classDetails;
 
 		methodDict['getline'] = botfuncts.rollLine;
 
@@ -72,6 +74,9 @@ module.exports = {
         //cooking
         methodDict['cookone'] = botvars.piAllMinigamesMap["Cooking"].cookOne;
         methodDict['cooking'] = botvars.piAllMinigamesMap["Cooking"].cooking;
+
+        //level up
+        methodDict['levelup'] = botvars.piAllMinigamesMap["Level Up"].levelUp;
         
 		//randomline
 		methodDict['choose'] = botfuncts.randomFromLine;
@@ -112,11 +117,14 @@ module.exports = {
         botvars.piAllMinigamesMap["Gardening"] = new Gardening("Gardening");
         botvars.piAllMinigamesMap["Alchemy"] = new Alchemy("Alchemy");
         botvars.piAllMinigamesMap["Cooking"] = new Cooking("Cooking");
+        botvars.piAllMinigamesMap["Level Up"] = new LevelUp("Level Up");
 
         //group calls
         cooking();
 		critters();
 		flora();
+
+		botvars.piClassList = loadCategory("classes", "./data/classes/classes.tsv");
 		
 		botvars.piCrystalsList = loadCategory("crystals", "./data/materials/crystal.tsv");
 		botvars.piFabricList = loadCategory("fabrics", "./data/fabrics.tsv");
@@ -258,7 +266,10 @@ function getFileCategoryListing(categoryName, filePath){
 			tempItem[propertyNames[j]] = item[j];
 		}
 
-		tempItem["obtainFrom"] = getObtainableFromProperty(tempItem["name"].toLowerCase());
+		if(categoryName != "classes"){
+			tempItem["obtainFrom"] = getObtainableFromProperty(tempItem["name"].toLowerCase());
+		}
+		
 		//assume name is always in item[0]
 		categoryList[(item[0].trim().toLowerCase())] = tempItem;
 	        
@@ -270,6 +281,8 @@ function getFileCategoryListing(categoryName, filePath){
 	        botvars.piAllLocationMap[tempItem["name"].toLowerCase()] = tempItem;
 		}else if("islands" == categoryName){
 	        botvars.piAllIslandMap[tempItem["name"].toLowerCase()] = tempItem;
+		}else if("classes" == categoryName){
+			botvars.piAllClassesMap[tempItem["name"].toLowerCase()] = tempItem;
 		}else{
 	        botvars.piAllItemMap[tempItem["name"].toLowerCase()] = tempItem;
 	    }

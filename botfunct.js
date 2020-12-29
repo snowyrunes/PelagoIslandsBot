@@ -159,6 +159,22 @@ module.exports = {
 
 	},
 
+	classDetails: function (args) {
+		if (args.length < 1){
+			return ("Please include a class name.");
+		}
+
+		var className =  ""+ args.join(" ").trim().toLowerCase() + "";
+
+		//console.log(Object.keys(botvars.piAllMonstersMap));
+		if(Object.keys(botvars.piAllClassesMap).includes(className)){
+			return getCategoryFromList(className, botvars.piAllClassesMap);
+		}else{
+			return "Invalid class name " + className;
+		}
+
+	},
+
 	rollLine: function(args) {
 		if (args.length < 1){
 			return ("Please include a minigame roll command.");
@@ -522,6 +538,38 @@ function getCategoryFromList(itemName, cItemMap){
 
 	if (item.hasOwnProperty("expBoss")){
 		itemString += giveField("\nEXP earned for defeating/Taming **Boss level** monsters: *", item.expBoss, "*");
+	}
+
+	if (item.hasOwnProperty("baseATK")){
+		itemString += giveField("\nBase ATK: *", item.baseATK, "*");
+	}
+
+	if (item.hasOwnProperty("baseDEF")){
+		itemString += giveField("\nBase DEF: *", item.baseDEF, "*");
+	}
+
+	if (item.hasOwnProperty("baseMATK")){
+		itemString += giveField("\nBase M.ATK: *", item.baseMATK, "*");
+	}
+
+	if (item.hasOwnProperty("baseMDEF")){
+		itemString += giveField("\nBase M.DEF: *", item.baseMDEF, "*");
+	}
+
+	if (item.hasOwnProperty("baseSPD")){
+		itemString += giveField("\nBase SPD: *", item.baseSPD, "*");
+	}
+
+	if (item.hasOwnProperty("MP")){
+		itemString += giveField("\nMP: *", item.MP, "*");
+	}
+
+	if (item.hasOwnProperty("mainStat")){
+		itemString += giveField("\nMain Stat: *", item.mainStat, "*");
+	}
+
+	if (item.hasOwnProperty("classCategory")){
+		itemString += giveField("\nClass Type: *", item.classCategory, "*");
 	}
 
 	if (item.hasOwnProperty("description")){
