@@ -159,6 +159,22 @@ module.exports = {
 
 	},
 
+	classDetails: function (args) {
+		if (args.length < 1){
+			return ("Please include a class name.");
+		}
+
+		var className =  ""+ args.join(" ").trim().toLowerCase() + "";
+
+		//console.log(Object.keys(botvars.piAllMonstersMap));
+		if(Object.keys(botvars.piAllClassesMap).includes(className)){
+			return getCategoryFromList(className, botvars.piAllClassesMap);
+		}else{
+			return "Invalid class name " + className;
+		}
+
+	},
+
 	rollLine: function(args) {
 		if (args.length < 1){
 			return ("Please include a minigame roll command.");
@@ -192,6 +208,11 @@ module.exports = {
 			case "alchemyone":
 			case "alchemy":
 				return getAlchemyRolls();
+			case "cooking":
+			case "cookone":
+				return getCookingRolls();
+			case "levelup":
+				return getLevelUpRolls();
 			default:
 				return ("No minigame command found for " + args[0]);
 		}
@@ -222,6 +243,32 @@ function parseObtain(oString){
 }
 
 //roll line functions
+
+function getLevelUpRolls(){
+	var aLine = "**Roll line for classes with High SPD**\n"
+	aLine += lines.highSPD.join(" | ");
+	aLine += "\n\n**Roll line for classes with High DEF**\n"
+	aLine += lines.highDEF.join(" | ");
+	aLine += "\n\n**Roll line for classes with High ATK**\n"
+	aLine += lines.highATK.join(" | ");
+	aLine += "\n\n**Roll line for classes with High M.ATK**\n"
+	aLine += lines.highMATK.join(" | ");
+	aLine += "\n\n**Roll line for classes with High M.DEF**\n"
+	aLine += lines.highMDEF.join(" | ");
+
+	return aLine;
+}
+
+function getCookingRolls(){
+	var aLine = "**Roll line for using a Small Kitchen**\n"
+	aLine += lines.smallKitchen.join(" | ");
+	aLine += "\n\n**Roll line for using a Medium Kitchen**\n"
+	aLine += lines.mediumKitchen.join(" | ");
+	aLine += "\n\n**Roll line for using a Large Kitchen**\n"
+	aLine += lines.largeKitchen.join(" | ");
+
+	return aLine;
+}
 
 function getAlchemyRolls(){
 	var aLine = "**Roll line for using a Small Chemistry Set**\n"
@@ -377,6 +424,10 @@ function getCategoryFromList(itemName, cItemMap){
 		itemString += giveFieldPrice("\nPrice: *", item.price, "*");
 	}
 
+	if(item.hasOwnProperty("shiningPrice")){
+		itemString += giveFieldPrice("\nShining Price: *", item.shiningPrice, "*");
+	}
+
 	if(item.hasOwnProperty("poorPrice")){
 		itemString += giveFieldPrice("\nPoor Quality Price: *", item.poorPrice, "*");
 	}
@@ -408,6 +459,15 @@ function getCategoryFromList(itemName, cItemMap){
 	if (item.hasOwnProperty("eEffect")){
 		itemString += giveField("\nEquipment Updgrade Effect: *", item.eEffect, "*");
 	}
+
+	if(item.hasOwnProperty("shiningStatBoost")){
+		itemString += giveField("\nShining Dish Stat Boost: *", item.shiningStatBoost, "*" );
+	}
+
+	if(item.hasOwnProperty("effects")){
+		itemString += giveField("\nEffects: *", item.effects, "*" );
+	}
+
 
 	if (item.hasOwnProperty("recipeSize")){
 		itemString += giveField("\nRecipe Size: *", item.recipeSize, "*");
@@ -495,6 +555,38 @@ function getCategoryFromList(itemName, cItemMap){
 
 	if (item.hasOwnProperty("expBoss")){
 		itemString += giveField("\nEXP earned for defeating/Taming **Boss level** monsters: *", item.expBoss, "*");
+	}
+
+	if (item.hasOwnProperty("baseATK")){
+		itemString += giveField("\nBase ATK: *", item.baseATK, "*");
+	}
+
+	if (item.hasOwnProperty("baseDEF")){
+		itemString += giveField("\nBase DEF: *", item.baseDEF, "*");
+	}
+
+	if (item.hasOwnProperty("baseMATK")){
+		itemString += giveField("\nBase M.ATK: *", item.baseMATK, "*");
+	}
+
+	if (item.hasOwnProperty("baseMDEF")){
+		itemString += giveField("\nBase M.DEF: *", item.baseMDEF, "*");
+	}
+
+	if (item.hasOwnProperty("baseSPD")){
+		itemString += giveField("\nBase SPD: *", item.baseSPD, "*");
+	}
+
+	if (item.hasOwnProperty("MP")){
+		itemString += giveField("\nMP: *", item.MP, "*");
+	}
+
+	if (item.hasOwnProperty("mainStat")){
+		itemString += giveField("\nMain Stat: *", item.mainStat, "*");
+	}
+
+	if (item.hasOwnProperty("classCategory")){
+		itemString += giveField("\nClass Type: *", item.classCategory, "*");
 	}
 
 	if (item.hasOwnProperty("description")){

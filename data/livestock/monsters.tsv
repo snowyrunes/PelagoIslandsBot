@@ -62,7 +62,7 @@ Little Dragon	B	N/A	N/A	dragon fang	dragon fang
 Little Golem	C	physical	magic	silver ore, ruby, tiny golem stone	silver ore
 Mamadoodle	A	N/A	N/A	big bird's comb, bird's feather, egg	egg
 Minotaur	A	fire	N/A	hammer piece, devil horn	hammer piece
-Monster Box	D	physical	N/A	broken hilt, failed dish	glue
+Monster Box	D	physical	N/A	broken hilt, failed dish	broken hilt
 Mystery Fairy	BOSS	N/A	N/A	mysterious powder, fairy elixir, melody bottle	mysterious powder
 Necromancer	BOSS	physical	magic	dark crystal, puppetry strings, quality cloth	quality cloth
 Octopirate	BOSS	water	earth	ammonite, fish fossil	fish fossil
@@ -86,6 +86,7 @@ Thunderbird	B	wind, fire	water	branch, thunderbird feather	thunderbird feather
 Tortas	E	physical	magic	tortoise shell, iron ore, copper ore	copper ore
 Troll	B	N/A	N/A	giant's nail, hammer piece	giant's nail
 Tundra	C	N/A	N/A	fairy dust, magic powder	magic powder
+Typhoon	A	wind, water	N/A	devil blood, devil horn, mealy apple	mealy apple
 Unicorn	A	wind	N/A	fairy dust, quality fur, light crystal	light crystal
 Water Elemental	D	water	earth	water crystal	water crystal
 Weagle	D	wind	earth	branch, thin stick, bird's feather	bird's feather

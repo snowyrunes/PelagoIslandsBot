@@ -23,7 +23,12 @@ module.exports = class Taming extends Minigame {
             var islandData = botvars.piMonsterIslandMapPreload[iKeys[i]];
             var islandMonsterList = islandData.monsters.split(",");
             for(var j = 0; j< islandMonsterList.length; j++){
-              super.getObtainablesConditonString(islandMonsterList[j].trim().toLowerCase(), islandData.name);
+
+              if("typhoon" === islandMonsterList[j].trim().toLowerCase()){
+                super.getObtainablesConditonString(islandMonsterList[j].trim().toLowerCase(), islandData.name + " during Hurricanes/Blizzards");
+              }else{
+                super.getObtainablesConditonString(islandMonsterList[j].trim().toLowerCase(), islandData.name);
+              }
             }
 	  		
   		}
@@ -32,7 +37,11 @@ module.exports = class Taming extends Minigame {
         var locationData = botvars.piMonsterLocationMapPreload[lKeys[i]];
             var locationMonsterList = locationData.monsters.split(",");
             for(var j = 0; j< locationMonsterList.length; j++){
-              super.getObtainablesConditonString(locationMonsterList[j].trim().toLowerCase(), locationData.name);
+              if("typhoon" === locationMonsterList[j].trim().toLowerCase()){
+                super.getObtainablesConditonString(locationMonsterList[j].trim().toLowerCase(), locationData.name + " during Hurricanes/Blizzards");
+              }else{
+                super.getObtainablesConditonString(locationMonsterList[j].trim().toLowerCase(), locationData.name);
+              }
             }
       }
 
@@ -128,7 +137,7 @@ module.exports = class Taming extends Minigame {
       }
 
       monsterName = argsString2[0].trim().toLowerCase();
-      locationName = argsString2[1].trim().toLowerCase()
+      locationName = argsString2[1].trim().toLowerCase();
 
     }else{
         removeArray= botfunct.splitCommaOrBar(removeStringDetails[1]);
@@ -201,9 +210,14 @@ function tameMonsterOnce(monsterObj, locationObj, removeLinesArr){
 
   var lineOutput = "***Taming Minigame (Single ReRoll Command):***\n";
 
-  lineOutput = lineOutput +"You are taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
+  lineOutput = lineOutput +"You are re-rolling taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
+
+  if("Typhoon" === monsterObj.name){
+    lineOutput += "***Special Note:*** Typhoons can only be tamed during Blizzards or Hurricanes.\n\n"
+  }
+
   lineOutput += "**Note**: this game requires a **Monster Glove**, and a living space for your monster. For more details, use **pi!monstercare**.\n\n"
-  lineOutput = lineOutput + "*(Beastmasters can remove five options. Earthmates can remove three options. People who are both can remove eight options. ";
+  lineOutput = lineOutput + "*(Beast Masters gain EXP and may remove five options. Earthmates may remove three options. People who are both can remove eight options. ";
   lineOutput = lineOutput + "If you have a food or dish that heals HP, you may use up **one** per activty check to remove a number of options equal to the HP it would heal.)*\n";
 
   //if lines removed
@@ -287,8 +301,13 @@ function tameMonsterMultiAttempt(monsterObj, locationObj, removeLinesArr){
   var lineOutput = "***Taming Minigame:***\n";
 
   lineOutput = lineOutput +"You are taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
+
+  if("Typhoon" === monsterObj.name){
+    lineOutput += "***Special Note:*** Typhoons can only be tamed during Blizzards or Hurricanes.\n\n"
+  }
+
   lineOutput += "**Note**: this game requires a **Monster Glove**, and a living space for your monster. For more details, use **pi!monstercare**.\n\n"
-  lineOutput = lineOutput + "*(Beastmasters can remove five options. Earthmates can remove three options. People who are both can remove eight options. ";
+  lineOutput = lineOutput + "*(Beast Masters can gain EXP and may remove five options. Earthmates can remove three options. People who are both can remove eight options. ";
   lineOutput = lineOutput + "If you have a food or dish that heals HP, you may use up **one** per activty check to remove a number of options equal to the HP it would heal.)*\n";
 
   //if lines removed
@@ -364,7 +383,7 @@ function getMonsterLine(monsterLevel){
     case "C":
       return lines.tameLevelC;
     case "B":
-      return lines.tameLevelB
+      return lines.tameLevelB;
     case "A":
       return lines.tameLevelA;
     case "BOSS":
@@ -446,5 +465,5 @@ function removeLinesErrorCatch(rollLine, removeArr){
 }
 
 function totalReturnLine(lineOutput, totalEXP, totalGLost){
-  return lineOutput + "\nTotal Money Lost: *" + commaNumber(totalGLost) + "G*"+ "\nTotal EXP for Beastmasters: *" + commaNumber(totalEXP) + "*";
+  return lineOutput + "\nTotal Money Lost: *" + commaNumber(totalGLost) + "G*"+ "\nTotal EXP for Beast Masters: *" + commaNumber(totalEXP) + "*";
 }

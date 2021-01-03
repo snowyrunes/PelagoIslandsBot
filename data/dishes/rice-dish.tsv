@@ -1,0 +1,55 @@
+name	price	recipeSize	effects	recipe
+Arancini	2500	Medium	SPD +8, ATK +8, Grants Earth Attribute	Rice + Cheese + Breadcrumbs + Egg
+Baked Oniguri	220	Small	ATK +2	Onigiri
+Bamboo Rice	550	Small	ATK +4, DEF +4	Rice + Bamboo Shoot
+Bibimbap	5200	Large	ATK +10, M.ATK +10, SPD +10, Doubles the quantity of monster drops	Rice + Egg + Octopus + Heavy Spice + Any Fish
+Biryani	4100	Large	SPD +9, M.DEF +9, DEF +9, Adds 3 HP to max for duration of use	Rice + Pumpkin + Carrot + Onion + Curry Powder
+Butter Rice	470	Small	SPD +3, ATK +3	Butter + Rice
+Chestnut Rice	510	Small	M.ATK +4, M.DEF +4	Rice + Chestnut
+Chirashi Sushi	2000	Medium	SPD +8, ATK +8, M.DEF +8	Rice + Egg + Crab + Any Fish
+Coconut Curry	1400	Medium	DEF +7, SPD +7, Block a HIT per battle	Rice + Curry Powder + Coconut
+Curd Rice	580	Small	SPD +4, Prevents Poison	Rice + Yogurt
+Curry Rice	1120	Medium	SPD +7, ATK +7, M.DEF +7	Rice + Curry Powder + Potato
+Dolma	2420	Medium	DEF +8, SPD +8, Prevents Sickness	Rice + Eggplant + Cabbage + Egg
+Doria	630	Small	DEF +4, Block one HIT per battle	Rice + Cheese
+Dry Curry	4500	Large	SPD +9, ATK +9, M.DEF +9, M.ATK +9	Rice + Butter + Curry Powder + Any Vegetable
+Eel Rice Bowl	800	Medium	SPD +5, Turns an enemy’s HIT into a MISS once per battle	Rice + Eel
+Fried Rice	3300	Large	M.DEF +9, SPD +9, ATK +9, Prevents all ailments	Rice + Onion + Carrot + Bell Pepper + Egg
+Herb Pilaf	360	Small	Turns a HIT into a MISS on the opponent’s line	Rice + Any Herb
+Kappa Roll	1060	Medium	M.DEF +7, ATK +7, Subtracts 1 point of damage from water attacks	Rice + Cucumber + Seaweed
+Loco Moco	940	Medium	SPD +6, ATK +6, Grants the ability to attack twice	Rice + Tofu + Egg
+Longtong	840	Medium	SPD +6, M.DEF +6	Rice + Banana
+Makloubeh	2760	Medium	M.ATK +8, M.DEF +8, Adds 50 to EXP earned	Rice + Eggplant + Onion + Any Fish
+Milk Curry	1650	Medium	DEF +8, M.ATK +8, SPD +8	Rice + Curry Powder + Milk
+Milk Porridge	920	Medium	DEF +6, ATK +6, Adds 2 HP to overall max for duration of use	Rice + Milk + Onion
+Milk Rice	1230	Medium	DEF +7, ATK +7, Prevents Curse	Rice + Milk + Onion
+Mixed Vegetable Rice	3000	Medium	M.DEF +9, DEF +9, Subtracts 1 point of damage from magical attacks	Rice + Carrot + Shiitake + Bamboo Shoot
+Mushroom Rice	435	Small	DEF +3, SPD +3	Rice + Any Mushroom
+Nasi Goreng	1970	Medium	M.ATK +8, ATK +8, Adds 1 point of damage to the user’s physical attacks	Rice + Onion + Shrimp + Soy Sauce
+Nasi Lemak	2900	Medium	M.ATK +9, SPD +9, ATK +9	Rice + Coconut + Egg + Any Fish
+Omelet Rice	1180	Medium	SPD +7, ATK +7, DEF +7	Rice + Egg + Milk
+Onigiri	280	Small	M.DEF +2	Rice + Seaweed
+Onion Rice	330	Small	Adds 1 HP to max for duration of use	Rice + Onion
+Oshinko Roll	970	Medium	DEF +7, ATK +7, Subtracts a point of damage from physical attacks	Rice + Turnip + Seaweed
+Paella	5000	Large	M.ATK +9, SPD +9, ATK +9, Prevents Death Curse	Rice + Onion + Bell Pepper + Tiger Prawn
+Pilaf	2350	Medium	M.ATK +8, M.DEF +8, SPD +8	Rice + Bell Pepper + Corn + Carrot
+Pumpkin Doria	650	Small	DEF +5, Adds 1 HP to max for duration of use	Rice + Pumpkin
+Rainbow Curry	6000	Large	M.DEF +10, M.ATK +10, ATK +10, DEF +10	Curry Rice + Spinach + Tomato + Seaweed + Milk 
+Risotto	2200	Medium	DEF +8, ATK +8, Survives with 1 HP upon first killing blow	Rice + Milk + Onion + Butter
+Salmon Onigiri	300	Small	M.ATK +3	Rice + Salmon
+Sea Bream Chazuke	720	Small	ATK +5, M.ATK +5	Rice + Sea Bream
+Seafood Doria	3780	Large	M.ATK +9, SPD +9, ATK +9, DEF +9	Rice + Shrimp + Cheese + Squid + Milk
+Seafood Omelet	550	Large	M.ATK +10, M.DEF +10, DEF +10, Subtracts 1 point of HP from attacks of all elements	Rice + Egg + Milk + Clam + Shrimp
+Seaweed Curry	1500	Medium	DEF +8, SPD +8, 50% Chance of Evading HITs	Rice + Curry Powder + Seaweed
+Spicy Curry	5700	Large	SPD +10, ATK +10, DEF +10, Adds 100 to EXP earned	Rice + Onion + Carrot + Curry Powder + Heavy Spice
+Squid Rice	760	Medium	M.ATK +5, ATK +5	Rice + Squid
+Supreme Curry	8000	Large	All Stats +10, Adds 1 point of damage to the entire party’s attack, both magical and physical	Rainbow Curry + Milk Curry + Wine + Failed Dish + Disastrous Dish 
+Sushi	240	Small	M.ATK +2	Rice + Sashimi
+Sushi Bowl	890	Medium	SPD +6, ATK +6, M.ATK +6	Rice + Sashimi + Egg
+Tekka Roll	1100	Medium	SPD +7, M.ATK +7, Adds one point of damage to user’s magical attacks	Rice + Tuna + Seaweed
+Thieboudienne	1800	Medium	DEF +8, M.DEF +8, Allows for recovery items to heal for an extra point of health	Rice + Carrot + Pumpkin + Any Fish
+Tomato Risotto	690	Small	ATK +5, SPD +5	Rice + Tomato
+Vegetable Curry	1380	Medium	M.DEF +7, M.ATK +7, ATK +7	Rice + Curry Powder + Spinach
+White Rice	200	Small	SPD +2	Rice
+Yam Rice	400	Small	DEF +3	Yam + Rice
+Yogurt Rice	1290	Medium	SPD +7, DEF +7, Prevents Poison	Rice + Yogurt + Onion

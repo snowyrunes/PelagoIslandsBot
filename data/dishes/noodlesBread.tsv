@@ -1,0 +1,56 @@
+name	price	recipeSize	effects	recipe
+Basil Cheese Bread	1800	Medium	DEF +7, Max HP +2, Prevents Stun	Flour + Basil + Cheese
+Beefaroni	4500	Large	Removes 3 results when beast taming	Flour + Common Mushroom + Cheese + Onion + Any Herb
+Bread	150	Small	DEF +2	Flour
+Butter Roll	580	Small	DEF +3, M.ATK +3	Flour + Butter
+Cannelloni	2600	Medium	DEF +8, M.DEF +8, M.ATK +8	Flour + Spinach + Milk + Cheese
+Carbonara	4150	Large	ATK +10, SPD +10, DEF +10, M.ATK +10	Flour + Cheese + Egg + Milk + Any Fish
+Cheese Bread	2850	Medium	SPD +8, ATK +8, DEF +8	Flour + Cheese + Egg + Milk
+Cheese Pasta	930	Medium	DEF +5, ATK +5	Flour + Cheese
+Cold Noodles	2370	Medium	SPD +8, ATK +8, Grants Water attribute	Flour + Cucumber + Tomato + Egg
+Cornbread	250	Small	M.ATK +2	Flour + Corn
+Corn Pasta	2530	Medium	M.ATK +8, DEF +8, Subtracts 1 point of damage from magic attacks	Flour + Corn + Butter + Milk
+Crackers	900	Medium	Adds 50 to EXP earned	Flour + Salt
+Cream Pasta	700	Small	DEF +4, M.DEF +4	Flour + Milk
+Curry Bread	1100	Medium	ATK +6, M.ATK +6, Grants Fire Attribute	Flour + Oil + Dry Curry
+Curry Udon	200	Small	M.DEF +2	Flour + Dry Curry
+Eastern Pasta	2300	Medium	DEF +7, M.DEF +7, Prevents Paralysis	Flour + Turnip + Radish + Any Mushroom
+Egg Benedict	3690	Large	SPD +9, ATK +9, M.ATK +9, 50% to evade an attack	Flour + Egg + Butter + Salmon
+Egg Sandwich	1490	Medium	SPD +6, ATK +6, Guarantees a ‘Success’ for the taming of bird-type monsters	Bread + Boiled Egg + Mayonnaise
+Focaccia	1970	Medium	User will retain 1 HP upon first killing blow	Flour + Butter + Any Herb
+French Toast	1760	Medium	SPD +7, ATK +7, DEF +7	Flour + Egg + Milk
+Fruit Bread	460	Small	M.ATK +3, M.DEF +3	Flour + Any Fruit
+Fruit Sandwich	830	Small	Adds 25 to EXP earned	Bread + Any Fruit
+Genovese Pasta	4260	Large	M.ATK +10, M.DEF +10, DEF +10, Max HP +3	Flour + Walnut + Milk + Cheese + Any Herb
+Green Pasta	1690	Medium	Allows recovery items to heal an extra point of health	Flour + Broccoli + Any Herb
+Herb Pasta	730	Small	Adds 1 HP to max for duration of use	Flour + Any Herb
+Jam Roll	3000	Medium	SPD +8, ATK +8, Adds 1 point of damage to magical attacks	Flour + Egg + Milk + Any Jam
+Lasagna	4000	Large	DEF +9, ATK +9, SPD +9, The entire party retains 1 HP upon first killing blow	Flour + Cheese + Onion + Tomato + Milk
+Mac and Cheese	2490	Medium	DEF +8, SPD +8, ATK +8	Flour + Cucumber + Mayonnaise + Cheese
+Macaroni Melody	4390	Large	DEF +10, Adds 2 points of recovery to recovery items	Flour + Herb + Onion + Cheese + Any Mushroom
+Melon Bread	970	Medium	SPD +5, M.ATK +5	Flour + Melon
+Mushroom Spaghetti	800	Small	DEF +4, Prevents Poison	Flour + Any Mushroom
+Naan Bread	3300	Large	DEF +9, ATK +9, Max HP +2, Prevents all ailments	Flour + Milk + Egg + Yogurt
+Napolitan	2100	Medium	ATK +7, Max HP +2, Prevents Poison	Flour + Tomato + Onion
+Octopus Pasta	3820	Large	Adds 2 points of recovery to healing spells	Flour + Octopus + Broccoli + Any Herb
+Penne All'arraabbiata	2180	Medium	DEF +7, ATK +7, M.DEF +7	Flour + Milk + Tomato
+Peperoncino	1500	Medium	ATK +6, Max HP +2, Subtracts 1 point of damage from fire attacks	Flour + Chili Pepper + Any Herb
+Pescatora	770	Small	M.ATK +4, Adds 1 point of damage to user’s magical attacks	Flour + Any Fish
+Pita Bread	3470	Large	SPD +9, ATK +9, M.DEF +9, Water Resistance	Flour + Egg + Tomato + Cucumber
+Potato Bread	330	Small	Grants Earth Attribute	Flour + Potato
+Raisin Bread	540	Small	SPD +3, M.DEF +3	Flour + Grape
+Saimin Noodles	2250	Medium	M.ATK +7, M.DEF +7, Heals 1 HP each turn	Flour + Shrimp + Any Fish
+Sandwich	860	Small	SPD +5, M.DEF +5	Bread + Egg + Cucumber
+Spaghetti	610	Small	ATK +3, Grants Fire Attribute	Flour + Tomato
+Steamed Bread	1250	Medium	SPD +6, ATK +6, DEF  +6	Flour + Egg + Milk
+Stir-Fried Udon	5000	Large	All Stats +10, Adds 100 to EXP earned	Flour + Tiger Prawn + Egg + Any Vegetable + Any Mushroom
+Tempura Udon	1000	Medium	M.ATK +5, M.DEF +5	Tempura + Udon
+Toast	300	Small	SPD +2	Bread + Butter
+Tuna Sandwich	1340	Medium	M.ATK +6, SPD +6, ATK +6	Bread + Tuna + Mayonnaise
+Udon	160	Small	ATK +2	Flour
+Udon with Egg	690	Small	SPD +3, ATK +3	Flour + Egg
+Vegetable Bread	400	Small	Grants Wind Attribute	Flour + Any Vegetable
+Vegetable Sandwich	1410	Medium	Allows recovery magic to heal an extra point of health	Bread + Any Vegetable + Mayonnaise
+Walnut Bread	350	Small	Subtracts 1 point of damage from Earth attacks	Flour + Walnut
+Yam Pasta	630	Small	ATK +3, Grants Fire Attribute	Flour + Tomato
+Yogurt Bread	500	Small	ATK +3, DEF +3	Flour + Yogurt

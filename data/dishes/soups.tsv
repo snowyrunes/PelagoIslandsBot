@@ -1,0 +1,41 @@
+name	price	recipeSize	effects	recipe
+Acqua Pazza	1420	Medium	Water Resistance, M.DEF +8	Squid + Any Fish + Tomato
+Borscht	3850	Large	Grants Earth Attribute, DEF +9	Carrot + Cabbage + Onion + Tomato + Any Herb
+Bouillabaisse	1200	Medium	Grants Fire Attribute, ATK +6	Onion + Tomato + Any Fish
+Bouillon Soup	700	Medium	ATK +5, M.ATK +5	Carrot + Cabbage
+Carrot Soup	350	Small	M.ATK +3, ATK +3	Carrot
+Cheese Soup	550	Medium	DEF +4	Cheese
+Clam Chowder	2000	Large	M.DEF +9	Clam + Potato + Onion + Basil
+Clam Soup	480	Small	ATK +3, DEF +3	Clam
+Clear Soup	880	Medium	Cures Poison, Sickness	Any Fish + Any Mushroom
+Coconut Soup	920	Medium	ATK +6	Coconut + Heavy Spice + Common Mushroom
+Corbasi	780	Medium	Cures Paralysis	Yogurt + Flour
+Corn Potage	200	Small	SPD +2	Corn
+Egg Drop Soup	1510	Medium	M.ATK +8, SPD +8, Adds 100 to EXP earned	Radish + Bok Choy + Egg
+Egg Soup	420	Small	DEF +3, Cures Poison	Egg
+Egg Sinach Soup	760	Medium	SPD +5, M.ATK +5	Spinach + Egg
+Ema Datshi	1400	Medium	M.DEF +7, M.ATK +7	Onion + Cheese + Oil
+Fish Chowder	1100	Medium	M.ATK +6	Any Fish + Potato + Onion
+Gazpacho	1490	Medium	ATK +8, DEF +8	Tomato + Cucumber + Carrot
+Gumbo	3500	Large	ATK +9	Bell Pepper + Tomato + Chili Pepper + Any Fish
+Herb Soup	575	Medium	Max HP +1, Cures Poison and Paralysis	Any Herb
+Ika Vakamiti	2670	Large	SPD +9, Grants Wind Attribute	Coconut + Orange + Lemon + Any Fish
+Milk Soup	610	Medium	DEF +5	Milk + Any Vegetable
+Minestrone	4000	Large	Doubles the quantity of a monster’s dropped items	Tomato + Onion + Potato + Cabbage + Any Mushroom
+Mushroom Soup	600	Medium	M.DEF +4	Any Mushroom
+Onion Soup	160	Small	DEF +2	Onion
+Orange Soup	560	Medium	ATK +4, SPD +4	Orange
+Osumashi Soup	845	Medium	Grants Water Attribute, M.DEF +6	Any Fish + Shiitake
+Pistou Soup	2340	Large	M.ATK +9	Carrot + Potato + Onion + Flour
+Pho	1250	Medium	Wind Resistance, SPD +6	Rice Flour + Turnip + Cabbage
+Potage	165	Small	M.DEF +2	Potato
+Pot-Au-Feu	3890	Large	DEF +9	Potato + Carrot + Onion + Turnip + Cabbage
+Radish Soup	810	Medium	Earth Resistance, DEF +5	Radish + Milk
+Spaghetti Soup	650	Medium	M.ATK +4	Potato + Flour
+Spinach Soup	220	Small	SPD +3, M.DEF +3	Spinach
+Thin Fish Soup	510	Small	M.DEF +4, Water Resistance	Sea Bream
+Tomato Soup	180	Small	M.ATK +2	Tomato
+Turnip Soup	150	Small	ATK +2	Turnip
+Ukha	720	Medium	M.DEF +5	Onion + Any Fish
+Ultimate Soup	7000	Large	ATK +10, DEF +10, M.ATK +10, M.DEF +10, Resistance to all elements	Elli Leaves + Heavy Spice + Fugue Mushroom + Lobster + Giant Halibut
+Vichyssoise	1330	Medium	Earth Resistance, DEF +7	Potato + Onion + Milk
