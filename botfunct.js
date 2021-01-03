@@ -211,6 +211,8 @@ module.exports = {
 			case "cooking":
 			case "cookone":
 				return getCookingRolls();
+			case "levelup":
+				return getLevelUpRolls();
 			default:
 				return ("No minigame command found for " + args[0]);
 		}
@@ -241,6 +243,21 @@ function parseObtain(oString){
 }
 
 //roll line functions
+
+function getLevelUpRolls(){
+	var aLine = "**Roll line for classes with High SPD**\n"
+	aLine += lines.highSPD.join(" | ");
+	aLine += "\n\n**Roll line for classes with High DEF**\n"
+	aLine += lines.highDEF.join(" | ");
+	aLine += "\n\n**Roll line for classes with High ATK**\n"
+	aLine += lines.highATK.join(" | ");
+	aLine += "\n\n**Roll line for classes with High M.ATK**\n"
+	aLine += lines.highMATK.join(" | ");
+	aLine += "\n\n**Roll line for classes with High M.DEF**\n"
+	aLine += lines.highMDEF.join(" | ");
+
+	return aLine;
+}
 
 function getCookingRolls(){
 	var aLine = "**Roll line for using a Small Kitchen**\n"

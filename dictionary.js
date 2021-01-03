@@ -17,6 +17,7 @@ var Gardening = require('./games/gardening');
 var Alchemy = require('./games/alchemy');
 var Cooking = require('./games/cooking');
 var LevelUp = require('./games/levelup');
+var MonsterHunting = require('./games/hunting');
 
 
 module.exports = {
@@ -62,6 +63,8 @@ module.exports = {
         methodDict['tameone'] = botvars.piAllMinigamesMap["Monster Taming"].tameOne;
         methodDict['taming'] = botvars.piAllMinigamesMap["Monster Taming"].taming;
         methodDict['monstercare'] = botvars.piAllMinigamesMap["Monster Taming"].monsterCare;
+
+        methodDict['monsterhunt'] = botvars.piAllMinigamesMap["Monster Hunting"].monsterHunt;
 
         //gardening
         //methodDict['gardenone'] = botvars.piAllMinigamesMap["Gardening"].gardenOne;
@@ -118,6 +121,7 @@ module.exports = {
         botvars.piAllMinigamesMap["Alchemy"] = new Alchemy("Alchemy");
         botvars.piAllMinigamesMap["Cooking"] = new Cooking("Cooking");
         botvars.piAllMinigamesMap["Level Up"] = new LevelUp("Level Up");
+        botvars.piAllMinigamesMap["Monster Hunting"] = new MonsterHunting("Monster Hunting");
 
         //group calls
         cooking();

@@ -276,7 +276,21 @@ module.exports = {
 	highMDEF: ["M.DEF", "DEF", "M.ATK", "DEF", "M.ATK", "M.DEF", "SPD", "M.DEF", "M.DEF", "M.DEF", "DEF", "M.ATK", "M.DEF", "SPD", "M.DEF", "SPD", "ATK", 
 				"M.DEF", "M.ATK", "M.DEF", "M.ATK", "M.DEF", "M.DEF", "ATK", "M.ATK", "M.ATK", "M.DEF", "SPD", "M.DEF", "DEF", "ATK", "DEF", "M.ATK", 
 				"M.DEF", "SPD", "M.DEF", "M.DEF", "M.DEF", "M.DEF", "M.DEF", "M.DEF", "ATK", "ATK", "M.ATK", "M.ATK", "M.DEF", "SPD", "M.DEF", "SPD", 
-				"M.DEF"]
+				"M.DEF"],
 
+	//player hitlines
+	level1To3HitLine: ["HIT", "MISS", "HIT", "MISS", "HIT", "MISS", "MISS", "MISS", "MISS"],
+	level4To6HitLine: ["HIT", "MISS", "HIT", "MISS", "MISS", "MISS", "HIT", "MISS"],
+	level7To9HitLine: ["HIT", "MISS", "HIT", "MISS", "HIT", "MISS", "HIT", "MISS"],
+	level10To12HitLine: ["HIT", "MISS", "HIT", "MISS", "HIT", "MISS", "HIT", "HIT"],
+	level13PlusHitLine: ["HIT", "MISS", "HIT", "HIT", "HIT", "MISS", "HIT", "HIT"],
+
+	//monster hitlines
+	levelEHitLine: ["HIT", "MISS", "HIT", "MISS", "HIT", "MISS", "MISS", "MISS", "MISS"],
+	levelDHitLine: ["HIT", "MISS", "HIT", "MISS", "HIT", "MISS", "MISS", "MISS", "MISS"],
+	levelCHitLine: ["HIT", "MISS", "HIT", "MISS", "MISS", "MISS", "HIT", "MISS"],
+	levelBHitLine: ["HIT", "MISS", "HIT", "MISS", "HIT", "MISS", "HIT", "MISS"],
+	levelAHitLine: ["HIT", "MISS", "HIT", "MISS", "HIT", "MISS", "HIT", "HIT"],
+	levelBossHitLine: ["HIT", "MISS", "HIT", "HIT", "HIT", "MISS", "HIT", "HIT"]
 
 }

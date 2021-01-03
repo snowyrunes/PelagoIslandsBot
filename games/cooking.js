@@ -122,7 +122,7 @@ module.exports = class Cooking extends Minigame{
             break;
         case "shining":
             price = parseInt(dishData.shiningPrice);
-            exp = getDishExp(dishData);
+            exp = getDishExp(dishData)*2;
             lineOutput += "**Result:** Wow! You crafted a Shining " + dishData.name + " worth a whopping " + commaNumber(price) + "G! (Use pi!item " + dishData.name + " for more details.)\n";
             break;
         default:
@@ -135,7 +135,7 @@ module.exports = class Cooking extends Minigame{
 
     cooking(args){
       if(args.length < 1){
-        return "Please provide kitchen size and the name of the dish. Example: pi!cookOne small kitchen, butter, [fails:success, disaster:success]"
+        return "Please provide kitchen size and the name of the dish. Example: pi!cooking small kitchen, butter, [fails:success, disaster:success]"
       }
       
       var argsString = args.join(" ");
@@ -248,7 +248,7 @@ module.exports = class Cooking extends Minigame{
               break;
           case "shining":
               price = parseInt(dishData.shiningPrice);
-              exp = getDishExp(dishData) *2;
+              exp = getDishExp(dishData)*2;
               totalPrice += price;
               totalExp += exp;
               ++totalShining;

@@ -27,7 +27,7 @@ module.exports = class LevelUp extends Minigame {
 			return "Please include the class name, level, currentExp, and gainedExp. Example: pi!levelUp Alchemist, 5, 100, 50";
 		}
 
-		var classData = getClass(newargs[0]);
+		var classData = getClass(newargs[0].toLowerCase());
 
 		if(null === classData){
 			return "Invalid class \"" + newargs[0] + "\". Use \"pi!list classes\" for valid class names."
