@@ -64,7 +64,7 @@ module.exports = {
         methodDict['taming'] = botvars.piAllMinigamesMap["Monster Taming"].taming;
         methodDict['monstercare'] = botvars.piAllMinigamesMap["Monster Taming"].monsterCare;
 
-        methodDict['monsterhunt'] = botvars.piAllMinigamesMap["Monster Hunting"].monsterHunt;
+        //methodDict['monsterhunt'] = botvars.piAllMinigamesMap["Monster Hunting"].monsterHunt;
 
         //gardening
         //methodDict['gardenone'] = botvars.piAllMinigamesMap["Gardening"].gardenOne;
