@@ -1,0 +1,50 @@
+name	price	recipeSize	effects	recipe
+Apple Jam	550	Small	SPD +5, Cures Sickness	Apple
+Boiled Broccoli	840	Medium	SPD +6, ATK +6	Broccoli + Flour + Egg
+Boiled Corn	240	Small	M.ATK +3	Corn
+Boiled Egg	330	Small	SPD +3	Egg
+Boiled Pumpkin	200	Small	Adds 1 HP to overall max for duration of use	Pumpkin
+Boiled Spinach	270	Small	M.DEF +3	Spinach
+Cabbage Rolls	165	Small	DEF +3	Cabbage
+Caponata	1180	Medium	SPD +7, ATK +7, Prevents Paralysis	Eggplant + Tomato + Egg + Any Herb
+Cheese Fondue	4000	Large	M.ATK +10, M.DEF +10, SPD +10, Allows for recovery items/spells to heal for 2 extra points of health	Cheese + Broccoli + Carrot + Potato + Shrimp
+Corn Stew	2200	Large	M.ATK +9, SPD +9, M.DEF +9, Increases max HP by 3 for duration of use	Corn + Potato + Onion + Carrot + Flour
+Cream Croquette	3200	Large	SPD +9, M.DEF +9, DEF +9, Nullifies one HIT per battle	Potato + Bread + Oil + Milk + Butter
+Creamy Hot Pot	1650	Medium	DEF +8, M.DEF +8, SPD +8	Milk + Onion + Carrot + Crawfish
+Croquette	1200	Medium	SPD +7, M.DEF +7, DEF +7	Potato + Breadcrumbs + Oil
+Deep-Fried Catfish	5000	Large	DEF +10, M.ATK +10, M.DEF +10, Heals 2 HP upon first killing blow	Catfish + Bread + Curry Powder + Cheese
+Deep-Fried Fish Cakes	920	Medium	M.ATK +6, M.DEF +6, Increases max HP by 2 for duration of use	Any Fish + Heavy Spice + Oil
+Egg Custard	3700	Large	ATK +9, DEF +9, M.ATK +9, M.DEF +9	Egg + Shiitake + Clam + Shrimp + Any Fish
+Flan	1390	Medium	DEF +8, ATK +8, Adds +50 to EXP earned	Milk + Bread + Any Vegetable + Egg
+Fried Isobe	955	Medium	SPD +7, DEF +7, Adds Fire attribute	Pontata Root + Seaweed + Cheese
+Glazed Yam	660	Small	Sweet Powder + Yam	Retains 1 HP upon first killing blow
+Grape Jam	480	Small	SPD +4, M.DEF +4	Grape
+Grilled Miso	360	Small	DEF +4	Radish
+Kakiage	576	Medium	M.ATK +7, M.DEF +7, Increases max HP by 2 for duration of use	Any Fish + Onion + Flour + Oil
+Lau Lau	905	Medium	M.DEF +6, M.ATK +6, SPD +6	Any Fish + Spinach + Banana
+Mackerel with Radish	600	Small	DEF +5, M.DEF +5	Mackerel + Radish
+Marmalade	450	Small	Allows recovery items to heal an extra point of HP	Orange
+Milk Porridge	700	Medium	ATK +5, DEF +5	Rice + Milk
+Milk Stew	2800	Large	M.ATK +9, M.DEF +9, SPD +9, DEF +9	Milk + Onion + Carrot + Spinach + Any Fish
+Moqueca	1000	Medium	ATK +7, M.ATK +7, M.DEF +7	Any Fish + Tomato + Onion
+New Year's Dish	4500	Large	ATK +10, SPD +10, M.ATK +10, Adds Light attribute	Burdock + Chestnut + Sea Bream + Rice + Lobster
+Oden	810	Medium	SPD +6, M.DEF +6	Radish + Egg + Potato
+Pumpkin Croquette	1240	Medium	SPD +8, M.DEF +8, DEF +8	Potato + Breadcrumbs + Pumpkin + Oil
+Ratatouille	2500	Large	ATK +9, DEF +9, Prevents Ailments, Prevents Death Curse	Eggplant + Tomato + Bell Pepper + Any Herb
+Rice Porridge	410	Small	SPD +4, ATK +4	Rice
+Royal Curry	8000	Large	SPD +10, ATK +10, M.ATK +10, Doubles EXP earned	Curry Powder + Apple + Honey + Mixed Herbs + Onion + Emery Flower
+Salmon Soup	3500	Large	M.ATK +9, M.DEF +9, SPD +9, DEF +9	Salmon + Potato + Carrot + Radish + Shiitake
+Samosa	865	Medium	SPD +6, M.DEF +6	Potato + Flour + Oil
+Simmered Eggplant	300	Small	Cures Poison	Eggplant
+Simmered Potato	140	Small	M.DEF +2	Potato
+Spanish Omelet	1590	Medium	SPD +8, ATK +8, Adds Wind attribute	Egg + Potato + Onion + Spinach
+Spring Roll	1500	Medium	DEF +8, Prevents Poison, Adds +50 to EXP earned	Bamboo Shoot + Shiitake + Flour + Oil
+Stew	1120	Medium	M.DEF +7, SPD +7, Increases max HP by 2 for duration of use	Potato + Carrot + Broccoli + Flour
+Strawberry jam	520	Small	Cures Paralysis	Strawberry
+Stuffed Tomatoes	210	Small	ATK +3	Tomato
+Succotash	740	Medium	ATK +5, M.ATK +5	Tomato + Corn + Butter
+Tempura	1780	Medium	SPD +8, M.ATK +8, Adds Water attribute	Egg + Flour + Any Fish + Any Vegetable
+Turnip Stew	120	Small	DEF +2	Turnip
+Ultimate Curry	7000	Large	SPD +10, M.DEF +10, DEF +10, Entire group retains 1 HP upon first killing blow	Curry Powder + Wine + Devil Blood + Heavy Spice + Onion + Golden Turnip
+Union Stew	2000	Large	SPD +9, ATK +9, DEF +9, Prevents all ailments	Radish + Bok Choy + Mushroom + Hot-Hot Fruit
+Vegetable Etuver	970	Medium	DEF +7, Adds Earth attribute, Allows recovery items to heal an extra point of HP	Broccoli + Turnip + Radish

@@ -15,6 +15,8 @@ var Fishing = require('./games/fishing');
 var Taming = require('./games/taming');
 var Gardening = require('./games/gardening');
 var Alchemy = require('./games/alchemy');
+var Cooking = require('./games/cooking');
+var LevelUp = require('./games/levelup');
 
 
 module.exports = {
@@ -28,6 +30,7 @@ module.exports = {
         methodDict['livestock'] = botfuncts.livestockDetails;
         methodDict['location'] = botfuncts.locationDetails;
         methodDict['island'] = botfuncts.islandDetails;
+        methodDict['class'] = botfuncts.classDetails;
 
 		methodDict['getline'] = botfuncts.rollLine;
 
@@ -67,6 +70,13 @@ module.exports = {
         //alchemy
         methodDict['alchemyone'] = botvars.piAllMinigamesMap["Alchemy"].alchemyOne;
         methodDict['alchemy'] = botvars.piAllMinigamesMap["Alchemy"].alchemy;
+
+        //cooking
+        methodDict['cookone'] = botvars.piAllMinigamesMap["Cooking"].cookOne;
+        methodDict['cooking'] = botvars.piAllMinigamesMap["Cooking"].cooking;
+
+        //level up
+        methodDict['levelup'] = botvars.piAllMinigamesMap["Level Up"].levelUp;
         
 		//randomline
 		methodDict['choose'] = botfuncts.randomFromLine;
@@ -92,6 +102,7 @@ module.exports = {
         preloadFileCategory("islands", "./data/places/islands.tsv");
         preloadFileCategory("potions", "./data/alchemy/potions.tsv");
 
+        cookingPreload();
         floraPreload();
        
         //load minigames
@@ -105,11 +116,15 @@ module.exports = {
         botvars.piAllMinigamesMap["Monster Taming"] = new Taming("Monster Taming");
         botvars.piAllMinigamesMap["Gardening"] = new Gardening("Gardening");
         botvars.piAllMinigamesMap["Alchemy"] = new Alchemy("Alchemy");
+        botvars.piAllMinigamesMap["Cooking"] = new Cooking("Cooking");
+        botvars.piAllMinigamesMap["Level Up"] = new LevelUp("Level Up");
 
         //group calls
         cooking();
 		critters();
 		flora();
+
+		botvars.piClassList = loadCategory("classes", "./data/classes/classes.tsv");
 		
 		botvars.piCrystalsList = loadCategory("crystals", "./data/materials/crystal.tsv");
 		botvars.piFabricList = loadCategory("fabrics", "./data/fabrics.tsv");
@@ -188,31 +203,51 @@ function preloadFileCategory(categoryName, filePath){
 		//some categories need to be loaded early
 		categoryList[(item[0].trim().toLowerCase())] = tempItem;
 
-			if("monsters" == categoryName){
-	            botvars.piAllMonstersMapPreload[tempItem["name"].toLowerCase()] = tempItem;
-	        }else if("livestock" == categoryName){
-	        	botvars.piAllLivestockMapPreload[tempItem["name"].toLowerCase()] = tempItem;
-	        }else if(("fish" == categoryName) && ("yes" == tempItem["isKingFish"].toLowerCase()) ){
-	        	//secret kingfish mapping for minigame
-	        	botvars.piKingFishMapPreload[tempItem["name"].toLowerCase()] = tempItem;
-	        }else if("islands" == categoryName){
-	        	if(!("N/A" == tempItem.monsters || "See Individual Locations" == tempItem.monsters)){
-	        		botvars.piMonsterIslandMapPreload[tempItem["name"].toLowerCase()] = tempItem;
-	        	}
-	        }else if("locations" == categoryName){
-	        	if(!("N/A" == tempItem.monsters)){
-	        		botvars.piMonsterLocationMapPreload[tempItem["name"].toLowerCase()] = tempItem;
-	        	}
-	        }else if("crops" == categoryName){
-	            botvars.piCropsPreload[tempItem["name"].toLowerCase()] = tempItem;
-	        }else if("flowers" == categoryName){
-	            botvars.piFlowersPreload[tempItem["name"].toLowerCase()] = tempItem;
-	        }else if("seeds" == categoryName){
-	            botvars.piSeedsPreload[tempItem["name"].toLowerCase()] = tempItem;
-	        }else if("potions" == categoryName){
-	        	botvars.piPotionsPreload[tempItem["name"].toLowerCase()] = tempItem;
-	        }
-		
+			switch(categoryName){
+				case "monsters":
+					botvars.piAllMonstersMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+					break;
+				case "livestock":
+					botvars.piAllLivestockMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+					break;
+				case "fish":
+					if("yes" === tempItem["isKingFish"].toLowerCase()){
+						botvars.piKingFishMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+					}
+					break;
+				case "islands":
+					if(!("N/A" === tempItem.monsters || "See Individual Locations" == tempItem.monsters)){
+		        		botvars.piMonsterIslandMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+		        	}
+		        	break;
+		        case "locations":
+		        	if(!("N/A" === tempItem.monsters)){
+		        		botvars.piMonsterLocationMapPreload[tempItem["name"].toLowerCase()] = tempItem;
+		        	}
+		        	break;
+		        case "seeds":
+		        	botvars.piSeedsPreload[tempItem["name"].toLowerCase()] = tempItem;
+		        	break;
+		        case "potions":
+		        	botvars.piPotionsPreload[tempItem["name"].toLowerCase()] = tempItem;
+		        	break;
+		        case "ingredients":
+		        case "desserts":
+		        case "drinks":
+		        case "grillfrydish":
+		        case "misc-dishes":
+		        case "noodlesbreaddish":
+		        case "pot-dishes":
+		        case "rice-dishes":
+		        case "salads":
+		        case "soups":
+		        	if(!("N/A" === tempItem.recipe) || ("Universal" === tempItem.recipeSize)){
+		        		botvars.piCookingDishPreload[tempItem["name"].toLowerCase()] = tempItem;
+		        	}
+		        	break;
+		        default:
+		        	break;
+			}		
 	}
 
 }
@@ -231,7 +266,10 @@ function getFileCategoryListing(categoryName, filePath){
 			tempItem[propertyNames[j]] = item[j];
 		}
 
-		tempItem["obtainFrom"] = getObtainableFromProperty(tempItem["name"].toLowerCase());
+		if(categoryName != "classes"){
+			tempItem["obtainFrom"] = getObtainableFromProperty(tempItem["name"].toLowerCase());
+		}
+		
 		//assume name is always in item[0]
 		categoryList[(item[0].trim().toLowerCase())] = tempItem;
 	        
@@ -243,6 +281,8 @@ function getFileCategoryListing(categoryName, filePath){
 	        botvars.piAllLocationMap[tempItem["name"].toLowerCase()] = tempItem;
 		}else if("islands" == categoryName){
 	        botvars.piAllIslandMap[tempItem["name"].toLowerCase()] = tempItem;
+		}else if("classes" == categoryName){
+			botvars.piAllClassesMap[tempItem["name"].toLowerCase()] = tempItem;
 		}else{
 	        botvars.piAllItemMap[tempItem["name"].toLowerCase()] = tempItem;
 	    }
@@ -284,6 +324,37 @@ function getGardeningFileCategoryListing(categoryName, filePath){
 	return categoryList;
 }
 
+function getCookingFileCategoryListing(categoryName, filePath){
+	var listRaw = readFile(filePath).split("\n");
+	var propertyNames = listRaw[0].trim().split("\t");
+	var categoryList = [];
+
+	for(i = 1; i< listRaw.length; i++){
+		var item = listRaw[i].trim().split("\t");
+		
+		var tempItem = {};
+
+		for(j = 0; j< propertyNames.length; j++){
+			tempItem[propertyNames[j]] = item[j];
+		}
+
+		if(Object.keys(botvars.piAllMinigamesMap["Cooking"].itemConditions).includes(tempItem.name.toLowerCase().trim())){
+			tempItem["shiningPrice"] = parseInt(tempItem["price"])*5;
+			tempItem["shiningStatBoost"] = "If the dish is shining, add +5 to each of this dish's regular stat boosts (if any).";
+		}
+		
+		tempItem["obtainFrom"] = getObtainableFromProperty(tempItem["name"].toLowerCase());
+		//assume name is always in item[0]
+		categoryList[(item[0].trim().toLowerCase())] = tempItem;
+	        
+	    botvars.piAllItemMap[tempItem["name"].toLowerCase()] = tempItem;
+
+		
+	}
+
+	return categoryList;
+}
+
 function loadCategory(categoryName, filepath){
 	var categoryList = getFileCategoryListing(categoryName, filepath);
 
@@ -293,6 +364,13 @@ function loadCategory(categoryName, filepath){
 
 function loadGardenCategory(categoryName, filepath){
 	var categoryList = getGardeningFileCategoryListing(categoryName, filepath);
+
+	botvars.piItemCategories[categoryName] = Object.keys(categoryList);
+	return categoryList;	
+}
+
+function loadCookingCategory(categoryName, filepath){
+	var categoryList = getCookingFileCategoryListing(categoryName, filepath);
 
 	botvars.piItemCategories[categoryName] = Object.keys(categoryList);
 	return categoryList;	
@@ -320,18 +398,37 @@ function flora(){
 	botvars.piHerbsList = loadGardenCategory("herbs", "./data/wildplants/herbs.tsv");
 }
 
-function cooking(){
-	botvars.piIngredientsList = loadCategory("ingredients", "./data/dishes/ingredients.tsv");
 
-	botvars.piDrinkList = loadCategory("drinks", "./data/dishes/drinks.tsv");
-	botvars.piGrillFryList = loadCategory("grillfrydish", "./data/dishes/grilledFried.tsv");
-	botvars.piMiscDishList = loadCategory("misc-dishes", "./data/dishes/misc-dish.tsv");
+function cookingPreload(){
+	botvars.piIngredientsList = preloadFileCategory("ingredients", "./data/dishes/ingredients.tsv");
+
+	botvars.piDessertsList = preloadFileCategory("desserts", "./data/dishes/desserts.tsv");
+	botvars.piDrinkList = preloadFileCategory("drinks", "./data/dishes/drinks.tsv");
+	botvars.piGrillFryList = preloadFileCategory("grillfrydish", "./data/dishes/grilledFried.tsv");
+	botvars.piMiscDishList = preloadFileCategory("misc-dishes", "./data/dishes/misc-dish.tsv");
+	botvars.piNoodleBreadList = preloadFileCategory("noodlesbreaddish", "./data/dishes/noodlesBread.tsv");
+	botvars.piPotDishesList = preloadFileCategory("pot-dishes", "./data/dishes/pot-dish.tsv");
+	botvars.piRiceDishesList = preloadFileCategory("rice-dishes", "./data/dishes/rice-dish.tsv");
+	botvars.piSaladList = preloadFileCategory("salads", "./data/dishes/salads.tsv");
+	botvars.piSoupList = preloadFileCategory("soups", "./data/dishes/soups.tsv");
+}
+
+function cooking(){
+	botvars.piIngredientsList = loadCookingCategory("ingredients", "./data/dishes/ingredients.tsv");
+
+	botvars.piDessertsList = loadCookingCategory("desserts", "./data/dishes/desserts.tsv");
+	botvars.piDrinkList = loadCookingCategory("drinks", "./data/dishes/drinks.tsv");
+	botvars.piGrillFryList = loadCookingCategory("grillfrydish", "./data/dishes/grilledFried.tsv");
+	botvars.piMiscDishList = loadCookingCategory("misc-dishes", "./data/dishes/misc-dish.tsv");
+	botvars.piNoodleBreadList = loadCookingCategory("noodlesbreaddish", "./data/dishes/noodlesBread.tsv");
+	botvars.piPotDishesList = loadCookingCategory("pot-dishes", "./data/dishes/pot-dish.tsv");
+	botvars.piRiceDishesList = loadCookingCategory("rice-dishes", "./data/dishes/rice-dish.tsv");
+	botvars.piSaladList = loadCookingCategory("salads", "./data/dishes/salads.tsv");
+	botvars.piSoupList = loadCookingCategory("soups", "./data/dishes/soups.tsv");
 }
 
 function floraPreload(){
 	preloadFileCategory("seeds", "./data/gardening/seeds-old.tsv");
-	//preloadFileCategory("crops", "./data/gardening/crops-old.tsv");
-	//preloadFileCategory("flowers", "./data/gardening/flowers-old.tsv");
 }
 
 

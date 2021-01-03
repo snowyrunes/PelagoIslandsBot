@@ -1,0 +1,72 @@
+name	price	recipeSize	effects	recipe
+Aloe Yogurt	830	Small	Heals 1 HP each turn	Yogurt + Aloe
+Apple Pie	3330	Medium	Prevents Sickness, SPD +8, ATK +8	Pie Crust + Apple + Butter + Egg
+Apricot Cake	2650	Medium	SPD +7, DEF +7, ATK +7	Flour + Apricot + Milk + Egg
+Banana Ice Cream	5050	Large	SPD +10, M.DEF +10, M.ATK +10, Resists Light	Ice + Milk + Egg + Sugar + Banana
+Banana Pudding	1850	Medium	Adds 2 points of recovery to healing items	Milk + Egg + Banana
+Blackberry Pie	3980	Large	SPD +9, M.ATK +9, M.DEF +9, Resists Dark	Pie Crust + Blackberry + Butter + Egg
+Blueberry Pie	3490	Medium	DEF +8, M.DEF +8, Blocks a magic attack once a battle	Pie Crust + Blueberry + Butter + Egg
+Brioche	1600	Medium	DEF +6, ATK +6	Flour + Egg + Milk
+Carrot Cake	4500	Large	M.DEF +9, SPD +9, DEF +9, ATK +9	Flour + Egg + Butter + Milk + Carrot
+Cheesecake	2920	Medium	DEF +8, SPD +8, ATK +8	Flour + Cheese + Milk + Egg
+Cherry Pie	3230	Medium	ATK +8, SPD +8, Adds 1 point of damage to physical attacks	Pie Crust + Cherry + Butter + Egg
+Cherry Tart	500	Small	ATK +2	Flour + Cherry
+Chestnut Pie	3690	Large	M.ATK +9, M.DEF +9, SPD +9, ATK +9	Pie Crust + Chestnut + Butter + Egg
+Chiffon Cake	2400	Medium	SPD +7, DEF +7, Grants Wind attribute	Flour + Egg + Milk + Any Fruit
+Chocolate Cake	4810	Large	M.DEF +9, M.ATK +9, SPD +9, Changes one MISS on the user’s line to HIT	Flour + Chocolate + Butter + Milk + Egg
+Chocolate Cookies	2850	Medium	M.DEF +7, M.ATK +7, ATK +7	Flour + Butter + Egg + Chocolate
+Chocolate Ice Cream	5220	Large	SPD +10, DEF +10, ATK +10, Adds 1 point of damage to magic attacks	Ice + Milk + Egg + Sugar + Chocolate
+Chocolate Pudding	1790	Medium	M.DEF +6, SPD +6	Milk + Egg + Chocolate
+Chocolate Sponge	2740	Medium	M.DEF +7, M.ATK +7, SPD +7	Flour + Chocolate + Egg + Milk
+Cinnamon Roll	610	Small	Grants Fire attribute	Flour + Cinnamon
+Clafoutis	2300	Medium	DEF +7, SPD +7, ATK +7	Flour + Yam + Egg + Milk
+Cookies	1270	Small	SPD +5, ATK +5	Flour + Egg + Butter
+Corn Muffin	780	Small	M.ATK +3	Flour + Corn
+Cream Puff	2700	Medium	SPD +7, ATK +7, DEF +7	Flour + Egg + Milk + Butter
+Crepe	300	Small	M.DEF +2	Flour 
+Donuts	960	Small	SPD +3, ATK +3	Flour + Egg
+Fruit Gratin	4220	Large	SPD +9, ATK +9, DEF +9, Resists Fire/Water/Wind/Earth	Flour + Egg + Milk + Any Fruit + Any Herb
+Grape Cake	Flour + Grape + Milk + Egg	Medium	SPD +7, M.DEF +7, DEF +7	Flour + Grape + Milk + Egg
+Herb Cookies	2100	Medium	SPD +7, ATK +7, DEF +7	Flour + Egg + Butter + Any Herb
+Herb Pie	750	Small	Prevents Paralysis	Pie Crust + Any Herb
+Hushpuppies	1690	Medium	Adds 50 to EXP earned	Flour + Egg + Milk
+Ice Cream Crepe	1500	Medium	DEF +6, M.DEF +6	Flour + Ice + Milk
+Kiwi Sherbert	1050	Small	Prevents Sleep	Ice + Kiwi
+Macaron	2000	Medium	SPD +6, DEF +6	Egg + Milk + Chestnut + Any Jam
+Madeleine	1400	Medium	Grants Earth attribute	Flour + Butter
+Malasada	3560	Large	DEF +9, SPD +9, Changes two HITs to MISSes on an enemy’s line	Flour + Milk + Honey + Oil
+Mango Cake	2510	Medium	DEF +7, SPD +7, ATK +7	Flour + Mango + Milk + Egg
+Mille Feuille	2360	Medium	ATK +7, DEF +7, Grants Fire attribute	Flour + Strawberry + Egg + Milk
+Mint Ice Cream	5180	Large	Adds 2 points of recovery to healing spells/items	Ice + Milk + Egg + Sugar + Mint
+Monaka Ice Cream	5500	Large	All Stats +10, Doubles EXP earned	Ice + Milk + Egg + Flour + Chocolate
+Mont Blanc	1720	Medium	M.ATK +6, M.DEF +6	Flour + Egg + Chestnut
+Nata de Coco	2090	Medium	ATK +7, M.ATK +7, Prevents Poison	Coconut + Aloe + Cherry + Strawberry
+Orange Cake	4760	Large	SPD +9, DEF +9, ATK +9, Heals 1 HP a turn	Flour + Egg + Butter + Milk + Orange
+Orange Cookies	2250	Medium	DEF +7, Max HP +2	Flour + Egg + Butter + Orange
+Orange Ice Cream	5300	Large	SPD +10, DEF +10, M.DEF +10, Revives entire party with 2 HP upon first KO	Ice + Milk + Egg + Sugar + Orange
+Orange Pie	3400	Medium	Retains 1 HP upon first killing blow, SPD +8	Pie Crust + Orange + Butter + Egg
+Orange Sherbert	1200	Small	DEF +5, Max HP +1	Ice + Milk + Orange
+Orange Tart	570	Small	Adds 1 point of recovery to healing spells	Flour + Orange
+Pancakes	1570	Medium	DEF +6, SPD +6	Flour + Milk + Honey
+Peach Pie	3180	Medium	SPD +8, ATK +8, Changes one HIT on the enemy’s line to MISS	Pie Crust + Peach + Butter + Egg
+Peach Tart	440	Small	SPD +2	Flour + Peach
+Pie Crust	340	Small	DEF +2	Flour + Butter
+Pineapple Cake	2460	Medium	Adds 50 to EXP earned	Flour + Pineapple + Milk + Egg
+Pound Cake	890	Small	SPD +3	Flour + Egg
+Pudding	920	Small	DEF +3, ATK +3	Milk + Egg
+Pudding a la Mode	4900	Large	SPD +10, M.DEF +10, Max HP +3, Prevents all ailments	Milk + Strawberry + Kiwi + Banana + Egg
+Pumpkin Pie	3100	Medium	Max HP +2, DEF +8, Subtracts 1 point of damage from Earth attacks	Pie Crust + Pumpkin + Butter + Egg
+Pumpkin Pudding	4100	Large	DEF +9, SPD +9, ATK +9, Max HP +3	Milk + Egg + Pumpkin + Honey
+Raspberry Pie	3800	Large	SPD +9, ATK +9, Prevents all ailments	Pie Crust + Raspberry + Butter + Egg
+Shortcake	1370	Medium	Prevents Poison and Paralysis	Flour + Strawberry
+Soft Chocolates	660	Small	M.DEF +2	Milk + Chocolate
+Soft-Serve Ice Cream	1000	Small	DEF +4, Subtracts 1 point of damage from water attacks	Ice + Milk
+Spinach Cake	4670	Large	M.DEF +9, M.ATK +9, DEF +9, ATK +	Flour + Egg + Butter + Milk + Spinach
+Strawberry Ice Cream	5430	Large	ATK +10, M.ATK +10, SPD +10, Adds 1 point of damage to physical attacks	Ice + Milk + Egg + Sugar + Strawberry
+Vanilla Ice Cream	1300	Small	DEF +5, SPD +5	Ice + Milk + Egg
+Vegetable Cake	1120	Small	M.DEF +4, M.ATK +4	Flour + Any Vegetable
+Watermelon Sherbet	1100	Small	SPD +4, Grants Water attribute	Ice + Watermelon
+Watermelon Tart	1480	Medium	Grants Water attribute	Flour + Watermelon
+Yam Cake	4350	Large	SPD +9, ATK +9, DEF +9, Revives with 2 HP upon first KO	Flour + Egg + Butter + Milk + Yam
+Yam Dessert	400	Small	Max HP +1	Flour + Yam
+Yogurt Pie	700	Small	Prevents Poison	Pie Crust + Yogurt

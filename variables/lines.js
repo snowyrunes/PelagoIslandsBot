@@ -139,21 +139,21 @@ module.exports = {
 					"Antidote Herb", "4 Leaf Clover", "Earth Crystal", "Rune Crystal", "Water Crystal", "Magic Crystal", "Mint", "Chamomile", 
 					"Weed", "Vine", "Strong Vine", "Red Magic Flower", "Blue Magic Flower", "Pink Cat", "Moondrop Flower"],
 
-	fishLeuda: ["Black Bass", "Black Bass", "Horse Mackerel", "Fish Fossil", "Puffer Fish", "Sardine", "Horse Mackerel", "Sea Bream", "Bonito", "Mackerel", 
+	fishLeuda: ["Black Bass", "Crab", "Horse Mackerel", "Fish Fossil", "Puffer Fish", "Sardine", "Horse Mackerel", "Sea Bream", "Bonito", "Mackerel", 
 				"Saury", "Angler Fish", "Tuna", "Dogfish Shark", "Rubber Boot", "Rubber Boot", "Bottle", "Sardine", "Amago Trout", "Stick", "Stick", 
-				"Fish Bone", "Pacific Halibut", "Fish Bone", "Black Bass", "Black Bass", "Sardine", "Sardine", "Barracuda", "Flounder", "Sea Bass", 
-				"Black Bass", "Large Trout", "Amago Trout", "Cod", "Squid", "Octopus", "Pirate Treasure", "Horse Mackerel", "Sea Bream", "Saury", 
-				"Dogfish Shark", "Sea Bass", "Black Bass", "Cod", "Flounder", "Amago Trout", "Black Bass", "Sea Bass", "Rare Can", "Sardine"],
+				"Fish Bone", "Pacific Halibut", "Fish Bone", "Black Bass", "Black Bass", "Sardine", "Shrimp", "Barracuda", "Flounder", "Sea Bass", 
+				"Shrimp", "Large Trout", "Amago Trout", "Cod", "Squid", "Octopus", "Pirate Treasure", "Horse Mackerel", "Sea Bream", "Saury", 
+				"Dogfish Shark", "Sea Bass", "Black Bass", "Cod", "Flounder", "Amago Trout", "Black Bass", "Sea Bass", "Rare Can", "Crab"],
 
 	fishArcadia: ["Goby", "Char", "Carp", "Catfish", "Crawfish", "Freshwater Prawn", "Brown Trout", "Sweetfish", "Shisamo", "Funa", "Amago Trout", 
-					"Sardine", "Cod", "Pond Smelt", "Rainbow Trout", "Icefish", "Eel", "Herring", "Glitter Snapper", "Puffer Fish", "Goby", "Fish Fossil", 
-					"Stick", "Rubber Boot", "Bottle", "Fish Bone", "Giant Arowana", "Stick", "Rubber Boot", "Bottle", "Fish Bone", "Stick", "Char", "Carp", 
-					"Rare Can", "Pirate Treasure", "Brown Trout", "Sweetfish", "Shisamo", "Amago Trout", "Sardine", "Cod", "Pond Smelt", "Rainbow Trout", 
-					"Icefish", "Eel", "Herring", "Goby", "Freshwater Prawn", "Puffer Fish"],
+				"Sardine", "Cod", "Pond Smelt", "Rainbow Trout", "Icefish", "Eel", "Herring", "Glitter Snapper", "Puffer Fish", "Goby", "Fish Fossil", 
+				"Stick", "Rubber Boot", "Crab", "Fish Bone", "Giant Arowana", "Stick", "Rubber Boot", "Bottle", "Fish Bone", "Stick", "Char", "Tiger Prawn", 
+				"Rare Can", "Pirate Treasure", "Brown Trout", "Sweetfish", "Shisamo", "Amago Trout", "Sardine", "Cod", "Pond Smelt", "Rainbow Trout", 
+				"Icefish", "Eel", "Herring", "Goby", "Freshwater Prawn", "Puffer Fish"],
 
-	fishShallow: ["Salmon", "Rainbow Trout", "Salmon", "Masu Trout", "Icefish", "Steelhead", "Eel", "Salmon", "Needlefish", "Moray Eel", "Large Goby", 
+	fishShallow: ["Salmon", "Rainbow Trout", "Salmon", "Masu Trout", "Icefish", "Steelhead", "Eel", "Shrimp", "Needlefish", "Moray Eel", "Large Goby", 
 					"Sweetfish", "Shisamo", "Icefish", "Loach", "Funa", "Salmon", "Black Bass", "Sardine", "Cod", "Yellowtail", "Goby", "Fish Fossil", 
-					"Stick", "Bottle", "Fish Bone", "Rubber Boot", "Stick", "King Salmon", "Stick", "Fish Bone", "Fish Bone", "Stick", "Stick", 
+					"Stick", "Bottle", "Fish Bone", "Rubber Boot", "Stick", "King Salmon", "Tiger Prawn", "Fish Bone", "Fish Bone", "Stick", "Stick", 
 					"Rainbow Trout", "Steelhead", "Masu Trout", "Salmon", "Nautilus", "Large Goby", "Shisamo", "Eel", "Icefish", "Loach", "Black Bass", 
 					"Sardine", "Cod", "Goby", "Yellowtail", "Salmon", "Rare Can"],
 
@@ -231,10 +231,52 @@ module.exports = {
 						"fails", "success", "fails", "success", "explodes", "success", "fails", "success", "explodes", "success", "fails", "success", 
 						"fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "explodes", "success", "success", "fails", 
 						"success"],
+
 	largeChemistrySet: ["fails", "success", "explodes", "success", "explodes", "success", "success", "success", "success", "success", "success", "success", 
 						"explodes", "success", "fails", "success", "success", "success", "success", "success", "fails", "success", "success", "success", 
 						"success", "success", "fails", "success", "explodes", "success", "fails", "success", "explodes", "success", "success", "success", 
 						"fails", "success", "success", "success", "success", "success", "fails", "success", "success", "explodes", "success", "success", 
-						"fails", "success"]
+						"fails", "success"],
+
+	//cooking lines
+	smallKitchen: ["fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", "fire", "success", "fails", 
+					"success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", "success", "success", 
+					"success", "success", "fails", "success", "fire", "success", "disaster", "explodes", "disaster", "explodes", "shining", "explodes", 
+					"disaster", "success", "disaster", "explodes", "success", "success", "disaster", "explodes", "success", "explodes", "success", "success"],
+
+	mediumKitchen: ["fails", "success", "fails", "success", "fails", "success", "fails", "success", "fails", "success", "success", "success", "success", 
+					"success", "fails", "success", "success", "success", "fails", "shining", "fails", "success", "fails", "success", "success", "success", 
+					"success", "success", "fails", "success", "fire", "success", "disaster", "explodes", "disaster", "explodes", "success", "success", 
+					"disaster", "success", "success", "explodes", "success", "success", "disaster", "explodes", "success", "explodes", "success", "success"],
+
+	largeKitchen: ["fails", "success", "success", "success", "fails", "success", "fails", "success", "shining", "success", "success", "success", "success", 
+					"success", "fails", "success", "success", "success", "success", "success", "shining", "success", "fails", "success", "success", 
+					"success", "success", "success", "success", "success", "fire", "success", "success", "success", "disaster", "success", "success", 
+					"success", "success", "success", "success", "explodes", "success", "success", "disaster", "explodes", "shining", "success", "success", 
+					"success"],
+
+
+	//levelup
+	highSPD: ["SPD", "ATK", "SPD", "SPD", "M.ATK", "ATK", "SPD", "DEF", "DEF", "ATK", "DEF", "M.ATK", "M.DEF", "SPD", "ATK", "SPD", "ATK", "DEF", "M.ATK", 
+				"M.DEF", "SPD", "SPD", "M.ATK", "SPD", "M.ATK", "M.ATK", "SPD", "SPD", "ATK", "SPD", "SPD", "M.ATK", "M.ATK", "M.DEF", "SPD", "SPD", "SPD", 
+				"SPD", "SPD", "SPD", "M.DEF", "M.DEF", "ATK", "SPD", "M.ATK", "M.DEF", "SPD", "ATK", "SPD", "M.ATK"],
+
+	highDEF: ["DEF", "M.DEF", "DEF", "DEF", "M.ATK", "M.DEF", "SPD", "M.DEF", "DEF", "ATK", "DEF", "M.ATK", "M.DEF", "DEF", "DEF", "SPD", "ATK", "DEF", 
+				"M.ATK", "M.DEF", "DEF", "DEF", "DEF", "ATK", "DEF", "M.ATK", "M.DEF", "DEF", "DEF", "SPD", "ATK", "DEF", "M.ATK", "M.DEF", "SPD", "DEF", 
+				"DEF", "DEF", "DEF", "DEF", "ATK", "M.ATK", "ATK", "DEF", "ATK", "M.DEF", "SPD", "SPD", "M.DEF", "M.ATK"],
+
+	highATK: ["ATK", "ATK", "ATK", "DEF", "ATK", "M.DEF", "SPD", "ATK", "M.ATK", "ATK", "DEF", "M.ATK", "M.DEF", "SPD", "DEF", "SPD", "ATK", "SPD", "ATK", 
+				"M.DEF", "SPD", "ATK", "ATK", "ATK", "DEF", "SPD", "M.DEF", "SPD", "ATK", "M.DEF", "ATK", "DEF", "M.ATK", "M.DEF", "SPD", "ATK", "ATK", 
+				"ATK", "ATK", "ATK", "SPD", "ATK", "ATK", "DEF", "ATK", "M.DEF", "SPD", "ATK", "DEF", "ATK"],
+
+	highMATK: ["M.ATK", "M.ATK", "M.ATK", "M.ATK", "M.ATK", "M.DEF", "SPD", "ATK", "M.ATK", "ATK", "DEF", "M.ATK", "M.DEF", "SPD", "SPD", "DEF", "ATK", 
+				"DEF", "M.ATK", "M.DEF", "SPD", "M.ATK", "M.DEF", "ATK", "DEF", "M.ATK", "M.DEF", "SPD", "M.ATK", "DEF", "ATK", "M.ATK", "M.ATK", "M.DEF", 
+				"SPD", "M.ATK", "M.ATK", "M.ATK", "M.ATK", "M.ATK", "M.ATK", "SPD", "ATK", "DEF", "M.ATK", "M.DEF", "SPD", "M.ATK", "M.ATK", "M.ATK"],
+
+	highMDEF: ["M.DEF", "DEF", "M.ATK", "DEF", "M.ATK", "M.DEF", "SPD", "M.DEF", "M.DEF", "M.DEF", "DEF", "M.ATK", "M.DEF", "SPD", "M.DEF", "SPD", "ATK", 
+				"M.DEF", "M.ATK", "M.DEF", "M.ATK", "M.DEF", "M.DEF", "ATK", "M.ATK", "M.ATK", "M.DEF", "SPD", "M.DEF", "DEF", "ATK", "DEF", "M.ATK", 
+				"M.DEF", "SPD", "M.DEF", "M.DEF", "M.DEF", "M.DEF", "M.DEF", "M.DEF", "ATK", "ATK", "M.ATK", "M.ATK", "M.DEF", "SPD", "M.DEF", "SPD", 
+				"M.DEF"]
+
 
 }

@@ -6,15 +6,15 @@ module.exports = {
 	piKingFishMapPreload: {},
 	piMonsterLocationMapPreload: {},
 	piMonsterIslandMapPreload: {},
-	//piFlowersPreload: {},
 	piSeedsPreload: {},
-	//piCropsPreload:{},
 	piPotionsPreload:{},
+	piCookingDishPreload:{},
 
 	//loaded maps
 	piAllItemMap: {},
     piAllMonstersMap: {},
     piAllLivestockMap: {},
+    piAllClassesMap: {},
 	piAllMinigamesMap: {},
 
 	//list of locations
@@ -28,10 +28,10 @@ module.exports = {
 	piMonsterList: {},
 	piLivestockList: {},
 
+	//classes
+	piClassList: {},
+
 	//list of Items
-	piGrillFryList: {},
-	piMiscDishList: {},
-	piDrinkList: {},
 	piCropsList: {},
 	piCrystalsList: {},
 	piFabricList: {},
@@ -39,7 +39,6 @@ module.exports = {
 	piFlowerList: {},
 	piGemsList: {},
 	piHerbsList: {},
-	piIngredientsList: {},
 	piLumberList: {},
 	piMiscList: {},
 	piMonsterPartsList: {},
@@ -52,6 +51,19 @@ module.exports = {
 	piSticksList: {},
 	piStonesList: {},
 	piWildFoodList: {},
+
+	//dishes
+	piIngredientsList: {},
+
+	piDessertsList: {},
+	piDrinkList: {},
+	piGrillFryList: {},
+	piMiscDishList: {},
+	piNoodleBreadList: {},
+	piPotDishesList: {},
+	piRiceDishesList: {},
+	piSaladList: {},
+	piSoupList: {},
 
 	//critters
 	piBeesList: {},
