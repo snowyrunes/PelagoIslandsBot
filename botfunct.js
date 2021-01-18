@@ -213,6 +213,8 @@ module.exports = {
 				return getCookingRolls();
 			case "levelup":
 				return getLevelUpRolls();
+			case "monsterhunt":
+				return getMonsterHuntRolls();
 			default:
 				return ("No minigame command found for " + args[0]);
 		}
@@ -255,6 +257,33 @@ function getLevelUpRolls(){
 	aLine += lines.highMATK.join(" | ");
 	aLine += "\n\n**Roll line for classes with High M.DEF**\n"
 	aLine += lines.highMDEF.join(" | ");
+
+	return aLine;
+}
+
+function getMonsterHuntRolls(){
+	var aLine = "**Roll line for Player Levels 1-3**\n"
+	aLine += lines.level1To3HitLine.join(" | ");
+	aLine += "\n**Roll line for Player Levels 4-6**\n"
+	aLine += lines.level4To6HitLine.join(" | ");
+	aLine += "\n**Roll line for Player Levels 7-9**\n"
+	aLine += lines.level7To9HitLine.join(" | ");
+	aLine += "\n**Roll line for Player Levels 10-12**\n"
+	aLine += lines.level10To12HitLine.join(" | ");
+	aLine += "\n**Roll line for Player Levels 13 and Above**\n"
+	aLine += lines.level13PlusHitLine.join(" | ");
+	aLine += "\n\n**Roll line for Monster Level E**\n"
+	aLine += lines.levelEHitLine.join(" | ");
+	aLine += "\n**Roll line for Monster Level D**\n"
+	aLine += lines.levelDHitLine.join(" | ");
+	aLine += "\n**Roll line for Monster Level C**\n"
+	aLine += lines.levelCHitLine.join(" | ");
+	aLine += "\n**Roll line for Monster Level B**\n"
+	aLine += lines.levelBHitLine.join(" | ");
+	aLine += "\n**Roll line for Monster Level A**\n"
+	aLine += lines.levelAHitLine.join(" | ");
+	aLine += "\n**Roll line for Monster Level Boss**\n"
+	aLine += lines.levelBossHitLine.join(" | ");
 
 	return aLine;
 }
