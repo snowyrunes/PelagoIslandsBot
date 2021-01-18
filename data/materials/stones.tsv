@@ -6,11 +6,12 @@ Glass Stone	200	COMMON	MP +1	MP +1
 Glittering Stone	300	COMMON	M.ATK +1	M.DEF +1
 Golem Spirit Stone	500	N/A	N/A	N/A
 Golem Stone	400	N/A	N/A	N/A
+Golem Tablet	1500	N/A	N/A	N/A
 Invisible Stone	7000	RARE	Adds 1 HIT to every attack line	Removes 1 HIT from every attack line made towards you
 Mythic Stone	10000	N/A	N/A	N/A
 Old Stone	100	N/A	N/A	N/A
 Rock	50	COMMON	ATK +1	DEF +1
-Rune Stone	0	RARE	ALL STATS +3	ALL STATS +3
+Rune Stone	20000	RARE	ALL STATS +3	ALL STATS +3
 Shade Stone	5000	RARE	Ability to use low-level Dark Magic	Ability to use low-level Dark Magic
 Small Rock	5	COMMON	ATK +1	DEF +1
 Small Stone	200	N/A	N/A	N/A

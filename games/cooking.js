@@ -135,7 +135,7 @@ module.exports = class Cooking extends Minigame{
 
     cooking(args){
       if(args.length < 1){
-        return "Please provide kitchen size and the name of the dish. Example: pi!cooking small kitchen, butter, [fails:success, disaster:success]"
+        return "Please provide kitchen size, number of dishes, and the name of the dish. Example: pi!cooking small kitchen, butter, [fails:success, disaster:success]"
       }
       
       var argsString = args.join(" ");

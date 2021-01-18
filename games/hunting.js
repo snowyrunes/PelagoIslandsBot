@@ -1,6 +1,7 @@
 const Minigame = require('./minigames');
 var botvars = require('../variables/vars');
 var botfunct = require('../botfunct');
+var lines = require('../variables/lines');
 var commaNumber = require('comma-number');
 
 module.exports = class MonsterHunting extends Minigame {
@@ -29,7 +30,45 @@ module.exports = class MonsterHunting extends Minigame {
   	}
     
 
-	monsterHunt(args){
+	attack(args){
+    if(args.length < 1){
+      return "Please provide your character level. Example: pi!attack 13"
+    }
+
+    var argsString = args.join(" ").toLowerCase().trim();
+    
+    if(isNaN(argsString)){
+      return "Invalid Level: " + argsString;
+    }
+
+    var attackLine = getHunterLine(argsString);
+    return attackLine[botfunct.randomize(attackLine.length)];
+  }
+
+  monsterAttack(args){
+    if(args.length < 1){
+      return "Please provide monster name. Example: pi!monsterAttack E"
+    }
+
+    var argsString = args.join(" ").toLowerCase().trim();
+    var monsterObj = null;
+
+    if(Object.keys(botvars.piAllMonstersMap).includes(argsString)){
+        monsterObj = botvars.piAllMonstersMap[argsString];
+    }else{
+      return "Invalid monster name: " + argsString;
+    }
+
+    var attackLine = getMonsterATKLine(botvars.piAllMonstersMap[argsString].mLevel);
+
+    if(null === attackLine){
+      return "Invalid Monster Level: " + argsString;
+    }
+
+    return attackLine[botfunct.randomize(attackLine.length)];
+  }
+
+  monsterHunt(args){
     
     if(args.length < 1){
       return "Please provide monster name, location or island, and character level. Example: pi!monsterhunt duck, forest haven, 13"
@@ -43,7 +82,7 @@ module.exports = class MonsterHunting extends Minigame {
     }
 
     if(isNaN(newargs[2])){
-      return "Invalid LeveL: " + newargs[2];
+      return "Invalid Level: " + newargs[2];
     }
 
     var monsterName = newargs[0].trim().toLowerCase();
@@ -76,13 +115,154 @@ module.exports = class MonsterHunting extends Minigame {
     }
 
     var lineOutput = "***Monster Hunting Minigame:***\n";
-    lineOutput += "*You may play this game a maximum of **three times** per activity check (unless triggered by another minigame).*\n\n"
+    lineOutput += "*You may play this game a maximum of **three times** per activity check (unless triggered by another minigame). Note that **Boss** monsters can only be fought **once** per check.*\n\n"
 
-    lineOutput += "You are hunting a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
-    lineOutput += "Hunter Level: " + level + "\n\n";
+    lineOutput += "You are hunting a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.";
+
+    if("Typhoon" === monsterObj.name){
+      lineOutput += " __*Special Note:*__ Typhoons can only be hunted during Blizzards or Hurricanes."
+    }
+
+    lineOutput += "\n";
+
+    lineOutput += "Hunter Level: **" + level + "**\n\n";
+
+    
+
+    var userLine = getHunterLine(level);
+    var monsterLine = getMonsterATKLine(monsterObj.mLevel);
+
+    var userHits = 0;
+    var monsterHits = 0;
+    var monsterHitArray = [];
+    var userHitArray = [];
+
+    var expEarned = getEXPFromIsland(monsterObj.mLevel, locationObj);
+
+    if(null === expEarned){
+      return "Error! " + monsterObj.mLevel + " " + locationObj.name;
+    }
+
+    for(var i =0; i< 5; i++){
+      var uResult = userLine[botfunct.randomize(userLine.length)];
+      var mResult = monsterLine[botfunct.randomize(monsterLine.length)];
+
+      if("HIT" === uResult){
+        userHits++;
+      }
+
+      userHitArray.push(uResult);
+
+      if("HIT" === mResult){
+        monsterHits++;
+      }
+
+      monsterHitArray.push(mResult);
+    }
+
+    lineOutput += "**Your Attacks:** " + userHitArray.join(", ") + " **(" + userHits + " Hits)**\n";
+    lineOutput += "**Monster's Attacks:** " + monsterHitArray.join(", ") + " **(" + monsterHits + " Hits)**\n\n";
+
+    var huntWinner = "";
+
+    if(userHits == monsterHits){
+      var tideBreaker = botfunct.randomFromLine([monsterObj.name + ", " + "You"]);
+
+      lineOutput += "It's a tie!\nTidebreaker " + tideBreaker + "!\n\n";
+
+      if(tideBreaker === "Result: " + monsterObj.name){
+        expEarned = expEarned/2;
+        huntWinner = monsterObj.name;
+      }else{
+        huntWinner = "You";
+      }
+
+    }else{
+
+      if(userHits < monsterHits){
+        huntWinner = monsterObj.name;
+        expEarned = expEarned/2;
+      }else{
+        huntWinner = "You";
+      }
+
+    }
+
+    lineOutput += "Winner: **"+ huntWinner + "**!\n"
+
+    lineOutput += "EXP Earned: **" + expEarned + " EXP**\n";
+
+    if("You" === huntWinner){
+      lineOutput += "\n**Drop Items**\n";
+
+      var dropArray = monsterObj.drops.split(",").map(a => a.trim().toLowerCase());
+      var dropItemArray = [];
+      var priceArray = [];
+      var dropPriceTotal = 0;
+
+      for(var i = 0; i< dropArray.length; i++){
+        var dropObj = null;
+        var dropPrice = 0;
+
+        if(dropArray[i].includes("(^") && dropArray[i].includes("%)")){
+          var splitArr = dropArray[i].split("(^").map(a => a.replace("%)", "").trim());
+
+          if(isNaN(splitArr[1])){
+            return "ERROR: Percentage " + splitArr[1];
+          }
+
+          var randomPercent = botfunct.randomize(100) + 1;
+          
+          //console.log(randomPercent);
+
+          if(parseInt(splitArr[1]) >= randomPercent){
+            dropObj = botvars.piAllItemMap[splitArr[0]];
+
+            if(null === dropObj){
+              return "ERROR: " + dropArray[i];
+            }
+
+            if(null === dropObj.price || undefined === dropObj.price || isNaN(dropObj.price)){
+              console.log
+              return "ERROR: Price of " + dropObj.price;
+            }
+
+            dropItemArray.push(dropObj.name);
+            priceArray.push(parseInt(dropObj.price));
+            dropPriceTotal = dropPriceTotal + parseInt(dropObj.price);
+
+          }
+
+        }else{
+          dropObj = botvars.piAllItemMap[dropArray[i]];
+
+          if(null === dropObj){
+            return "ERROR: " + dropArray[i];
+          }
+
+          if(null === dropObj.price || undefined === dropObj.price || isNaN(dropObj.price)){
+            console.log
+            return "ERROR: Price of " + dropObj.price;
+          }
+
+          dropItemArray.push(dropObj.name);
+          priceArray.push(parseInt(dropObj.price));
+          dropPriceTotal = dropPriceTotal + parseInt(dropObj.price);
+
+        }
+      }
+
+      for(var i=0; i< dropItemArray.length; i++){
+        lineOutput += dropItemArray[i] + " (" + commaNumber(priceArray[i]) + "G)\n"
+      }
+
+      lineOutput += "\n**Total Items:** " + dropItemArray.join(", ")+"\n";
+      lineOutput += "**Total For Selling Everything:** " + commaNumber(dropPriceTotal) + "G";
+
+
+    }
 
     return lineOutput;
-
 
 	}
 }

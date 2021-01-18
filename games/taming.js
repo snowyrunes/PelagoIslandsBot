@@ -51,7 +51,7 @@ module.exports = class Taming extends Minigame {
 	tameOne(args){
     //console.log(args);
 		if(args.length < 1 ){
-			return "Invalid Params. Requires at least a monster name and island/location, separated by comma. Sample: \"pi!tameOne **Hornet**, **Leuda Mines**, **[Ignored, Ignored, Success!]**\"";
+			return "Invalid Params. Requires at least a monster name and island/location, separated by comma. Sample: \"pi!tameOne Hornet, Leuda Mines, [Ignored, Ignored, Success!]\"";
 		}
 
     var argsString = args.join(" ");
@@ -70,7 +70,7 @@ module.exports = class Taming extends Minigame {
 
       //console.log(argsString2);
       if(argsString2.length < 2){
-        return "Invalid Params. Requires at least a monster name and island/location. Sample: \"pi!tameOne **Hornet**, **Leuda Mines**, **[Ignored | Ignored | Success!]**\"";
+        return "Invalid Params. Requires at least a monster name and island/location. Sample: \"pi!tameOne Hornet, Leuda Mines, [Ignored, Ignored, Success!]\"";
       }
 
       monsterName = argsString2[0].trim().toLowerCase();
@@ -81,7 +81,7 @@ module.exports = class Taming extends Minigame {
         argsString2 = argsString.replace(removeStringDetails[0], "").split(",");
 
         if(argsString2.length < 2){
-          return "Invalid Params. Requires at least a monster name and island/location. Sample: \"pi!tameOne **Hornet**, **Leuda Mines**, **[Ignored | Ignored | Success!]**\"";
+          return "Invalid Params. Requires at least a monster name and island/location. Sample: \"pi!tameOne Hornet, Leuda Mines, [Ignored, Ignored, Success!]\"";
         }
 
         monsterName = argsString2[0].trim().toLowerCase();
@@ -114,7 +114,7 @@ module.exports = class Taming extends Minigame {
   taming(args){
     //console.log(args);
     if(args.length < 1 ){
-      return "Invalid Params. Requires at least a monster name and island/location, separated by comma. Sample: \"pi!taming **Hornet**, **Leuda Mines**, **[Ignored | Ignored | Success!]**\"";
+      return "Invalid Params. Requires at least a monster name and island/location, separated by comma. Sample: \"pi!taming Hornet, Leuda Mines, [Ignored, Ignored, Success!]\"";
     }
 
     var argsString = args.join(" ");
@@ -133,7 +133,7 @@ module.exports = class Taming extends Minigame {
 
       //console.log(argsString2);
       if(argsString2.length < 2){
-        return "Invalid Params. Requires at least a monster name and island/location. Sample: \"pi!taming **Hornet**, **Leuda Mines**, **[Ignored, Ignored, Success!]**\"";
+        return "Invalid Params. Requires at least a monster name and island/location. Sample: \"pi!taming Hornet, Leuda Mines, [Ignored, Ignored, Success!]\"";
       }
 
       monsterName = argsString2[0].trim().toLowerCase();
@@ -144,7 +144,7 @@ module.exports = class Taming extends Minigame {
         argsString2 = argsString.replace(removeStringDetails[0], "").split(",");
 
         if(argsString2.length < 2){
-          return "Invalid Params. Requires at least a monster name and island/location. Sample: \"pi!tameOne **Hornet**, **Leuda Mines**, **[Ignored | Ignored | Success!]**\"";
+          return "Invalid Params. Requires at least a monster name and island/location. Sample: \"pi!taming Hornet, Leuda Mines, [Ignored, Ignored, Success!]\"";
         }
 
         monsterName = argsString2[0].trim().toLowerCase();
@@ -210,11 +210,13 @@ function tameMonsterOnce(monsterObj, locationObj, removeLinesArr){
 
   var lineOutput = "***Taming Minigame (Single ReRoll Command):***\n";
 
-  lineOutput = lineOutput +"You are re-rolling taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
+  lineOutput = lineOutput +"You are re-rolling taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.";
 
   if("Typhoon" === monsterObj.name){
-    lineOutput += "***Special Note:*** Typhoons can only be tamed during Blizzards or Hurricanes.\n\n"
+    lineOutput += " __*Special Note:*__ Typhoons can only be tamed during Blizzards or Hurricanes."
   }
+
+  lineOutput += "\n\n";
 
   lineOutput += "**Note**: this game requires a **Monster Glove**, and a living space for your monster. For more details, use **pi!monstercare**.\n\n"
   lineOutput = lineOutput + "*(Beast Masters gain EXP and may remove five options. Earthmates may remove three options. People who are both can remove eight options. ";
@@ -300,11 +302,13 @@ function tameMonsterMultiAttempt(monsterObj, locationObj, removeLinesArr){
 
   var lineOutput = "***Taming Minigame:***\n";
 
-  lineOutput = lineOutput +"You are taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.\n";
+  lineOutput = lineOutput +"You are taming a(n) **" + monsterObj.name + "**. Location: **"+ locationObj.name +"**.";
 
   if("Typhoon" === monsterObj.name){
-    lineOutput += "***Special Note:*** Typhoons can only be tamed during Blizzards or Hurricanes.\n\n"
+    lineOutput += " __*Special Note:*__ Typhoons can only be tamed during Blizzards or Hurricanes."
   }
+
+  lineOutput += "\n\n";
 
   lineOutput += "**Note**: this game requires a **Monster Glove**, and a living space for your monster. For more details, use **pi!monstercare**.\n\n"
   lineOutput = lineOutput + "*(Beast Masters can gain EXP and may remove five options. Earthmates can remove three options. People who are both can remove eight options. ";

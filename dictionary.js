@@ -2,6 +2,7 @@ var fs =require('fs');
 
 var botvars = require('./variables/vars');
 var botfuncts = require('./botfunct');
+var helpfunct = require('./helpfunct');
 
 var msgWriter = require('./messageWriter');
 
@@ -24,6 +25,8 @@ module.exports = {
 	initMethodDict: function (methodDict) {
 		//general functions
 		//methodDict['rtest'] = botfuncts.randomTest;
+		methodDict['help'] = helpfunct.helpInfo;
+
 		methodDict['list'] = botfuncts.listItemsFromCategory;
 		
 		methodDict['item'] = botfuncts.itemDetails;
@@ -64,7 +67,10 @@ module.exports = {
         methodDict['taming'] = botvars.piAllMinigamesMap["Monster Taming"].taming;
         methodDict['monstercare'] = botvars.piAllMinigamesMap["Monster Taming"].monsterCare;
 
-        //methodDict['monsterhunt'] = botvars.piAllMinigamesMap["Monster Hunting"].monsterHunt;
+        methodDict['monsterhunt'] = botvars.piAllMinigamesMap["Monster Hunting"].monsterHunt;
+
+        methodDict['attack'] = botvars.piAllMinigamesMap["Monster Hunting"].attack;
+        methodDict['monsterattack'] = botvars.piAllMinigamesMap["Monster Hunting"].monsterAttack;
 
         //gardening
         //methodDict['gardenone'] = botvars.piAllMinigamesMap["Gardening"].gardenOne;

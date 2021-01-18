@@ -40,7 +40,7 @@ module.exports = class Alchemy extends Minigame{
 
   	alchemyOne(args){
       if(args.length < 1){
-        return "Please provide type of chemistry set and the name of the potion. Example: pi!alchemyOne small, object x"
+        return "Please provide type of chemistry set and the name of the potion. Example: pi!alchemyOne small, object x [fails | fails]"
       }
 
       var argsString = args.join(" ");
@@ -51,7 +51,7 @@ module.exports = class Alchemy extends Minigame{
       var newargs = argsString.replace("[" + removeStringDetails +"]", "").split(",").map(a => a.trim());
 
       if(newargs.length < 2){
-        return "Please provide type of chemistry set and the name of the potion. Example: pi!alchemyOne small, object x"
+        return "Please provide type of chemistry set and the name of the potion. Example: pi!alchemyOne small, object x [fails | fails]"
       }
 
       var potionName = newargs[1].toLowerCase().trim();
@@ -131,7 +131,7 @@ module.exports = class Alchemy extends Minigame{
     alchemy(args){
 
       if(args.length < 1){
-        return "Please provide type of chemistry set, the number of potions, and the name of the potion. Example: pi!alchemy small, 10, object x"
+        return "Please provide type of chemistry set, the number of potions, and the name of the potion. Example: pi!alchemy small, 10, object x [fails | fails]"
       }
 
       var argsString = args.join(" ");
@@ -142,7 +142,7 @@ module.exports = class Alchemy extends Minigame{
       var newargs = argsString.replace("[" + removeStringDetails +"]", "").split(",").map(a => a.trim());
 
       if(newargs.length < 3 || isNaN(newargs[1])){
-        return "Please provide type of chemistry set, the number of potions, and the name of the potion. Example: pi!alchemy small, 10, object x"
+        return "Please provide type of chemistry set, the number of potions, and the name of the potion. Example: pi!alchemy small, 10, object x [fails | fails]"
       }
 
       if(newargs[1] > 10 || newargs[1] < 1){
